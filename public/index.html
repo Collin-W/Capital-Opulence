@@ -61,22 +61,50 @@
         </nav>
       
         <form>
+        
+
+            <p>Expense Form</p>
             <div>
-                <input class="" type="number" placeholder="">
-                <input class="" type="boolean" placeholder="">
-                <input class="" type="text" placeholder="">
-                <input class="" type="number" placeholder="">
+                <input class="expense-input expense-date" type="number" placeholder="Date Of Expense">
+                <input class="expense-input expense-gain-loss" type="boolean" placeholder="Gain/Loss">
+                <input class="expense-input expense-description" type="text" placeholder="Description Of Expense">
+                <input class="expense-input expense-amount" type="number" placeholder="Amount - Or +">
+
             </div>
+
+            <p>Click the button to add a new form element.</p>
         
             <div>
-                <button>Add Button</button>
+                <button id="expense-form-add-btn">Add Button</button>
+
             </div>
         </form>
  
     </section>
 
-    <section id="login">
+    <section id="login-signup">
         
+        <form id="login-form">
+
+            <p>Login</p> 
+
+            <label class="login-signup-label">Username<input class="login-signup-input" placeholder="Enter Username"></label>
+            <label class="login-signup-label">Password<input class="login-signup-input" placeholder="Enter Password"></label>
+
+            <button id="login-btn">Login</button>
+        </form>
+
+        <form id="signup-form">
+
+            <p>Sign Up</p>
+
+            <label class="login-signup-label">Username<input class="login-signup-input" placeholder="Enter New Username"></label>
+            <label class="login-signup-label">Email<input class="login-signup-input" placeholder="Enter Email"></label>
+            <label class="login-signup-label">Password<input class="login-signup-input" placeholder="Enter New Password"></label>
+
+            <button id="signup-btn">Login</button>
+        </form>
+
     </section>
 
     <section id="calculator">
