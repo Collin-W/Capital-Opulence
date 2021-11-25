@@ -4,7 +4,7 @@ VALUES
     ('Griff', 'Thrift', '2021-11-10', 'big_griff@gmail.com', 'p3nNyP1NcHeR$'),
     ('Jane', 'Plain', '2021-11-09', 'janeplain@gmail.com', '$pendsomesavesom3');
 
-INSTER INTO expense_track(tx_date, tx_type, tx_description, tx_amount, tx_from_user)
+INSERT INTO expense_track(tx_date, tx_type, tx_description, tx_amount, tx_from_user)
 VALUES
     ('2021-11-11', 'expense', 'dinner for four', '341.45', 1),
     ('2021-11-11', 'expense', 'dog grooming', '201.85', 1),
