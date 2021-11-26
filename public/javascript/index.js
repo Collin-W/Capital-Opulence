@@ -16,7 +16,7 @@ $('#start-login-signup').click(() => {
 });
 
 $('#start-expense-tracker').click(() => {
-    $('homepage').hide();
+    $('#homepage').hide();
     $('#expense-form-fieldset').show();
 });
 
@@ -34,8 +34,7 @@ $('.go-back-home').click(() => {
     // add each new section to this 
 })
 
-
-$("#expense-form-add-btn").click(() => {
+$("#expense-form-add-btn").click((evt) => {
     console.log('add button')
 
     evt.preventDefault();
