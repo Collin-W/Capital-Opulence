@@ -38,9 +38,6 @@ $("#expense-form-add-btn").click(() => {
     // var inputAmount = $("<input>", {class: "expense-input expense-amount", type: "number", placeholder:"Amount - Or +"});
 
 
-
-     
-
      $(newInputRow).append(inputDate, inputGainLoss, inputDescription, inputAmount)
 
      $('#expense-form').append(newInputRow)

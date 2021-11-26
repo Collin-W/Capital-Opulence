@@ -13,19 +13,66 @@
 
     </header>
 
+    <section id="Homepage">
+        <!-- header/hero of page -->
+       <header>
+           <!-- This header will be the hero of the landing page with a nice
+            background and the title of the name of the page below -->
+            <h1>Page Title</h1>
+       </header>
+       <!-- navigation for application -->
+       <nav>
+           <!-- Links to each part of the page -->
+        <a href="">Expense Tracker</a>
+        <a href="">Finance calculator</a>
+        <a href="">Login</a>
+        <!-- button that when clicked will logout/destroy the session-->
+        <button id='logout' type="button">logout</button>
+       </nav>
+       <!-- div that will hold info about the calculator and the expense tracker
+            This info will be held in two columns -->
+       <div>
+           <!-- this will be the main description of the page and what its
+           function is  -->
+           <p>This will be a description of the page</p>
+           <!-- this will be the div column that will hold the infomation about
+           the financal calculator -->
+            <div>
+                <h2>Calculator</h2>
+                <p>description of the financal calculator</p>
+            </div>
+
+            <!-- this will be the div column that will hold the information
+            about the Expense tracker -->
+            <div>
+                <h2>Expense Tracker</h2> 
+                <p>description of expense tracker</p>
+            </div>
+       </div>
+    </section>
+
+    <nav>
+        <a href="">Homepage</a>
+        <a href="">Calculator</a>
+        <a href="">Login</a>
+        <button id='logout' type="button">logout</button>
+    </nav>
 
 
     <fieldset>
 
-        <legend>Expense Form</legend>
+    <legend>Expense Form</legend>
 
         <form id="expense-form">
 
+            <p>Expense Form</p>
+            <div>
 
             <input class="expense-input expense-date" type="date" placeholder="Date Of Expense">
             <input class="expense-input expense-gain-loss" type="boolean" placeholder="Gain/Loss" list="gain-loss">
             <input class="expense-input expense-description" type="text" placeholder="Description Of Expense">
             <input class="expense-input expense-amount" type="number" placeholder="Amount - Or +">
+            </div>
 
             
         </form>
