@@ -1,13 +1,18 @@
 let expenseArray = [];
 
+let section = {
+    login: $('#login-signup'),
+    expenseForm: $('#expense-form-fieldset'),
+    calculator: $('#calculator')
+}
+
 //$('').hide();
 //$('').show();
 
 //default html elements
-//can this be a var so it is more dry
-$('#expense-form-fieldset').hide();
-$('#login-signup').hide();
-$('#calculator').hide();
+$.map(section, (section) =>  {
+section.hide()
+}) 
 
 //renders or hides html on button clicks
 $('#start-login-signup').click(() => {
@@ -17,7 +22,7 @@ $('#start-login-signup').click(() => {
 
 $('#start-expense-tracker').click(() => {
     $('#homepage').hide();
-    $('#expense-form-fieldset').show();
+    form.show();
 });
 
 $('#start-calculator').click(() => {
@@ -27,7 +32,7 @@ $('#start-calculator').click(() => {
 
 $('.go-back-home').click(() => {
     $('#homepage').show();
-    $('#expense-form-fieldset').hide();
+    form.hide();
     $('#login-signup').hide();
     $('#calculator').hide();
 
