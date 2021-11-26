@@ -1,4 +1,3 @@
-
 let expenseArray = [];
 
 $("#expense-form-add-btn").click(() => {
