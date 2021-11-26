@@ -16,7 +16,6 @@ function defaultState() {
     });
 };
 
-
 //RENDERS or HIDES html on BUTTON CLICKS
 $('#start-login-signup').click(() => {
     homepage.hide();
@@ -67,12 +66,16 @@ $("#expense-form-add-btn").click((evt) => {
         type: "number",
         placeholder: "Amount - Or +"
     });
+    let deleteBtn = $("<button>", {
+        text: "X",
+        onclick: "Delete(this);"
+    })
     let newInputRow = document.createElement('div');
 
-    $(newInputRow).append(inputDate, inputGainLoss, inputDescription, inputAmount)
+    $(newInputRow).append(inputDate, inputGainLoss, inputDescription, inputAmount, deleteBtn)
 
     $('#expense-form').append(newInputRow)
-})
+});
 
 // COLLECTS expense form data and pushes it into an array.
 $(".expense-input").each(function () {
