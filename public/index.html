@@ -13,7 +13,7 @@
 
     </header>
 
-    <section id="Homepage">
+    <section id="homepage">
         <!-- header/hero of page -->
        <header>
            <!-- This header will be the hero of the landing page with a nice
@@ -25,7 +25,7 @@
            <!-- Links to each part of the page -->
         <a href="">Expense Tracker</a>
         <a href="">Finance calculator</a>
-        <a href="">Login</a>
+        <button id="start-login-signup">Login</button>
         <!-- button that when clicked will logout/destroy the session-->
         <button id='logout' type="button">logout</button>
        </nav>
@@ -40,6 +40,7 @@
             <div>
                 <h2>Calculator</h2>
                 <p>description of the financal calculator</p>
+                <button id="start-calculator">Calculator</button>
             </div>
 
             <!-- this will be the div column that will hold the information
@@ -47,19 +48,13 @@
             <div>
                 <h2>Expense Tracker</h2> 
                 <p>description of expense tracker</p>
+                <button id="start-expense-tracker">Start Tracker</button>
             </div>
        </div>
     </section>
 
-    <nav>
-        <a href="">Homepage</a>
-        <a href="">Calculator</a>
-        <a href="">Login</a>
-        <button id='logout' type="button">logout</button>
-    </nav>
 
-
-    <fieldset>
+    <fieldset id="expense-form-fieldset">
 
     <legend>Expense Form</legend>
 
@@ -86,6 +81,8 @@
                 <option value="Loss">
                 <option value="Gain"> 
             </datalist>
+
+            <button class='go-back-home'>Go Back</button>
  
     </fieldset>
 
@@ -110,11 +107,14 @@
             <label class="login-signup-label">Password<input type="password" class="login-signup-input" placeholder="Enter New Password"></label>
 
             <button id="signup-btn">Login</button>
+            <button class='go-back-home'>Go Back</button>
         </form>
 
     </section>
 
     <section id="calculator">
+
+        <button class='go-back-home'>Go Back</button>
         
     </section>
 
