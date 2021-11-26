@@ -10,11 +10,13 @@ $(".expense-input").each(function () {
 })
 
 $("#expense-form-add-btn").click(() => {
+    console.log('add button')
 
     let inputDate = document.createElement('input');
     let inputGainLoss = document.createElement('input');
     let inputDescription = document.createElement('input');
     let inputAmount = document.createElement('input');
+    let newInputRow = document.createElement('div');
 
     inputDate.setAttribute('class', 'expense-input expense-date');
     inputGainLoss.setAttribute('class', 'expense-input expense-gain-loss');
@@ -26,6 +28,8 @@ $("#expense-form-add-btn").click(() => {
     inputDescription.setAttribute('placeholder', "Description Of Expense")
     inputAmount.setAttribute('placeholder', "Amount - Or +")
 
+
+
     //this jQuery might work and will make code more dry
 
     // var inputDate = $("<input>", {class: "expense-input expense-date", type: "date", placeholder:"Date Of Expense"});
@@ -35,5 +39,9 @@ $("#expense-form-add-btn").click(() => {
 
 
 
-     //let newInputRow = 
+     
+
+     $(newInputRow).append(inputDate, inputGainLoss, inputDescription, inputAmount)
+
+     $('#expense-form').append(newInputRow)
 })

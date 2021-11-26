@@ -15,22 +15,32 @@
 
 
 
-    <section id="expense-form">
-        <form>
+    <fieldset>
 
-            <p>Expense Form</p>
+        <legend>Expense Form</legend>
+
+        <form id="expense-form">
+
 
             <input class="expense-input expense-date" type="date" placeholder="Date Of Expense">
-            <input class="expense-input expense-gain-loss" type="boolean" placeholder="Gain/Loss">
+            <input class="expense-input expense-gain-loss" type="boolean" placeholder="Gain/Loss" list="gain-loss">
             <input class="expense-input expense-description" type="text" placeholder="Description Of Expense">
             <input class="expense-input expense-amount" type="number" placeholder="Amount - Or +">
 
-            <p>Click the button to add a new form element.</p>
+            
+        </form>
+
+        <p>Click the button to add a new form element.</p>
         
             <button id="expense-form-add-btn">Add Button</button>
-        </form>
+
+            <!-- datalist for the gain loss input -->
+            <datalist id="gain-loss">
+                <option value="Loss">
+                <option value="Gain"> 
+            </datalist>
  
-    </section>
+    </fieldset>
 
     <section id="login-signup">
         
@@ -65,6 +75,7 @@
 
     </footer>
 
+    <script src="../javascript/index.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 </body>
 
