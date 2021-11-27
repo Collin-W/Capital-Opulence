@@ -37,7 +37,6 @@ $('.go-back-home').click(() => {
     homepage.show();
 })
 
-
 // listens to the expense form only
 $("#expense-form-add-btn").click((evt) => {
     console.log('add button')
@@ -85,7 +84,31 @@ $(".expense-input").each(function () {
     console.log(expenseArray);
 })
 
+//LOGIN/SIGNUP SCRIPT- might move to its own file
 
+// $('#').val().trim()
+//login
+let loginUsername = $('#username-login').val().trim()
+let loginPassword = $('#password-login').val().trim()
+
+$('#login-btn').click(() => {
+    if(loginUsername && loginPassword) {
+
+    }
+
+}) 
+
+//signup
+let signupUsername = $('#username-signup').val().trim()
+let signupEmail = $('#email-signup').val().trim()
+let signupPassword = $('#password-signup').val().trim()
+
+$('#signup-btn').click(() => {
+    if(signupUsername && signupEmail && signupPassword) {
+
+    }
+
+}) 
 
 //function CALLS
 defaultState();
