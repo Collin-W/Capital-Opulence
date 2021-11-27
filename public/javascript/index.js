@@ -91,7 +91,10 @@ $(".expense-input").each(function () {
 let loginUsername = $('#username-login').val().trim()
 let loginPassword = $('#password-login').val().trim()
 
-$('#login-btn').click(() => {
+$('#login-btn').click( async (evt) => {
+
+    evt.preventDefault();
+
     if (loginUsername && loginPassword) {
 
 
@@ -114,16 +117,28 @@ $('#login-btn').click(() => {
         }
 
     }
+    //test
+    alert('enter all inputs to login')
+    console.log('not all login inputs entered')
+    //end test
+
+    //this needs to handle and notify user about input verification
 
 })
 
 //signup
+
+let signupFirstName = $('#first-name-signup').val().trim()
+let signupLastName = $('#last-name-signup').val().trim()
 let signupUsername = $('#username-signup').val().trim()
 let signupEmail = $('#email-signup').val().trim()
 let signupPassword = $('#password-signup').val().trim()
 
-$('#signup-btn').click(() => {
-    if (signupUsername && signupEmail && signupPassword) {
+$('#signup-btn').click( async (evt) => {
+
+    evt.preventDefault();
+
+    if (signupFirstName && signupLastName && signupUsername && signupEmail && signupPassword) {
 
         const res = await fetch('/api/users', {
             method: 'post',
@@ -144,6 +159,12 @@ $('#signup-btn').click(() => {
         }
 
     }
+    //test
+    alert('enter all inputs to signup')
+    console.log('not all sign up inputs entered')
+    //end test
+
+    //this needs to handle and notify user about input verification
 
 })
 
