@@ -17,7 +17,7 @@ Expense_Form.init(
       allowNull: false,
     },
     type: {
-      type: DataTypes.ENUM('exspense', 'income', ''),
+      type: DataTypes.ENUM('expense', 'income', ''),
       allowNull: false,
       defaultValue: '',
     },
@@ -30,7 +30,7 @@ Expense_Form.init(
       allowNull: false,
       defaultValue: 0.00
     },
-    from_user: {
+    user_id: {
       type: DataTypes.INTEGER,
       references: {
         model: 'user',

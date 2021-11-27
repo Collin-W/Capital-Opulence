@@ -1,14 +1,14 @@
 const User = require('./User')
-const Expense_Tracker = require('./Expense_Form')
+const Expense_Form = require('./Expense_Form')
 
 //you can have many expense forms 
-User.hasMany(Expense_Tracker, {
-  foreignKey: 'from_user'
+User.hasMany(Expense_Form, {
+  foreignKey: 'user_id'
 })
 
 //expense forms can only have on user
-Expense_Tracker.belongsTo(User, {
-  foreignKey: 'from_user'
+Expense_Form.belongsTo(User, {
+  foreignKey: 'user_id'
 })
 
-module.exports = { User, Expense_Tracker }
+module.exports = { User, Expense_Form }
