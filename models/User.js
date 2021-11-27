@@ -52,16 +52,15 @@ User.init(
   },
   {
     //define hooks
-    //beforeCreate makes sure to has the password before creating a new user
-    //beforeUpdate makes sure to check if the password needs to be hashed before
-    //the user is updated
+    //beforeCreate makes sure to hash the password before creating a new user
+    //beforeUpdate makes sure to hash the password before a user is updated
     hooks: {
       async beforeCreate(newUserData){
         newUserData.password = await bcrypt.hash(newUserData.password, 10)
         return newUserData
       },
       async beforeUpdate(updatedUserData){
-        updatedUserData.password = await bcrypt.hash(newUserData.password, 10)
+        updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10)
         return updatedUserData
       }
     },

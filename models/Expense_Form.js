@@ -2,9 +2,9 @@ const {Model , DataTypes} = require('sequelize')
 
 const sequelize = require('../config/connection')
 
-class Expense_Tracker extends Model {}
+class Expense_Form extends Model {}
 
-Expense_Tracker.init(
+Expense_Form.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -17,7 +17,7 @@ Expense_Tracker.init(
       allowNull: false,
     },
     type: {
-      type: DataTypes.ENUM('exspense', 'income', ''),
+      type: DataTypes.ENUM('expense', 'income', ''),
       allowNull: false,
       defaultValue: '',
     },
@@ -30,7 +30,7 @@ Expense_Tracker.init(
       allowNull: false,
       defaultValue: 0.00
     },
-    from_user: {
+    user_id: {
       type: DataTypes.INTEGER,
       references: {
         model: 'user',
@@ -46,4 +46,4 @@ Expense_Tracker.init(
   }
 )
 
-module.exports = Expense_Tracker
+module.exports = Expense_Form
