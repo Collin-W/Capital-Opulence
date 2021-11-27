@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const {User, Expense_Tracker} = require('../../models') 
+const {User, Expense_Form} = require('../../models') 
 
 //get all users
 router.get('/', (req, res) => {
@@ -18,11 +18,11 @@ router.get('/:id', (req, res) => {
   User.findOne({
     where: {
       id: req.params.id
+    },
+    include: {
+      model: Expense_Form,
+      attributes: ['id','date', 'type', 'description']
     }
-    // include: {
-    //   model: Expense_Tracker,
-    //   attributes: ['date', 'type', 'description']
-    // }
   })
   .then(dbUserData => {
     if(!dbUserData){

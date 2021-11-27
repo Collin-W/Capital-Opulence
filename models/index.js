@@ -1,5 +1,5 @@
 const User = require('./User')
-const Expense_Tracker = require('./Expense_Tracker')
+const Expense_Tracker = require('./Expense_Form')
 
 //you can have many expense forms 
 User.hasMany(Expense_Tracker, {

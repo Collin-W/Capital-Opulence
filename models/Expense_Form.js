@@ -2,9 +2,9 @@ const {Model , DataTypes} = require('sequelize')
 
 const sequelize = require('../config/connection')
 
-class Expense_Tracker extends Model {}
+class Expense_Form extends Model {}
 
-Expense_Tracker.init(
+Expense_Form.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -46,4 +46,4 @@ Expense_Tracker.init(
   }
 )
 
-module.exports = Expense_Tracker
+module.exports = Expense_Form
