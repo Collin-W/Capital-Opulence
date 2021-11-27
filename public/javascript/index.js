@@ -37,7 +37,6 @@ $('.go-back-home').click(() => {
     homepage.show();
 })
 
-
 // listens to the expense form only
 $("#expense-form-add-btn").click((evt) => {
     console.log('add button')
@@ -85,7 +84,68 @@ $(".expense-input").each(function () {
     console.log(expenseArray);
 })
 
+//LOGIN/SIGNUP SCRIPT- might move to its own file
 
+// $('#').val().trim()
+//login
+let loginUsername = $('#username-login').val().trim()
+let loginPassword = $('#password-login').val().trim()
+
+$('#login-btn').click(() => {
+    if (loginUsername && loginPassword) {
+
+
+        const res = await fetch('/api/users/login', {
+            method: 'post',
+            body: JSON.stringify({
+                loginUsername,
+                loginPassword
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+
+
+        if (res.ok) {
+            document.location.replace('/');
+        } else {
+            alert(res.statusText);
+        }
+
+    }
+
+})
+
+//signup
+let signupUsername = $('#username-signup').val().trim()
+let signupEmail = $('#email-signup').val().trim()
+let signupPassword = $('#password-signup').val().trim()
+
+$('#signup-btn').click(() => {
+    if (signupUsername && signupEmail && signupPassword) {
+
+        const res = await fetch('/api/users', {
+            method: 'post',
+            body: JSON.stringify({
+                signupUsername,
+                signupEmail,
+                signupPassword
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+
+        if (res.ok) {
+            console.log('signup was successful');
+        } else {
+            alert(res.statusText);
+        }
+
+    }
+
+})
 
 //function CALLS
 defaultState();
