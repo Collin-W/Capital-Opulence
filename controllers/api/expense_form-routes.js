@@ -13,10 +13,10 @@ router.get('/', (req, res) => {
 
 //get all expense forms by user id
 
-router.get('/:user_id', (req, res) => {
+router.get('/user/:user_id', (req, res) => {
   Expense_Form.findAll({
     where: {
-      from_user : req.params.user_id
+      user_id : req.params.user_id
     }
   })
   .then( dbExpFormData => {
@@ -38,10 +38,6 @@ router.get('/:id', (req, res) => {
   Expense_Form.findOne({
     where: {
       id: req.params.id
-    },
-    include: {
-      model: User,
-      attributes: [{ exlcude: 'password'}]
     }
   })
   .then( dbExpFormData => {
@@ -64,8 +60,8 @@ router.post('/', (req, res) => {
     date: req.body.date,
     type: req.body.type,
     description: req.body.description,
-    amount: req.body.description,
-    from_user: req.body.from_user
+    amount: req.body.amount,
+    user_id: req.body.user_id
   })
   .then(dbExpFormData => res.json(dbExpFormData))
   .catch(err => {
@@ -86,7 +82,7 @@ router.put('/:id', (req, res) => {
       res.status(404).json({ message: 'No Expense froms found with that id'})
       return
     }
-
+    
     res.json(dbExpFormData)
   })
   .catch(err => {
