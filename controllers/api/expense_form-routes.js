@@ -4,7 +4,7 @@ const {User, Expense_Form} = require('../../models')
 //get all expense forms
 router.get('/', (req, res) => {
   Expense_Form.findAll()
-  .then(dbEPTXData => res.json(dbEPTXData))
+  .then(dbExpFormData => res.json(dbExpFormData))
   .catch(err => {
     console.log(err)
     res.status(500).json(err)
@@ -19,13 +19,13 @@ router.get('/:user_id', (req, res) => {
       from_user : req.params.user_id
     }
   })
-  .then( dbEPTXData => {
-    if(!dbEPTXData){
+  .then( dbExpFormData => {
+    if(!dbExpFormData){
       res.status(404).json({ message: "No user found with that id"})
       return
     }
 
-    res.json(dbEPTXData)
+    res.json(dbExpFormData)
   })
   .catch(err => {
     console.log(err)
@@ -44,13 +44,13 @@ router.get('/:id', (req, res) => {
       attributes: [{ exlcude: 'password'}]
     }
   })
-  .then( dbEPTXData => {
-    if(!dbEPTXData){
+  .then( dbExpFormData => {
+    if(!dbExpFormData){
       res.status(404).json({ message: 'No Expense froms found with that id'})
       return
     }
     
-    res.json(dbEPTXData)
+    res.json(dbExpFormData)
   })
   .catch(err => {
     console.log(err)
@@ -67,7 +67,7 @@ router.post('/', (req, res) => {
     amount: req.body.description,
     from_user: req.body.from_user
   })
-  .then(dbEPTXData => res.json(dbEPTXData))
+  .then(dbExpFormData => res.json(dbExpFormData))
   .catch(err => {
     console.log(err)
     res.status(500).json(err)
@@ -81,13 +81,13 @@ router.put('/:id', (req, res) => {
       id: req.params.id
     }
   })
-  .then(dbEPTXData => {
-    if(!dbEPTXData){
+  .then(dbExpFormData => {
+    if(!dbExpFormData){
       res.status(404).json({ message: 'No Expense froms found with that id'})
       return
     }
 
-    res.json(dbEPTXData)
+    res.json(dbExpFormData)
   })
   .catch(err => {
     console.log(err)
@@ -102,13 +102,13 @@ router.delete('/:id', (req, res) => {
       id: req.params.id
     }
   })
-  .then(dbEPTXData => {
-    if(!dbEPTXData){
+  .then(dbExpFormData => {
+    if(!dbExpFormData){
       res.status(404).json({ message: 'No Expense froms found with that id'})
       return
     }
 
-    res.json(dbEPTXData)
+    res.json(dbExpFormData)
   })
   .catch(err => {
     console.log(err)
