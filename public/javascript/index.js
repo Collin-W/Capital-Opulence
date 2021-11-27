@@ -92,11 +92,30 @@ let loginUsername = $('#username-login').val().trim()
 let loginPassword = $('#password-login').val().trim()
 
 $('#login-btn').click(() => {
-    if(loginUsername && loginPassword) {
+    if (loginUsername && loginPassword) {
+
+
+        const res = await fetch('/api/users/login', {
+            method: 'post',
+            body: JSON.stringify({
+                loginUsername,
+                loginPassword
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+
+
+        if (res.ok) {
+            document.location.replace('/');
+        } else {
+            alert(res.statusText);
+        }
 
     }
 
-}) 
+})
 
 //signup
 let signupUsername = $('#username-signup').val().trim()
@@ -104,11 +123,29 @@ let signupEmail = $('#email-signup').val().trim()
 let signupPassword = $('#password-signup').val().trim()
 
 $('#signup-btn').click(() => {
-    if(signupUsername && signupEmail && signupPassword) {
+    if (signupUsername && signupEmail && signupPassword) {
+
+        const res = await fetch('/api/users', {
+            method: 'post',
+            body: JSON.stringify({
+                signupUsername,
+                signupEmail,
+                signupPassword
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+
+        if (res.ok) {
+            console.log('signup was successful');
+        } else {
+            alert(res.statusText);
+        }
 
     }
 
-}) 
+})
 
 //function CALLS
 defaultState();
