@@ -88,7 +88,6 @@ $("#expense-form-add-btn").click((evt) => {
 
 
     //resets main input row on top 
-
     $('#main-expense-row :input').val('')
 });
 
