@@ -67,16 +67,36 @@
             <input class="expense-input expense-description" type="text" placeholder="Description Of Expense">
             <input class="expense-input expense-amount" type="number" placeholder="Amount - Or +">
 
-            <button onclick="Delete(this);">X</button>
+
+            
+            <button onclick="Delete(this);">Reset Row</button>
+
+            </div>
+
+            <div>
+
+                <ul  id="expense-row-list">
+
+                
+
+
+                </ul>
+    
 
             </div>
 
             
+            
         </form>
 
         <p>Click the button to add a new form element.</p>
+
+        <button class='go-back-home'>Go Back</button>
+ 
         
             <button id="expense-form-add-btn">Add Button</button>
+
+            <button id="submit-expense-row">Submit</button>
 
             <!-- datalist for the gain loss input -->
             <datalist id="gain-loss">
@@ -84,23 +104,24 @@
                 <option value="Gain"> 
             </datalist>
 
-            <button class='go-back-home'>Go Back</button>
- 
+           
     </fieldset>
 
     <section id="login-signup">
         
-        <form id="login-form">
+        <form action="/login" method="get" id="login-form">
 
             <p>Login</p> 
 
-            <label class="login-signup-label">Username<input id='username-login' class="login-signup-input" placeholder="Enter Username"></label>
-            <label class="login-signup-label">Password<input id="password-login" type="password" class="login-signup-input" placeholder="Enter Password"></label>
+            <label for="username" class="login-signup-label">Username<input name="username" id='username-login' type="text" class="login-signup-input" placeholder="Enter Username"></label>
+            <small></small>
+            <label  for="email" class="login-signup-label">Password<input name="email" id="password-login" type="password" class="login-signup-input" placeholder="Enter Password"></label>
+            <small></small>
 
             <button id="login-btn">Login</button>
         </form>
 
-        <form id="signup-form">
+        <form action="/signup" method="post" id="signup-form">
 
             <p>Sign Up</p>
 
@@ -130,6 +151,7 @@
 
     <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js@3.6.0/dist/chart.min.js" integrity="sha256-7lWo7cjrrponRJcS6bc8isfsPDwSKoaYfGIHgSheQkk=" crossorigin="anonymous"></script> -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="javascript/test.js"></script>
     <script src="./javascript/index.js"></script>
 </body>
 
