@@ -1,4 +1,5 @@
 let expenseArray = [];
+let i = 0;
 
 const homepage = $('#homepage')
 
@@ -40,7 +41,6 @@ $('.go-back-home').click(() => {
 // listens to the expense form only
 $("#expense-form-add-btn").click((evt) => {
     console.log('add button')
-    let i = 0;
 
     evt.preventDefault();
 
@@ -48,61 +48,66 @@ $("#expense-form-add-btn").click((evt) => {
     let inputDate = $("<input>", {
         class: "expense-input expense-date",
         type: "date",
-        placeholder: "Date Of Expense"
+        placeholder: "Date Of Expense",
+        value:  $('#expense-date').val().trim()
     });
     let inputGainLoss = $("<input>", {
         class: "expense-input expense-gain-loss",
         type: "boolean",
         placeholder: "Gain/Loss",
-        list: "gain-loss"
+        list: "gain-loss",
+        value:  $('#expense-gain-loss').val().trim()
     });
     let inputDescription = $("<input>", {
         class: "expense-input expense-description",
         type: "text",
-        placeholder: "Description Of Expense"
+        placeholder: "Description Of Expense",
+        value:  $('#expense-description').val().trim()
     });
     let inputAmount = $("<input>", {
         class: "expense-input expense-amount",
         type: "number",
-        placeholder: "Amount - Or +"
+        placeholder: "Amount - Or +",
+        value:  $('#expense-amount').val().trim()
     });
     
     let deleteBtn = $("<button>", {
         text: "X",
-        onclick: "Delete(this);"
+        onclick: "Delete(this);",
+       
     })
+   
     let newInputRow = document.createElement('li');
 
-    let inputDataAtt = $('li').data('row', i++)
+    let inputDataAtt = jQuery.data(newInputRow,'inputRow', 'row ' + i++)
     
-
     $(newInputRow).append(inputDate, inputGainLoss, inputDescription, inputAmount, deleteBtn, inputDataAtt)
+    console.log(newInputRow)
 
-    $('#expense-list').append(newInputRow)
+    $('#expense-row-list').append(newInputRow)
+
+
+    //resets main input row on top 
+
+    $('#main-expense-row :input').val('')
 });
 
 // COLLECTS expense form data and pushes it into an array.
 //for chart js I am going to start with just the spending data
-$('#submit-expense-row').click(() => {
+// $('#submit-expense-row').click(() => {
 
-
-    $(".expense-input").each(function () {
-        let userInputs = $(this).val().trim();
-        expenseArray.push(userInputs);
+//     $(".expense-input").each(function () {
+//         let userInputs = $(this).val().trim();
+//         expenseArray.push(userInputs);
     
-        console.log(expenseArray + ' expense array');
-    });
-});
+//         console.log(expenseArray + ' expense array');
+//     });
 
-
-
-
-
+// });
 
 
 //LOGIN/SIGNUP SCRIPT- might move to its own file
 
-// $('#').val().trim()
 //login
 let loginUsername = $('#username-login').val().trim()
 let loginPassword = $('#password-login').val().trim()
