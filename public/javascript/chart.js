@@ -1,0 +1,1 @@
+console.log(expenseArray = "in chart js")
