@@ -1,11 +1,8 @@
 //calculations and calculator
-
-let gainArray = []
-let lossArray = []
+let gainArray = [];
+let lossArray = [];
 
 $('#submit-expense-row').click(() => {
-
-
 
     ifArray = expenseArray.map((x) => {
         return {
@@ -15,16 +12,13 @@ $('#submit-expense-row').click(() => {
         //x.gainLoss + x.amount
     })
 
-    // ifArray.forEach(() => {
+    //ifArray.forEach(() => {
 
     for (var i = 0; i < ifArray.length; i++) {
-
 
         if (ifArray[i].gainLoss === "Gain") {
 
             gainArray.push(parseInt(ifArray[i].amount))
-
-            //////////////////////////////////////////////////////
 
             let totalGains = gainArray.reduce((a, b) => a + b, 0);
 
@@ -33,24 +27,11 @@ $('#submit-expense-row').click(() => {
 
         } else {
 
-            lossArray.push(ifArray[i])
+            lossArray.push(parseInt(ifArray[i].amount))
 
-            console.log(lossArray)
+            let totalLoss = lossArray.reduce((a, b) => a + b, 0);
 
-
-
-            //////////////////////////////////////////////
-            // lossArray = expenseArray.map((x) => {
-            //     return parseInt(x.amount)
-            // })
-
-            // let totalLoss = lossArray.reduce((a, b) => a + b, 0);
-
-            // console.log("your total loss are " + totalLoss)
-
-
-
-
+            console.log("your total loss are " + totalLoss)
         }
     };
 
