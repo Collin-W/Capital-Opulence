@@ -4,7 +4,8 @@ const homepage = $('#homepage')
 let section = {
     login: $('#login-signup'),
     expenseForm: $('#expense-form-fieldset'),
-    calculator: $('#calculator')
+    calculator: $('#calculator'),
+    expenseChart: $('#expense-chart')
 }
 
 //DEFAULT html state
@@ -34,6 +35,11 @@ $('.go-back-home').click(() => {
     defaultState();
     homepage.show();
 })
+
+$('#submit-expense-row').click(() => {
+    section.expenseChart.show()
+})
+
 
 
 
