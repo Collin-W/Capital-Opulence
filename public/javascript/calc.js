@@ -1,6 +1,8 @@
 //calculations
 let gainArray = [];
 let lossArray = [];
+const a = [];
+const b = [];
 
 $('#submit-expense-row').click(() => {
 
@@ -31,29 +33,85 @@ $('#submit-expense-row').click(() => {
             console.log("your total loss are " + totalLoss);
         }
     });
+})
 
 //calculator
 
+// i want loss labels to have a minus added absolute value
 
 
+// program for a simple calculator
+
+$('.calc-btn').click(function()  {
+
+    // const a = []
+
+    let btnNum = $(this).val()
+    console.log(btnNum)
+
+   a.push(btnNum)
+
+    console.log(a)
+
+    if ($('.operator').click()) {
+
+        //should have a concatenated string
+        let newA = a.reduce((x, y) => x + y);
+        console.log(newA)
+
+        //now parsing
+        console.log(parseInt(a[1]))
+
+        $('.operator').click(() => {
+            const operator = $(this).val()
+
+            console.log(operator)
 
 
+            $('.calc-btn').click(() => {
+                //const b = []
 
+                $(b).push($('.calc-btn').val())
 
+                //should have a concatenated string
+                b.reduce((x, y) => x + y);
 
+                //now parsing
+                console.log(parseInt(b[1]))
+            })
 
+        });
+    }
+})
 
+$('#calculate').click(() => {
 
+    let result;
 
+    switch (operator) {
+        case '+':
+            result = a + b;
+            console.log(`${a} + ${b} = ${result}`);
+            break;
 
+        case '-':
+            result = a - b;
+            console.log(`${a} - ${b} = ${result}`);
+            break;
 
+        case '*':
+            result = a * b;
+            console.log(`${a} * ${b} = ${result}`);
+            break;
 
+        case '/':
+            result = a / b;
+            console.log(`${a} / ${b} = ${result}`);
+            break;
 
-    gainArray = expenseArray.map((x) => {
-        return x.date
-    })
+        default:
+            console.log('Invalid operator');
+            break;
+    }
 
-    lossArray = expenseArray.map((x) => {
-        return x.date
-    })
 })
