@@ -1,49 +1,43 @@
-//console.log(expenseArray = "in chart js")
+console.log("in chart js")
 
 
+$('#submit-expense-row').click(() => {
 
-//dates 
-const labels = [
+    console.log(expenseArray)
+    dateArray = expenseArray.map((x) => {
+        return x.date
+    })
 
-    // "date":"2021-12-01"
-    // "date":"2021-12-01"
-    // "date":"2021-12-02"
-    // "date":"2021-12-03"
+    intArray = expenseArray.map((x) => {
+        return x.amount
+    })
 
-    "2021-12-01",
-
-    "2021-12-01",
-
-    "2021-12-02",
-
-    "2021-12-03"
+    const labels = dateArray
 
 
+    const data = {
+        labels: labels,
+        datasets: [{
+            label: 'Daily Expenses',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            // data is money
+            data: intArray,
+        }]
+    };
 
 
-];
-const data = {
-    labels: labels,
-    datasets: [{
-        label: 'Daily Expenses',
-        backgroundColor: 'rgb(255, 99, 132)',
-        borderColor: 'rgb(255, 99, 132)',
-        // data is money
-        data: [
-            50, 20, 10, 250
-        ],
-    }]
-};
+    const config = {
+        type: 'bar',
+        data: data,
+        options: {}
+    };
 
 
-const config = {
-    type: 'bar',
-    data: data,
-    options: {}
-};
+    const myChart = new Chart(
+        document.getElementById('myChart'),
+        config
+    );
 
 
-const myChart = new Chart(
-    document.getElementById('myChart'),
-    config
-);
+})
