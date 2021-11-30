@@ -8,15 +8,15 @@ const session = require('express-session')
 const SequelizeStore = require('connect-session-sequelize')(session.Store)
 
 
-const sess = {
-    secret: 'Super Secret',
-    cookie: {},
-    resave: false,
-    saveUninitialized: true,
-    store: new SequelizeStore({
-        db: sequelize
-    })
-}
+// const sess = {
+//     secret: 'Super secret secret',
+//     cookie: {},
+//     resave: false,
+//     saveUninitialized: true,
+//     store: new SequelizeStore({
+//         db: sequelize
+//     })
+// }
 
 
 const app = express();
@@ -29,7 +29,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.engine('handlebars', hbs.engine)
 app.set('view engine', 'handlebars')
 
-app.use(session(sess))
+// app.use(session(sess))
 //use routes
 app.use(routes);
 
