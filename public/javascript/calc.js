@@ -1,61 +1,58 @@
 //calculations and calculator
 
 let gainArray = []
-let lossArray =[]
+let lossArray = []
 
 $('#submit-expense-row').click(() => {
 
 
 
     ifArray = expenseArray.map((x) => {
-        return x.gainLoss
+        return {
+            gainLoss: x.gainLoss,
+            amount: x.amount
+        }
+        //x.gainLoss + x.amount
     })
 
     // ifArray.forEach(() => {
 
-        for (var i = 0; i < ifArray.length; i++) {
+    for (var i = 0; i < ifArray.length; i++) {
 
-           
-        
-    
 
-    if(ifArray[i] === "Gain") {
+        if (ifArray[i].gainLoss === "Gain") {
 
-        gainArray.push(ifArray[i])
+            gainArray.push(parseInt(ifArray[i].amount))
 
-        console.log(gainArray)
+            //////////////////////////////////////////////////////
 
-       //.push(gains)
+            let totalGains = gainArray.reduce((a, b) => a + b, 0);
 
-    
-    
+            console.log("your total gains are " + totalGains)
 
-        //console.log(gains)
 
-        // gainArray = expenseArray.map( (x) => {
-        //     return parseInt(x.amount)
-        // })
+        } else {
 
-    //    let totalGains = gainArray.reduce((a, b) => a + b, 0);
+            lossArray.push(ifArray[i])
 
-    //     console.log("your total gains are " + totalGains)
-    } else {
+            console.log(lossArray)
 
-        lossArray.push(ifArray[i])
 
-        console.log(lossArray)
-        // lossArray = expenseArray.map((x) => {
-        //     return parseInt(x.amount)
-        // })
 
-        // let totalLoss = lossArray.reduce((a, b) => a + b, 0);
+            //////////////////////////////////////////////
+            // lossArray = expenseArray.map((x) => {
+            //     return parseInt(x.amount)
+            // })
 
-        // console.log("your total loss are " + totalLoss)
-        
-        
- 
-    }
-};
+            // let totalLoss = lossArray.reduce((a, b) => a + b, 0);
+
+            // console.log("your total loss are " + totalLoss)
+
+
+
+
+        }
+    };
 
 
 
@@ -74,7 +71,7 @@ $('#submit-expense-row').click(() => {
 
 
 
-   gainArray = expenseArray.map((x) => {
+    gainArray = expenseArray.map((x) => {
         return x.date
     })
 
