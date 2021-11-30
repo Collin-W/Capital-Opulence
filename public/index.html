@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>Document</title>
 </head>
@@ -73,8 +74,6 @@
                 <input id="expense-amount" class="expense-input expense-amount" type="number"
                     placeholder="Amount - Or +">
 
-
-
                 <button onclick="Delete(this);">Reset Row</button>
 
             </div>
@@ -82,26 +81,16 @@
             <div>
 
                 <ul id="expense-row-list">
-
-
-
-
                 </ul>
 
-
             </div>
-
-
 
         </form>
 
         <p>Click the button to add a new form element.</p>
 
         <button class='go-back-home'>Go Back</button>
-
-
         <button id="expense-form-add-btn">Add Button</button>
-
         <button id="submit-expense-row">Submit</button>
 
         <!-- datalist for the gain loss input -->
@@ -110,8 +99,36 @@
             <option value="Gain">
         </datalist>
 
-
     </fieldset>
+
+    
+<section id="calculator">
+
+    <input id="calculator-window">
+
+
+        <button>AC</button>
+        <button>Del</button>
+        <button class="operator">÷</button>
+        <button class="calc-btn" value=1>1</button>
+        <button class="calc-btn" value=2>2</button>
+        <button class="calc-btn" value=3>3</button>
+        <button class="operator">*</button>
+        <button class="calc-btn" value=4>4</button>
+        <button class="calc-btn" value=5>5</button>
+        <button class="calc-btn" value=6>6</button>
+        <button class="operator">+</button>
+        <button class="calc-btn" value=7>7</button>
+        <button class="calc-btn" value=8>8</button>
+        <button class="calc-btn" value=9>9</button>
+        <button class="operator">-</button>
+        <button>.</button>
+        <button class="calc-btn" value=0>0</button>
+        <button id="calculate" value='='>=</button>
+
+
+</section>
+
 
     <section id="login-signup">
 
@@ -132,7 +149,6 @@
         <form action="/signup" method="post" id="signup-form">
 
             <p>Sign Up</p>
-
 
 
             <label class="login-signup-label">First Name<input id="first-name-signup" type="text"
@@ -162,6 +178,30 @@
         <canvas style="max-height: 400px; max-width: 500px;" id="myChart"></canvas>
 
     </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <footer>
 
