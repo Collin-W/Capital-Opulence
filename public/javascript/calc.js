@@ -1,8 +1,8 @@
 //calculations
 let gainArray = [];
 let lossArray = [];
-const a = []
-const b = []
+const a = [];
+const b = [];
 
 $('#submit-expense-row').click(() => {
 
@@ -42,22 +42,28 @@ $('#submit-expense-row').click(() => {
 
 // program for a simple calculator
 
-$('.calc-btn').click(() => {
+$('.calc-btn').click(function()  {
 
     // const a = []
 
-    $(a).push($('.calc-btn').val())
+    let btnNum = $(this).val()
+    console.log(btnNum)
 
-    //should have a concatenated string
-    a.reduce((x, y) => x + y);
+   a.push(btnNum)
 
-    //now parsing
-    console.log(parseInt(a[1]))
-
+    console.log(a)
 
     if ($('.operator').click()) {
+
+        //should have a concatenated string
+        let newA = a.reduce((x, y) => x + y);
+        console.log(newA)
+
+        //now parsing
+        console.log(parseInt(a[1]))
+
         $('.operator').click(() => {
-            const operator = $('.operator').val()
+            const operator = $(this).val()
 
             console.log(operator)
 
