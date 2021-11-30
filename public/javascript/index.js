@@ -109,14 +109,9 @@ $("#expense-form-add-btn").click((evt) => {
 // });
 
 
-<<<<<<< HEAD
-//LOGIN/SIGNUP SCRIPT- might move to its own file
-
-=======
 //LOGIN/SIGNUP SCRIPT- moved to own file
 /*
 // $('#').val().trim()
->>>>>>> feat/db-seeds
 //login
 let loginUsername = $('#username-login').val().trim()
 let loginPassword = $('#password-login').val().trim()
