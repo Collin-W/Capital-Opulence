@@ -8,7 +8,7 @@ let expenseArray = [
     },
     {
         date: '2021-01-02',
-        gainLoss: 'Loss',
+        gainLoss: 'Gain',
         description: 'fast food',
         amount: '15'
     },
