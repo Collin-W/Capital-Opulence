@@ -1,8 +1,12 @@
+//TO-DO removed migrated code, split expense and calc js to separate files
+let expenseArray = [];
+let i = 0;
+
 const homepage = $('#homepage')
 
 //this object for HTML sections only
 let section = {
-    login: $('#login-signup'),
+   // login: $('#login-signup'), // removed due to page splitting
     expenseForm: $('#expense-form-fieldset'),
     calculator: $('#calculator'),
     expenseChart: $('#expense-chart')
@@ -15,11 +19,14 @@ function defaultState() {
     });
 };
 
-//RENDERS or HIDES html on BUTTON CLICKS
+// removed section due to login-split, will handle with handlebars
+/* RENDERS or HIDES html on BUTTON CLICKS
 $('#start-login-signup').click(() => {
     homepage.hide();
     section.login.show();
 });
+*/
+
 
 $('#start-expense-tracker').click(() => {
     homepage.hide();
@@ -39,6 +46,7 @@ $('.go-back-home').click(() => {
 $('#submit-expense-row').click(() => {
     section.expenseChart.show()
 })
+
 
 
 
