@@ -1,0 +1,6 @@
+This favicon was generated using the following font:
+
+- Font Title: Arbutus
+- Font Author: http://scripts.sil.org/OFL
+- Font Source: http://fonts.gstatic.com/s/arbutus/v12/NaPYcZ7dG_5J3poob9JtryO8fMU.ttf
+- Font License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL))

@@ -1,3 +1,6 @@
+/* 
+Use npm run-script seeds to populate DB with test data
+
 INSERT INTO user_info (user_first_name, user_last_name, user_create_date, user_email, user_password)
 VALUES
     ('Brenda', 'Spenda', '2021-11-11', 'brenda.spenda@gmail.com', 'sPend@llc4$h'),
@@ -17,4 +20,6 @@ VALUES
     ('2021-11-11', 'expense', 'dinner', '25.00', 3),
     ('2021-11-11', 'expense', 'electric bill', '104.44', 3),
     ('2021-11-11', 'income', 'paycheck', '740.48', 3),
-    ('2021-11-11', 'income', 'dividend payment', '56.21', 3);
+    ('2021-11-11', 'income', 'dividend payment', '56.21', 3); 
+
+*/

@@ -1,3 +1,4 @@
+//TO-DO removed migrated code, split expense and calc js to separate files
 let expenseArray = [];
 let i = 0;
 
@@ -5,7 +6,7 @@ const homepage = $('#homepage')
 
 //this object for HTML sections only
 let section = {
-    login: $('#login-signup'),
+   // login: $('#login-signup'), // removed due to page splitting
     expenseForm: $('#expense-form-fieldset'),
     calculator: $('#calculator')
 }
@@ -17,11 +18,14 @@ function defaultState() {
     });
 };
 
-//RENDERS or HIDES html on BUTTON CLICKS
+// removed section due to login-split, will handle with handlebars
+/* RENDERS or HIDES html on BUTTON CLICKS
 $('#start-login-signup').click(() => {
     homepage.hide();
     section.login.show();
 });
+*/
+
 
 $('#start-expense-tracker').click(() => {
     homepage.hide();
@@ -105,8 +109,14 @@ $("#expense-form-add-btn").click((evt) => {
 // });
 
 
+<<<<<<< HEAD
 //LOGIN/SIGNUP SCRIPT- might move to its own file
 
+=======
+//LOGIN/SIGNUP SCRIPT- moved to own file
+/*
+// $('#').val().trim()
+>>>>>>> feat/db-seeds
 //login
 let loginUsername = $('#username-login').val().trim()
 let loginPassword = $('#password-login').val().trim()
@@ -145,9 +155,10 @@ $('#login-btn').click( async (evt) => {
     //this needs to handle and notify user about input verification
 
 })
+*/
 
-//signup
-
+//signup - moved to own file
+/*
 let signupFirstName = $('#first-name-signup').val().trim()
 let signupLastName = $('#last-name-signup').val().trim()
 let signupUsername = $('#username-signup').val().trim()
@@ -187,6 +198,7 @@ $('#signup-btn').click( async (evt) => {
     //this needs to handle and notify user about input verification
 
 })
+*/
 
 //function CALLS
 defaultState();
