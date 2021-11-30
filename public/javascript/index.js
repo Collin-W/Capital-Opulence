@@ -8,7 +8,8 @@ const homepage = $('#homepage')
 let section = {
    // login: $('#login-signup'), // removed due to page splitting
     expenseForm: $('#expense-form-fieldset'),
-    calculator: $('#calculator')
+    calculator: $('#calculator'),
+    expenseChart: $('#expense-chart')
 }
 
 //DEFAULT html state
@@ -42,6 +43,7 @@ $('.go-back-home').click(() => {
     homepage.show();
 })
 
+<<<<<<< HEAD
 // listens to the expense form only
 $("#expense-form-add-btn").click((evt) => {
     console.log('add button')
@@ -149,51 +151,15 @@ $('#login-btn').click( async (evt) => {
 
     //this needs to handle and notify user about input verification
 
+=======
+$('#submit-expense-row').click(() => {
+    section.expenseChart.show()
+>>>>>>> develop
 })
-*/
 
-//signup - moved to own file
-/*
-let signupFirstName = $('#first-name-signup').val().trim()
-let signupLastName = $('#last-name-signup').val().trim()
-let signupUsername = $('#username-signup').val().trim()
-let signupEmail = $('#email-signup').val().trim()
-let signupPassword = $('#password-signup').val().trim()
 
-$('#signup-btn').click( async (evt) => {
 
-    evt.preventDefault();
 
-    if (signupFirstName && signupLastName && signupUsername && signupEmail && signupPassword) {
-
-        const res = await fetch('/api/users', {
-            method: 'post',
-            body: JSON.stringify({
-                signupUsername,
-                signupEmail,
-                signupPassword
-            }),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
-
-        if (res.ok) {
-            console.log('signup was successful');
-        } else {
-            alert(res.statusText);
-        }
-
-    }
-    //test
-    alert('enter all inputs to signup')
-    console.log('not all sign up inputs entered')
-    //end test
-
-    //this needs to handle and notify user about input verification
-
-})
-*/
 
 //function CALLS
 defaultState();
