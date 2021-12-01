@@ -59,28 +59,28 @@ const logdata = [
         user_id: '2'        
     },
     {
-        date: '11-11-21',
+        date: '2021-11-11',
         type: 'expense',
         description: 'dinner',
         amount: '25.00',
         user_id: '3'        
     },
     {
-        date: '11-12-21',
+        date: '2021-11-12',
         type: 'expense',
         description: 'electric bill',
         amount: '104.44',
         user_id: '3'        
     },
     {
-        date: '11-13-21',
+        date: '2021-11-13',
         type: 'income',
         description: 'paycheck',
         amount: '740.48',
         user_id: '3'        
     },
     {
-        date: '11-14-21',
+        date: '2021-11-14',
         type: 'income',
         description: 'dividend payment',
         amount: '56.21',
@@ -88,6 +88,6 @@ const logdata = [
     }
 ];
 
-const seedLogs = () => Expense_Logs.bulkCreate(seedData);
+const seedLogs = () => Expense_Form.bulkCreate(logdata);
 
 module.exports = seedLogs;
