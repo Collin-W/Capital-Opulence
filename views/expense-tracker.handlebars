@@ -1,11 +1,36 @@
 <!-- todo - insert Collin's static html here -->
-<div class="col-4 align-self-center">
-    <h2>Expense Tracker</h2> 
-    <p>description of expense tracker</p>
-    <button id="start-expense-tracker" class="btn-styles">Start Tracker</button>
-</div>
-<div class="col">
-    <h2>Calculator</h2>
-    <p>description of the financal calculator</p>
-    <button id="start-calculator" class="btn-styles">Calculator</button>
-</div>
+<fieldset id="expense-form-fieldset">
+
+<legend>Expense Form</legend>
+
+  <form id="expense-form">
+      <div id="main-expense-row">
+      <input id="expense-date" class="expense-input expense-date" type="date" placeholder="Date Of Expense"> 
+      <input id="expense-gain-loss" class="expense-input expense-gain-loss" type="boolean" placeholder="Gain/Loss" list="gain-loss">
+      <input id="expense-description" class="expense-input expense-description" type="text" placeholder="Description Of Expense">
+      <input id="expense-amount" class="expense-input expense-amount" type="number" placeholder="Amount - Or +">
+      <button onclick="Delete(this);">Reset Row</button>
+      </div>
+
+      <div>
+          <ul  id="expense-row-list">
+          </ul>
+      </div>
+  </form>
+
+    <p>Click the button to add a new form element.</p>
+
+    <button class='go-back-home'>Go Back</button>
+
+        <button id="expense-form-add-btn">Add Button</button>
+        <button id="submit-expense-row">Submit</button>
+
+        <!-- datalist for the gain loss input -->
+        <datalist id="gain-loss">
+            <option value="Loss">
+            <option value="Gain"> 
+        </datalist>
+</fieldset>
+
+
+<script src="/javascript/expense-form.js"></script>
