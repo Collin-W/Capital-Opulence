@@ -3,9 +3,13 @@
 #calculator {
 background-color: aquamarine;
 margin: 6%;
+
 }
 .calc-row {
-    margin: 30%; 
+    margin: 10px 5px 10px 5px ; 
+    justify-content: space-between;
+   
+
 }
 
 #calculator-window {
@@ -15,8 +19,10 @@ margin: 6%;
 }
 
 .calc-btn-style {
+width: 22%; 
 border-radius: 10px;
 padding: 5px;
+margin: 2px;
 
 }
 
