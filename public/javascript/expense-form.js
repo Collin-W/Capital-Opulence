@@ -1,4 +1,37 @@
-let expenseArray = [];
+let expenseArray = [
+
+    {
+        date: '2021-01-01',
+        gainLoss: 'Loss',
+        description: 'car payment',
+        amount: '300'
+    },
+    {
+        date: '2021-01-02',
+        gainLoss: 'Gain',
+        description: 'fast food',
+        amount: '15'
+    },
+    {
+        date: '2021-01-03',
+        gainLoss: 'Loss',
+        description: 'new shoes',
+        amount: '75'
+    },
+    {
+        date: '2021-01-04',
+        gainLoss: 'Loss',
+        description: 'bill',
+        amount: '25'
+    },
+    {
+        date: '2021-01-05',
+        gainLoss: 'Loss',
+        description: 'bought ticket',
+        amount: '5'
+    }
+
+];
 let i = 0;
 
 
@@ -35,31 +68,31 @@ $("#expense-form-add-btn").click((evt) => {
         type: "boolean",
         placeholder: "Gain/Loss",
         list: "gain-loss",
-        value:  rowObj.gainLoss
+        value: rowObj.gainLoss
     });
     let inputDescription = $("<input>", {
         class: "expense-input expense-description",
         type: "text",
         placeholder: "Description Of Expense",
-        value:  rowObj.description
+        value: rowObj.description
     });
     let inputAmount = $("<input>", {
         class: "expense-input expense-amount",
         type: "number",
         placeholder: "Amount - Or +",
-        value:  rowObj.amount
+        value: rowObj.amount
     });
-    
+
     let deleteBtn = $("<button>", {
         text: "X",
         onclick: "Delete(this);",
-       
+
     })
 
     let newInputRow = document.createElement('li');
 
-    let inputDataAtt = jQuery.data(newInputRow,'inputRow', 'row ' + i++)
-    
+    let inputDataAtt = jQuery.data(newInputRow, 'inputRow', 'row ' + i++)
+
     $(newInputRow).append(inputDate, inputGainLoss, inputDescription, inputAmount, deleteBtn, inputDataAtt)
     console.log(newInputRow)
 
@@ -76,6 +109,5 @@ $("#expense-form-add-btn").click((evt) => {
 
 //     expenseArray
 
-    
-// });
 
+// });

@@ -9,7 +9,8 @@ let section = {
    // login: $('#login-signup'), // removed due to page splitting
     expenseForm: $('#expense-form-fieldset'),
     calculator: $('#calculator'),
-    expenseChart: $('#expense-chart')
+    expenseChart: $('#expense-chart'),
+    goBackBtn: $('.go-back-home')
 }
 
 //DEFAULT html state
@@ -31,6 +32,8 @@ $('#start-login-signup').click(() => {
 $('#start-expense-tracker').click(() => {
     homepage.hide();
     section.expenseForm.show();
+    section.calculator.show();
+    section.goBackBtn.show();
 });
 
 $('#start-calculator').click(() => {

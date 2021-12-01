@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <header>
+
+
+    </header>
+
+    <section id="homepage">
+        <!-- header/hero of page -->
+        <header>
+            <!-- This header will be the hero of the landing page with a nice
+            background and the title of the name of the page below -->
+            <h1>Capital Opulence</h1>
+        </header>
+        <!-- navigation for application -->
+        <nav>
+            <!-- Links to each part of the page -->
+            <a href="">Expense Tracker</a>
+            <a href="">Finance calculator</a>
+            <button id="start-login-signup">Login</button>
+            <!-- button that when clicked will logout/destroy the session-->
+            <button id='logout' type="button">logout</button>
+        </nav>
+        <!-- div that will hold info about the calculator and the expense tracker
+            This info will be held in two columns -->
+        <div>
+            <!-- this will be the main description of the page and what its
+           function is  -->
+            <p>This will be a description of the page</p>
+            <!-- this will be the div column that will hold the infomation about
+           the financal calculator -->
+            <div>
+                <h2>Calculator</h2>
+                <p>description of the financal calculator</p>
+                <button id="start-calculator">Calculator</button>
+            </div>
+
+            <!-- this will be the div column that will hold the information
+            about the Expense tracker -->
+            <div>
+                <h2>Expense Tracker</h2>
+                <p>description of expense tracker</p>
+                <button id="start-expense-tracker">Start Tracker</button>
+            </div>
+        </div>
+    </section>
+
+
+    <fieldset id="expense-form-fieldset">
+
+        <legend>Expense Form</legend>
+
+        <form id="expense-form">
+
+            <div id="main-expense-row">
+
+                <input id="expense-date" class="expense-input expense-date" type="date" placeholder="Date Of Expense">
+                <input id="expense-gain-loss" class="expense-input expense-gain-loss" type="boolean"
+                    placeholder="Gain/Loss" list="gain-loss">
+                <input id="expense-description" class="expense-input expense-description" type="text"
+                    placeholder="Description Of Expense">
+                <input id="expense-amount" class="expense-input expense-amount" type="number"
+                    placeholder="Amount - Or +">
+
+                <button onclick="Delete(this);">Reset Row</button>
+
+            </div>
+
+            <div>
+
+                <ul id="expense-row-list">
+                </ul>
+
+            </div>
+
+        </form>
+
+        <p>Click the button to add a new form element.</p>
+
+        <button class='go-back-home'>Go Back</button>
+        <button id="expense-form-add-btn">Add Button</button>
+        <button id="submit-expense-row">Submit</button>
+
+        <!-- datalist for the gain loss input -->
+        <datalist id="gain-loss">
+            <option value="Loss">
+            <option value="Gain">
+        </datalist>
+
+    </fieldset>
+
+    
+<section id="calculator">
+
+    <input id="calculator-window">
+
+
+        <button>AC</button>
+        <button>Del</button>
+        <button class="operator" value="÷">÷</button>
+        <button class="calc-btn" value='1'>1</button>
+        <button class="calc-btn" value='2'>2</button>
+        <button class="calc-btn" value='3'>3</button>
+        <button class="operator" value="*">*</button>
+        <button class="calc-btn" value='4'>4</button>
+        <button class="calc-btn" value='5'>5</button>
+        <button class="calc-btn" value='6'>6</button>
+        <button class="operator" value="+">+</button>
+        <button class="calc-btn" value='7'>7</button>
+        <button class="calc-btn" value='8'>8</button>
+        <button class="calc-btn" value='9'>9</button>
+        <button class="operator" value="-">-</button>
+        <button>.</button>
+        <button class="calc-btn" value='0'>0</button>
+        <button id="calculate" value='='>=</button>
+
+
+</section>
+
+
+    <section id="login-signup">
+
+        <form action="/login" method="get" id="login-form">
+
+            <p>Login</p>
+
+            <label for="username" class="login-signup-label">Username<input name="username" id='username-login'
+                    type="text" class="login-signup-input" placeholder="Enter Username"></label>
+            <small></small>
+            <label for="email" class="login-signup-label">Password<input name="email" id="password-login"
+                    type="password" class="login-signup-input" placeholder="Enter Password"></label>
+            <small></small>
+
+            <button id="login-btn">Login</button>
+        </form>
+
+        <form action="/signup" method="post" id="signup-form">
+
+            <p>Sign Up</p>
+
+
+            <label class="login-signup-label">First Name<input id="first-name-signup" type="text"
+                    class="login-signup-input" placeholder="Enter First Name"></label>
+            <label class="login-signup-label">Last Name<input id="last-name-signup" type="text"
+                    class="login-signup-input" placeholder="Enter Last Name"></label>
+            <label class="login-signup-label">Username<input id="username-signup" type="text" class="login-signup-input"
+                    placeholder="Enter New Username"></label>
+            <label class="login-signup-label">Email<input id="email-signup" type="email" class="login-signup-input"
+                    placeholder="Enter Email"></label>
+            <label class="login-signup-label">Password<input id="password-signup" type="password"
+                    class="login-signup-input" placeholder="Enter New Password"></label>
+
+            <button id="signup-btn">Sign Up</button>
+            <button class='go-back-home'>Go Back</button>
+        </form>
+
+    </section>
+
+    <section id="calculator">
+
+        <button class='go-back-home'>Go Back</button>
+
+    </section>
+
+    <section id="expense-chart">
+        <canvas style="max-height: 400px; max-width: 500px;" id="myChart"></canvas>
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer>
+
+    </footer>
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js@3.6.0/dist/chart.min.js" integrity="sha256-7lWo7cjrrponRJcS6bc8isfsPDwSKoaYfGIHgSheQkk=" crossorigin="anonymous"></script> -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+    <script src="./javascript/expense-form.js"></script>
+    <script src="./javascript/login-signup.js"></script>
+    <script src="./javascript/calc.js"></script>
+
+    <script src="./javascript/index.js"></script>
+    <script src="./javascript/chart.js"></script>
+</body>
+
+</html>
