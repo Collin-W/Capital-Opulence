@@ -1,0 +1,12 @@
+<div>
+<h4> {{EXPForm.user.first_name}} {{EXPForm.user.last_name}}</h4>
+
+{{#each EXPForms as |expform|}}
+<div>
+  <p>Date: <span>{{date}}</span></p>
+  <p>Description: <span>{{description}}</span></p>
+  <p>Amount: <span>{{amount}}</span></p>
+</div>
+{{/each}}
+
+</div>
