@@ -1,12 +1,21 @@
 const router = require('express').Router()
 const sequelize = require('../config/connection')
+const { Expense_Form, User } = require('../models')
 
 
 router.get('/', (req, res) => {
- res.render('homepage')
+<<<<<<< HEAD
+  res.render('homepage')
+=======
+ res.render('homepage', {loggedIn: req.session.loggedIn})
+>>>>>>> 8c4c15d8a45c445f9fa1ef280a1dfddd06bb8401
 })
 
 router.get('/login', (req,res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
   res.render('login')
 })
 
