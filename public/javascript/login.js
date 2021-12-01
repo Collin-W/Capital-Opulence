@@ -2,7 +2,7 @@
 
 // $('#').val().trim()
 //login
-let loginUsername = $('#username-login').val().trim()
+let loginEmail = $('#email-login').val().trim()
 let loginPassword = $('#password-login').val().trim()
 
 $('#login-btn').click( async (evt) => {
@@ -15,7 +15,7 @@ $('#login-btn').click( async (evt) => {
         const res = await fetch('/api/users/login', {
             method: 'post',
             body: JSON.stringify({
-                loginUsername,
+                loginEmail,
                 loginPassword
             }),
             headers: {
@@ -44,7 +44,6 @@ $('#login-btn').click( async (evt) => {
 
 let signupFirstName = $('#first-name-signup').val().trim()
 let signupLastName = $('#last-name-signup').val().trim()
-let signupUsername = $('#username-signup').val().trim()
 let signupEmail = $('#email-signup').val().trim()
 let signupPassword = $('#password-signup').val().trim()
 
@@ -52,12 +51,11 @@ $('#signup-btn').click( async (evt) => {
 
     evt.preventDefault();
 
-    if (signupFirstName && signupLastName && signupUsername && signupEmail && signupPassword) {
+    if (signupFirstName && signupLastName && signupEmail && signupPassword) {
 
         const res = await fetch('/api/users', {
             method: 'post',
             body: JSON.stringify({
-                signupUsername,
                 signupEmail,
                 signupPassword
             }),
