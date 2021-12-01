@@ -1,0 +1,25 @@
+
+
+#calculator {
+background-color: aquamarine;
+margin: 6%;
+}
+.calc-row {
+    margin: 30%; 
+}
+
+#calculator-window {
+    border-radius: 10px;
+    
+   
+}
+
+.calc-btn-style {
+border-radius: 10px;
+padding: 5px;
+
+}
+
+/* #calculate{
+
+} */

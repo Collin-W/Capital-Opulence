@@ -38,16 +38,9 @@ $('#submit-expense-row').click(() => {
 })
 
 //calculator
-
-// i want loss labels to have a minus added absolute value
-
-// program for a simple calculator
-
 $('.calc-btn').click(function () {
 
     calcWindow.val('')
-
-
 
     if (operator === '') {
 
@@ -61,7 +54,7 @@ $('.calc-btn').click(function () {
 
         calcWindow.val(windowVal1)
 
-        console.log(a + " a variable")
+       // console.log(a + " a variable")
 
     } else {
 
@@ -73,7 +66,7 @@ $('.calc-btn').click(function () {
 
         calcWindow.val(windowVal3)
 
-        console.log(b + " b var")
+        //console.log(b + " b var")
     }
 
 })
@@ -86,8 +79,7 @@ $('.operator').click(function () {
 
     calcWindow.val(windowVal2)
 
-
-    console.log(operator + " operator")
+    //console.log(operator + " operator")
 });
 
 
@@ -96,9 +88,9 @@ $('#calculate').click(() => {
     let num1 = a.reduce((x, y) => x + y);
     let num2 = b.reduce((x, y) => x + y);
 
-    console.log(num1)
-    console.log(num2)
-    console.log(operator)
+    // console.log(num1)
+    // console.log(num2)
+    // console.log(operator)
 
     let result;
 
@@ -135,13 +127,11 @@ $('#calculate').click(() => {
             console.log('Invalid operator');
     }
 
-    //make this a golbal object??
+    //make this a global object??
     a = []
     b = []
     operator = ''
-
 })
-
 
 
 $('.delete').click(function () {
@@ -151,21 +141,17 @@ $('.delete').click(function () {
         a.pop()
         calcWindow.val(a.join(''))
     } else {
-        
+
+        //add operator delelte
+
         b.pop()
         calcWindow.val(b.join(''))
     }
 })
-
-
-
-
-
 
 $('.clear').click(() => {
     a = []
     b = []
     operator = ''
     calcWindow.val('')
-
 })
