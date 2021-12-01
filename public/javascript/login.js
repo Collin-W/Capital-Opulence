@@ -9,7 +9,7 @@ $('#login-btn').click( async (evt) => {
 
     evt.preventDefault();
 
-    if (loginUsername && loginPassword) {
+    if (loginEmail && loginPassword) {
 
 
         const res = await fetch('/api/users/login', {
