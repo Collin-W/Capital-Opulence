@@ -38,13 +38,12 @@
             <nav class="row align-items-end">
                 <a href="/about" class="btn-styles" style="width: 20%;">About</a>
               {{#if loggedIn}}
-                <a href="/tracker" id="start-expense-tracker" class="anch-styles">Expense Tracker</a>
-                <a href="/calc" id="start-calculator" class="anch-styles">Finance Calculator</a>
+                <a href="/tracker" class="anch-styles">Expense Tracker</a>
+                <a href="/calc" class="anch-styles">Finance Calculator</a>
                 <a href="/dashboard">Dashboard</a>
                 <button id='logout' type="button" class="btn-styles" style="width: 20%;">logout</button>                
               {{else}}
-                <a href="/login" class="arch-styles" >Login</a>
-
+                <a href="/login" class="anch-styles">Login</a>
               {{/if}}
             </nav>
         </div>
