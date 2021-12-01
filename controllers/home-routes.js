@@ -4,7 +4,11 @@ const { Expense_Form, User } = require('../models')
 
 
 router.get('/', (req, res) => {
+<<<<<<< HEAD
   res.render('homepage')
+=======
+ res.render('homepage', {loggedIn: req.session.loggedIn})
+>>>>>>> 8c4c15d8a45c445f9fa1ef280a1dfddd06bb8401
 })
 
 router.get('/login', (req,res) => {
