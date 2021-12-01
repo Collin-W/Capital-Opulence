@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     font-family: Oswald, sans-serif;
-    text-decoration: none;
 }
 
 :root {
@@ -18,17 +17,36 @@ body {
 
 header {
     box-sizing: border-box;
+    border-bottom: solid 5px black;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     background-color: var(--primary-color);
-    padding-left: 60px;
+    padding: 0 30px 10px 60px;
 }
 
 h1 {
-    font-weight: bold;
-    font-size: 8em;
     padding: 20px 0;
 }
 
+h2 {
+    font-size: 3em;
+}
+
+.nav-styles {
+    display: flex;
+    justify-content: end;
+    align-items: end;
+}
+
+.ul-styles {
+    display: flex;
+    justify-content: space-around;
+}
+
+.description {
+    margin: 100px 100px;
+    padding: 50px 50px;
+    border: solid 2px black;
+}
 
 section {
     padding: 60px 60px;
@@ -37,11 +55,14 @@ section {
 .btn-styles {
     border: solid black 2px;
     border-radius: 8px;
+    width: 100px;
     box-shadow: 3px 3px black;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
     background-color: var(--quaternary-color);
     padding: 5px 15px;
     top: 3px;
+    text-decoration: none;
 }
 
 .btn-styles:hover {
@@ -56,3 +77,55 @@ section {
     box-shadow: none;
 }
 
+.anch-styles {
+    color: black;
+    text-decoration: none;
+}
+
+.anch-styles:hover {
+    color: white;
+}
+
+.header-anch {
+    color: black;
+    text-decoration: none;
+}
+
+.header-anch:hover {
+    color: black;
+}
+
+.footer-anchors {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer-anchors:hover {
+    color: var(--tertiary-color);
+}
+
+footer {
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    display: flex;
+    justify-content: end;
+    position: absolute;
+    bottom: 0;
+    padding: 100px 0 10px 100px;
+}
+
+
+/* expense form styling */
+
+.expense-form-styles {
+    margin: 100px;
+    padding: 50px;
+    border: solid 2px black;
+    width: 50%;
+}
+
+.exp-styles {
+    border: solid 2px black;
+}

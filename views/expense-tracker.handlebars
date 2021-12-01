@@ -1,17 +1,17 @@
 <link rel="stylesheet" href="/stylesheets/calc-style.css">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-<fieldset id="expense-form-fieldset">
+<fieldset id="expense-form-fieldset"  class="expense-form-styles">
 
 <legend>Expense Form</legend>
 
-  <form id="expense-form">
+  <form id="expense-form" class="exp-style">
       <div id="main-expense-row">
       <input id="expense-date" class="expense-input expense-date" type="date" placeholder="Date Of Expense"> 
       <input id="expense-gain-loss" class="expense-input expense-gain-loss" type="boolean" placeholder="Gain/Loss" list="gain-loss">
       <input id="expense-description" class="expense-input expense-description" type="text" placeholder="Description Of Expense">
       <input id="expense-amount" class="expense-input expense-amount" type="number" placeholder="Amount - Or +">
-      <button onclick="Delete(this);">Reset Row</button>
+      <button onclick="Delete(this);" class="btn-styles">Reset Row</button>
       </div>
 
       <div>
@@ -20,12 +20,12 @@
       </div>
   </form>
 
-    <p>Click the button to add a new form element.</p>
+    <p>Click the add button to add a new form element.</p>
 
-    <button class='go-back-home'>Go Back</button>
+    <button class='go-back-home btn-styles'>Go Back</button>
 
-        <button id="expense-form-add-btn">Add Button</button>
-        <button id="submit-expense-row">Submit</button>
+        <button id="expense-form-add-btn" class="btn-styles">Add</button>
+        <button id="submit-expense-row" class="btn-styles">Submit</button>
 
         <!-- datalist for the gain loss input -->
         <datalist id="gain-loss">
@@ -77,6 +77,8 @@
  </div>
  {{!-- </div> --}}
 </section>
+
+{{> footer }}
 
 <script src="/javascript/chart.js"></script>
 <script src="/javascript/expense-form.js"></script>
