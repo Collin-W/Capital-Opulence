@@ -1,8 +1,9 @@
 //calculations
 let gainArray = [];
 let lossArray = [];
-const a = [];
-const b = [];
+let operator = '';
+let a = [];
+let b = [];
 
 $('#submit-expense-row').click(() => {
 
@@ -39,79 +40,74 @@ $('#submit-expense-row').click(() => {
 
 // i want loss labels to have a minus added absolute value
 
-
 // program for a simple calculator
 
-$('.calc-btn').click(function()  {
+$('.calc-btn').click(function () {
 
-    // const a = []
+    if (operator === '') {
 
-    let btnNum = $(this).val()
-    console.log(btnNum)
+        let btnNum = $(this).val()
+        console.log(btnNum)
 
-   a.push(btnNum)
+        a.push(btnNum)
 
-    console.log(a)
+        console.log(a + " a variable")
 
-    if ($('.operator').click()) {
+    } else {
 
-        //should have a concatenated string
-        let newA = a.reduce((x, y) => x + y);
-        console.log(newA)
+        let btnNum = $(this).val()
 
-        //now parsing
-        console.log(parseInt(a[1]))
+        b.push(btnNum)
 
-        $('.operator').click(() => {
-            const operator = $(this).val()
-
-            console.log(operator)
-
-
-            $('.calc-btn').click(() => {
-                //const b = []
-
-                $(b).push($('.calc-btn').val())
-
-                //should have a concatenated string
-                b.reduce((x, y) => x + y);
-
-                //now parsing
-                console.log(parseInt(b[1]))
-            })
-
-        });
+        console.log(b + " b var")
     }
 })
 
+$('.operator').click(function () {
+
+    operator = $(this).val()
+    console.log(operator + " operator")
+});
+
+
 $('#calculate').click(() => {
+
+    let num1 = a.reduce((x, y) => x + y);
+    let num2 = b.reduce((x, y) => x + y);
+
+    console.log(num1)
+    console.log(num2)
+    console.log(operator)
 
     let result;
 
     switch (operator) {
         case '+':
-            result = a + b;
-            console.log(`${a} + ${b} = ${result}`);
+            result = num1 + num2;
+            console.log(`${num1} + ${num2} = ${result}`);
             break;
 
         case '-':
-            result = a - b;
-            console.log(`${a} - ${b} = ${result}`);
+            result = num1 - num2;
+            console.log(`${num1} - ${num2} = ${result}`);
             break;
 
         case '*':
-            result = a * b;
-            console.log(`${a} * ${b} = ${result}`);
+            result = num1 * num2;
+            console.log(`${num1} * ${num2} = ${result}`);
             break;
 
         case '/':
-            result = a / b;
-            console.log(`${a} / ${b} = ${result}`);
+            result = num1 / num2;
+            console.log(`${num1} / ${num2} = ${result}`);
             break;
 
         default:
             console.log('Invalid operator');
-            break;
     }
+
+    a = []
+    b = []
+    operator = ''
 
 })
