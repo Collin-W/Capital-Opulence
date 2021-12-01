@@ -8,15 +8,15 @@ const session = require('express-session')
 const SequelizeStore = require('connect-session-sequelize')(session.Store)
 
 
-// const sess = {
-//     secret: 'Super secret secret',
-//     cookie: {},
-//     resave: false,
-//     saveUninitialized: true,
-//     store: new SequelizeStore({
-//         db: sequelize
-//     })
-// }
+const sess = {
+    secret: 'Super secret secret',
+    cookie: { expires: new Date(Date.now() + 36000000)},
+    resave: false,
+    saveUninitialized: true,
+    store: new SequelizeStore({
+      db: sequelize
+    })
+  }
 
 
 const app = express();
@@ -30,7 +30,8 @@ app.set('view engine', 'handlebars')
 
 // app.use(express.static('public/images'));
 
-// app.use(session(sess))
+app.use(session(sess))
+
 //use routes
 app.use(routes);
 
