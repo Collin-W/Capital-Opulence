@@ -21,12 +21,15 @@
         {{#if loggedIn}}
         <a href="/tracker">Expense Tracker</a>
         <a href="/calc">Finance Calculator</a>
+        <a href="/dashboard">Dashboard</a>
         <button id="logout" class="btn-no-style">Logout</button>
         {{else}}
         <a href="/login">login</a>
         {{/if}}
       </nav>
     </header>
+    {{!-- jqeury --}}
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <main>
       {{{ body }}}
     </main>
@@ -52,7 +55,6 @@
 {{!-- main script --}}
 {{!-- <script src="/javascript/index.js"></script> --}}
 
-{{!-- jqeury --}}
- <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
 
 </html>
