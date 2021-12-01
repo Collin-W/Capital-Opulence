@@ -1,5 +1,9 @@
+.env
 node_modules/
+.env
+.npmrc
 package-lock.json
 .vscode
 .DS_Store
-# .env
+
+HTMLHolderFile/

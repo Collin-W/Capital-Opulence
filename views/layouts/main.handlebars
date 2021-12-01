@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capital Opulence</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="manifest" href="images/site.webmanifest">
+</head>
+
+<body>
+  <div class="wrapper">
+    <header>
+      <h1>
+        <a href="/">Capital Opulence</a>
+      </h1>
+      <nav>
+        {{#if loggedIn}}
+        <a href="/tracker">Expense Tracker</a>
+        <a href="/calc">Finance Calculator</a>
+        <a href="/dashboard">Dashboard</a>
+        <button id="logout" class="btn-no-style">Logout</button>
+        {{else}}
+        <a href="/login">login</a>
+        {{/if}}
+      </nav>
+    </header>
+    {{!-- jqeury --}}
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <main>
+      {{{ body }}}
+    </main>
+    <footer>
+      <p style="font-size: 18px;"><strong>Thank you for visting our page</strong><span>&#128151;</span></p>
+    <p><strong>Creators</strong></p>
+    <div>
+      {{!-- these will be github links --}}
+        <a href="">Ben</a>
+        <a href="">Tom</a>
+        <a href="">Inmar</a>
+        <a href="">Collin</a>
+        <a href="">Mark</a>
+    </div>
+    </footer>
+  </div>
+<!--  Implement later
+  {{#if loggedIn}}
+  <script src="/javascript/logout.js"></script>
+  {{/if}}
+-->
+</body>
+{{!-- main script --}}
+{{!-- <script src="/javascript/index.js"></script> --}}
+
+
+
+</html>

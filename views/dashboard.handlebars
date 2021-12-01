@@ -1,0 +1,14 @@
+<div>
+  <h3>Expense Forms</h3>
+
+  <h4> {{usersName.first_name}} {{usersName.last_name}}</h4>
+
+  {{#each EXPForms}}
+  <div>
+    <p>Date: <span>{{date}}</span></p>
+    <p>Description: <span>{{description}}</span></p>
+    <p>Amount: <span>{{amount}}</span></p>
+  </div>
+  {{/each}}
+
+</div>
