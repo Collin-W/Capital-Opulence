@@ -4,6 +4,7 @@ let lossArray = [];
 let operator = '';
 let a = [];
 let b = [];
+let calcWindow = $('#calculator-window')
 
 $('#submit-expense-row').click(() => {
 
@@ -44,12 +45,21 @@ $('#submit-expense-row').click(() => {
 
 $('.calc-btn').click(function () {
 
+    calcWindow.val('')
+
     if (operator === '') {
 
         let btnNum = $(this).val()
+       
         console.log(btnNum)
 
         a.push(btnNum)
+
+        let windowVal1 = a.join('')
+
+
+
+        calcWindow.val(windowVal1)
 
         console.log(a + " a variable")
 
@@ -59,6 +69,10 @@ $('.calc-btn').click(function () {
 
         b.push(btnNum)
 
+        let windowVal3 = b.join('')
+
+        calcWindow.val(windowVal3)
+
         console.log(b + " b var")
     }
 })
@@ -66,6 +80,12 @@ $('.calc-btn').click(function () {
 $('.operator').click(function () {
 
     operator = $(this).val()
+
+    let windowVal2 = operator
+
+    calcWindow.val(windowVal2)
+
+
     console.log(operator + " operator")
 });
 
@@ -84,21 +104,29 @@ $('#calculate').click(() => {
     switch (operator) {
         case '+':
             result = num1 + num2;
+
+            calcWindow.val(result)
             console.log(`${num1} + ${num2} = ${result}`);
             break;
 
         case '-':
             result = num1 - num2;
+
+            calcWindow.val(result)
             console.log(`${num1} - ${num2} = ${result}`);
             break;
 
         case '*':
             result = num1 * num2;
+
+            calcWindow.val(result)
             console.log(`${num1} * ${num2} = ${result}`);
             break;
 
         case '/':
             result = num1 / num2;
+
+            calcWindow.val(result)
             console.log(`${num1} / ${num2} = ${result}`);
             break;
 
