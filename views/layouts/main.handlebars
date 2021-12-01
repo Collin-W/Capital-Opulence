@@ -5,10 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Capital Opulence</title>
     <link rel="stylesheet" href="/stylesheets/style.css">
+<<<<<<< HEAD
     <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
     <link rel="manifest" href="images/site.webmanifest">
+=======
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="manifest" href="/images/site.webmanifest">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+>>>>>>> 7a4db45c695efe22d7c69ba16d90b30555f7eebb
 
     <!-- bootstrap style sheet -->
     <link rel="stylesheet"
@@ -35,13 +43,14 @@
         </h1>
         <div class="col-3">
             <nav class="row align-items-end">
+                <a href="/about" class="btn-styles" style="width: 20%;">About</a>
               {{#if loggedIn}}
                 <a href="/tracker" id="start-expense-tracker" class="anch-styles">Expense Tracker</a>
                 <a href="/calc" id="start-calculator" class="anch-styles">Finance Calculator</a>
                 <a href="/dashboard">Dashboard</a>
-                <button id="login" class="btn-styles" style="width: 20%;">Login</button>
+                <button id='logout' type="button" class="btn-styles" style="width: 20%;">logout</button>                
               {{else}}
-                <button id='logout' type="button" class="btn-styles" style="width: 20%;">logout</button>
+                <button id="login" class="btn-styles" style="width: 20%;">Login</button>
               {{/if}}
             </nav>
         </div>
