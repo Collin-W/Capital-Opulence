@@ -47,17 +47,17 @@ $('.calc-btn').click(function () {
 
     calcWindow.val('')
 
+
+
     if (operator === '') {
 
         let btnNum = $(this).val()
-       
+
         console.log(btnNum)
 
         a.push(btnNum)
 
         let windowVal1 = a.join('')
-
-
 
         calcWindow.val(windowVal1)
 
@@ -75,6 +75,7 @@ $('.calc-btn').click(function () {
 
         console.log(b + " b var")
     }
+
 })
 
 $('.operator').click(function () {
@@ -134,8 +135,37 @@ $('#calculate').click(() => {
             console.log('Invalid operator');
     }
 
+    //make this a golbal object??
     a = []
     b = []
     operator = ''
+
+})
+
+
+
+$('.delete').click(function () {
+
+    if (operator === '') {
+
+        a.pop()
+        calcWindow.val(a.join(''))
+    } else {
+        
+        b.pop()
+        calcWindow.val(b.join(''))
+    }
+})
+
+
+
+
+
+
+$('.clear').click(() => {
+    a = []
+    b = []
+    operator = ''
+    calcWindow.val('')
 
 })
