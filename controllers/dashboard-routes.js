@@ -2,10 +2,10 @@ const router = require('express').Router()
 const sequelize = require('../config/connection')
 const {User, Expense_Form} = require('../models')
 
-router.get('/:id', (req, res) => {
+router.get('/', (req, res) => {
   Expense_Form.findAll({
     where: {
-      user_id: req.params.id
+      user_id: req.session.user_id
     }, 
     include: {
       model: User,
