@@ -119,25 +119,50 @@ section {
     color: var(--tertiary-color);
 }
 
-footer {
-    position: fixed;
-    left: 0px;
-    bottom: 0px;
+.footer-div{
     display: flex;
-    justify-content: end;
-    position: absolute;
-    bottom: 0;
-    padding: 100px 0 10px 100px;
+    justify-content: center;
 }
 
+footer{
+    display: flex;
+    flex-direction: column;
+   align-items: center;
+   padding-bottom: 2%;
+}
+
+.footer-a{
+    text-decoration: none;
+    color: black;
+    font-size: 1.25rem;
+    background-color: var(--quaternary-color);
+    padding: 5px 15px 5px 15px;
+    border-radius: 10px;
+    border: solid black 2px;
+    border-radius: 8px;
+    box-shadow: 3px 3px black;
+    margin-top: 1%;
+}
+
+.footer-a:hover{
+    color: white;
+    box-shadow: none;
+}
 
 /* expense form styling */
 
+.exp-div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
 .expense-form-styles {
     margin: 100px;
     padding: 50px;
     border: solid 2px black;
-    width: 50%;
+    width: auto;
+    display: flex;
+    justify-content: center;
 }
 
 .exp-form-head {
