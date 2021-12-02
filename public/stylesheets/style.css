@@ -247,4 +247,13 @@ footer{
     width: 400px;
     height: 550px;
     object-fit: cover;
+    max-width: 100%;
+}
+
+.page-icon {
+    float: left;
+    width: 125px;
+    height: 125px;
+    margin-right: 30px;
+    margin-top: 15px;
 }
