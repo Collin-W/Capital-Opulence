@@ -32,9 +32,20 @@ body {
 .mt-l{
     margin-top: 1.25rem;
 }
+/* margin botton */
+.mb{
+    margin-bottom: 2rem;
+}
+
 /* font increase */
 .font-in{
     font-size: 1.25rem;
+}
+
+/* padding styles */
+/* padding bottom */
+.pb{
+    padding-bottom: 1.25rem;
 }
 
 header {
@@ -89,7 +100,6 @@ section {
     border-radius: 8px;
     width: 100px;
     box-shadow: 3px 3px black;
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     text-align: center;
     background-color: var(--quaternary-color);
     padding: 5px 15px;
@@ -238,6 +248,22 @@ footer{
     margin-bottom: 2%;
 }
 
+.dash-del-btn{
+    border: solid black 2px;
+    border-radius: 8px;
+    width: 80px;
+    box-shadow: 3px 3px black;
+    text-align: center;
+    background-color: var(--quaternary-color);
+    padding: 5px 15px;
+    top: 3px;
+    text-decoration: none;
+}
+.dash-del-btn:hover{
+    box-shadow: none;
+    color: white;
+}
+
 /* homepage styling */
 .content-homepage{
     display: flex;
@@ -259,4 +285,48 @@ footer{
     height: 125px;
     margin-right: 30px;
     margin-top: 15px;
+}
+
+/* hidden */
+.hidden{
+    display: none;
+}
+
+/* update form */
+.update-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.update-btn{
+    border: solid black 2px;
+    border-radius: 8px;
+    width: auto;
+    box-shadow: 3px 3px black;
+    text-align: center;
+    background-color: var(--quaternary-color);
+    padding: 5px 15px;
+    top: 3px;
+    text-decoration: none;
+}
+
+.update-btn:hover{
+    box-shadow: none;
+    color: white;
+}
+.update-current-update{
+    display: flex;
+    justify-content: space-between;
+}
+
+.update-form{
+ display: flex;
+ flex-direction: row;
+}
+
+.update-form-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
