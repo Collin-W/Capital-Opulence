@@ -15,6 +15,17 @@ body {
     background-color: var(--secondary-color);   
 }
 
+
+/* margin stlyes */
+.ml{
+    margin-left: 2rem;
+}
+
+.mt{
+    margin-top: 2rem;
+}
+
+
 header {
     box-sizing: border-box;
     border-bottom: solid 5px black;
@@ -78,8 +89,8 @@ section {
 }
 
 .anch-styles {
-    color: black;
     text-decoration: none;
+    color: black;
 }
 
 .anch-styles:hover {
@@ -129,3 +140,6 @@ footer {
 .exp-styles {
     border: solid 2px black;
 }
+
+
+
