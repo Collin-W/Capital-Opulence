@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Capital Opulence</title>
-    <link rel="stylesheet" href="/stylesheets/style.css">
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
@@ -21,6 +20,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 
 <body style="background-color: #FFEFCF">
@@ -35,16 +36,16 @@
             <nav class="row">
               <ul class="ul-styles">
               
-              {{!-- {{#if loggedIn}} --}}
+              {{#if loggedIn}}
                 <a href="/tracker" id="start-expense-tracker" class="anch-styles">Expense Tracker</a>
                 <a href="/calc" id="start-calculator" class="anch-styles">Finance Calculator</a>
                 <a href="/dashboard" class="anch-styles">Dashboard</a>
                 <a href="/about" class="btn-styles anch-styles" style="width: 100px;">About</a>
-                <button id='logout' type="button" class="btn-styles anch-styles" style="width: 100px;">logout</button>                
-              {{!-- {{else}} --}}
-                <a href="/about" class="btn-styles anch-styles" style="width: 100px;">About</a>
-                <button id="login" type="button" class="btn-styles anch-styles" style="width: 100px;">Login</button>
-              {{!-- {{/if}} --}}
+                <button id='logout-btn' type="button" class="btn-styles anch-styles" style="width: 100px;">logout</button>                
+              {{else}}
+                <a href="/about" class="btn-styles anch-styles" >About</a>
+                <a href="/login" class="btn-styles anch-styles ml" >Login</a>
+              {{/if}}
               </ul>
             </nav>
         </div>
@@ -52,14 +53,22 @@
     <main>
       {{{ body }}}
     </main>
-    
   </div>
+
+<div class="footer-div">
+  
+<footer>   
+    <h5><strong>Thank you for visting our page</strong><span>&#128151;</span></h5>
+    <a href="/about" class="footer-a">About The Creators</a>
+</footer>
+</div>
 
   {{#if loggedIn}}
   <script src="/javascript/logout.js"></script>
   {{/if}}
 
 </body>
+
 
 
 

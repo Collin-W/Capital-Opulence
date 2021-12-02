@@ -1,9 +1,10 @@
 <link rel="stylesheet" href="/stylesheets/calc-style.css">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
+<div class="exp-div">
 <fieldset id="expense-form-fieldset"  class="expense-form-styles">
-
-<legend>Expense Form</legend>
+<div>
+ <legend>Expense Form</legend>
 
   <form id="expense-form" class="exp-style">
       <div id="main-expense-row">
@@ -23,7 +24,7 @@
 
     <p>Click the add button to add a new form element.</p>
 
-    <button class='go-back-home btn-styles'>Go Back</button>
+    <a href="/" class="btn-styles anch-styles ">Homepage</a>
 
         <button id="expense-form-add-btn" class="btn-styles">Add</button>
         <button id="submit-expense-row" class="btn-styles">Submit</button>
@@ -33,12 +34,15 @@
             <option value="Loss">
             <option value="Gain"> 
         </datalist>
+</div>
+
 </fieldset>
+</div>
+
 
 <section id="expense-chart">
-        <canvas style="max-height: 400px; max-width: 500px;" id="myChart"></canvas>
- 
-    </section>
+<canvas style="max-height: 400px; max-width: 500px;" id="myChart"></canvas>
+</section>
 
 
 
@@ -78,8 +82,6 @@
  </div>
  {{!-- </div> --}}
 </section>
-
-{{> footer }}
 
 <script src="/javascript/chart.js"></script>
 <script src="/javascript/expense-form.js"></script>

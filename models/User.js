@@ -9,7 +9,7 @@ const bcrypt = require('bcrypt')
 class User extends Model{
   //instance to compare password when logging in
   checkPassword(loginPW){
-    return bcrypt.compareSync(loginPW, this.user_password)
+    return bcrypt.compareSync(loginPW, this.password)
   }
 }
 
