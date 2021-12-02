@@ -248,6 +248,11 @@ footer{
     margin-bottom: 2%;
 }
 
+.dash-a:hover{
+    box-shadow: none;
+    color: white;
+}
+
 .dash-del-btn{
     border: solid black 2px;
     border-radius: 8px;
