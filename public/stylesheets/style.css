@@ -1,0 +1,337 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Oswald, sans-serif;
+}
+
+:root {
+    --primary-color: #FF7A00;
+    --secondary-color: #FFEFCF;
+    --tertiary-color: #D44000;
+    --quaternary-color: #864000;
+}
+
+body {
+    background-color: var(--secondary-color);   
+}
+
+
+/* margin stlyes */
+/* margin left */
+.ml{
+    margin-left: 2rem;
+}
+.ml-l{
+    margin-left: 1.25rem;
+}
+/* margin top */
+.mt{
+    margin-top: 2rem;
+}
+/* margin top but less */
+.mt-l{
+    margin-top: 1.25rem;
+}
+/* margin botton */
+.mb{
+    margin-bottom: 2rem;
+}
+
+/* font increase */
+.font-in{
+    font-size: 1.25rem;
+}
+
+/* padding styles */
+/* padding bottom */
+.pb{
+    padding-bottom: 1.25rem;
+}
+
+header {
+    box-sizing: border-box;
+    min-height: 100px;
+    border-bottom: solid 5px black;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    background-color: var(--primary-color);
+    padding: 0 30px 10px 60px;
+}
+
+h1 {
+    padding: 20px 0;
+}
+
+h2 {
+    font-size: 3em;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.nav-styles {
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    font-size: 1.3rem;
+}
+
+.ul-styles {
+    display: flex;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    font-weight: bold;
+}
+
+.description {
+    margin: 100px 100px;
+    padding: 50px 50px;
+    border: solid 2px black;
+}
+
+section {
+    padding: 60px 60px;
+}
+
+.walker-img {
+    margin: 100px;
+    padding: 10px;
+}
+
+/* btn styles */
+.btn-styles {
+    border: solid black 2px;
+    border-radius: 8px;
+    width: 100px;
+    box-shadow: 3px 3px black;
+    text-align: center;
+    background-color: var(--quaternary-color);
+    padding: 5px 15px;
+    top: 3px;
+    text-decoration: none;
+    /* color: burlywood; */
+}
+
+.btn-styles:hover {
+    background-color: var(--tertiary-color);
+    color: white;
+    box-shadow: 2px 2px var(--third-color);
+    top: -2px;
+}
+
+.btn-styles:active {
+    top: 0;
+    box-shadow: none;
+}
+/* end btn styles */
+
+/* anchor styles */
+.anch-styles {
+    text-decoration: none;
+    color: black;
+}
+
+.anch-styles:hover {
+    color: white;
+}
+
+.header-anch {
+    color: black;
+    text-decoration: none;
+}
+
+.header-anch:hover {
+    color: black;
+}
+/* end anchor styles */
+
+/* footer styles */
+.footer-anchors {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer-anchors:hover {
+    color: var(--tertiary-color);
+}
+
+.footer-div{
+    display: flex;
+    justify-content: center;
+}
+
+footer{
+    display: flex;
+    flex-direction: column;
+   align-items: center;
+   padding-bottom: 2%;
+}
+
+.footer-a{
+    text-decoration: none;
+    color: black;
+    font-size: 1.25rem;
+    background-color: var(--quaternary-color);
+    padding: 5px 15px 5px 15px;
+    border-radius: 10px;
+    border: solid black 2px;
+    border-radius: 8px;
+    box-shadow: 3px 3px black;
+    margin-top: 1%;
+}
+
+.footer-a:hover{
+    color: white;
+    box-shadow: none;
+}
+/* end footer styles */
+
+/* expense form styling */
+
+.exp-div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.expense-form-styles {
+    margin: 100px;
+    padding: 50px;
+    border: solid 2px black;
+    width: auto;
+    display: flex;
+    justify-content: center;
+}
+
+
+.exp-form-head {
+    font-size: 3rem;
+}
+
+.exp-styles {
+    border: solid 2px black;
+}
+
+/* end expense form styling */
+.card {
+    border: solid 2px rgb(27, 27, 27)
+}
+
+
+/* dashboard styling */
+
+
+.dash-expform-div{
+    border: solid black 2px;
+    margin-bottom: 1%;
+    width: 50%;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    background-color: var(--primary-color);
+    color: black;
+}
+
+.dash-div{
+    display: flex; 
+    align-items: center;
+    flex-direction: column;
+}
+
+.dash-a{
+    text-decoration: none;
+    color: black;
+    font-size: 1.25rem;
+    background-color: var(--quaternary-color);
+    padding: 5px 15px 5px 15px;
+    border-radius: 10px;
+    border: solid black 2px;
+    border-radius: 8px;
+    box-shadow: 3px 3px black;
+    margin-top: 1%;
+    margin-bottom: 2%;
+}
+
+.dash-a:hover{
+    box-shadow: none;
+    color: white;
+}
+
+.dash-del-btn{
+    border: solid black 2px;
+    border-radius: 8px;
+    width: 80px;
+    box-shadow: 3px 3px black;
+    text-align: center;
+    background-color: var(--quaternary-color);
+    padding: 5px 15px;
+    top: 3px;
+    text-decoration: none;
+}
+.dash-del-btn:hover{
+    box-shadow: none;
+    color: white;
+}
+
+/* homepage styling */
+.content-homepage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.img-portrait {
+    float: left;
+    width: 400px;
+    height: 550px;
+    object-fit: cover;
+    max-width: 100%;
+}
+
+.page-icon {
+    float: left;
+    width: 125px;
+    height: 125px;
+    margin-right: 30px;
+    margin-top: 15px;
+}
+
+/* hidden */
+.hidden{
+    display: none;
+}
+
+/* update form */
+.update-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.update-btn{
+    border: solid black 2px;
+    border-radius: 8px;
+    width: auto;
+    box-shadow: 3px 3px black;
+    text-align: center;
+    background-color: var(--quaternary-color);
+    padding: 5px 15px;
+    top: 3px;
+    text-decoration: none;
+}
+
+.update-btn:hover{
+    box-shadow: none;
+    color: white;
+}
+.update-current-update{
+    display: flex;
+    justify-content: space-between;
+}
+
+.update-form{
+ display: flex;
+ flex-direction: row;
+}
+
+.update-form-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

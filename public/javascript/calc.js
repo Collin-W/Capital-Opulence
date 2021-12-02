@@ -1,10 +1,19 @@
 //calculations
 let gainArray = [];
 let lossArray = [];
-const a = [];
-const b = [];
+let operator = '';
+let a = [];
+let b = [];
+let calcWindow = $('#calculator-window')
 
 $('#submit-expense-row').click(() => {
+
+    let totalLoss;
+    let totalGains;
+   
+    //on submit renders the chart and hides the form
+    //$(".exp-div-hide").effect('slide', {direction: 'right', duration: 1000});
+    $(".exp-div-hide").hide(1000)
 
     ifArray = expenseArray.map((x) => {
         return {
@@ -19,99 +28,148 @@ $('#submit-expense-row').click(() => {
 
             gainArray.push(parseInt(ifArray[i].amount));
 
-            let totalGains = gainArray.reduce((a, b) => a + b, 0);
+            totalGains = gainArray.reduce((a, b) => a + b, 0);
 
             console.log("your total gains are " + totalGains);
-
 
         } else {
 
             lossArray.push(parseInt(ifArray[i].amount));
 
-            let totalLoss = lossArray.reduce((a, b) => a + b, 0);
+            totalLoss = lossArray.reduce((a, b) => a + b, 0);
 
             console.log("your total loss are " + totalLoss);
         }
     });
+
+    let pEl = $("<p>", {
+        class: "totalGainLoss-p-tag",
+        type: "text",
+        text: `Total gains: ${totalGains} Total loss: ${totalLoss}`
+    });
+
+    $('#expense-chart').append(pEl)
+
 })
 
 //calculator
+$('.calc-btn').click(function () {
 
-// i want loss labels to have a minus added absolute value
+    calcWindow.val('')
 
+    if (operator === '') {
 
-// program for a simple calculator
+        let btnNum = $(this).val()
 
-$('.calc-btn').click(function()  {
+        console.log(btnNum)
 
-    // const a = []
+        a.push(btnNum)
 
-    let btnNum = $(this).val()
-    console.log(btnNum)
+        let windowVal1 = a.join('')
 
-   a.push(btnNum)
+        calcWindow.val(windowVal1)
 
-    console.log(a)
+       // console.log(a + " a variable")
 
-    if ($('.operator').click()) {
+    } else {
 
-        //should have a concatenated string
-        let newA = a.reduce((x, y) => x + y);
-        console.log(newA)
+        let btnNum = $(this).val()
 
-        //now parsing
-        console.log(parseInt(a[1]))
+        b.push(btnNum)
 
-        $('.operator').click(() => {
-            const operator = $(this).val()
+        let windowVal3 = b.join('')
 
-            console.log(operator)
+        calcWindow.val(windowVal3)
 
-
-            $('.calc-btn').click(() => {
-                //const b = []
-
-                $(b).push($('.calc-btn').val())
-
-                //should have a concatenated string
-                b.reduce((x, y) => x + y);
-
-                //now parsing
-                console.log(parseInt(b[1]))
-            })
-
-        });
+        //console.log(b + " b var")
     }
+
 })
 
+$('.operator').click(function () {
+
+    operator = $(this).val()
+
+    let windowVal2 = operator
+
+    calcWindow.val(windowVal2)
+
+    //console.log(operator + " operator")
+});
+
+
 $('#calculate').click(() => {
+
+    let num1 = a.reduce((x, y) => x + y);
+    let num2 = b.reduce((x, y) => x + y);
+
+   num1 = parseInt(num1)
+   num2 = parseInt(num2)
+
+    // console.log(num1)
+    // console.log(num2)
+    // console.log(operator)
 
     let result;
 
     switch (operator) {
         case '+':
-            result = a + b;
-            console.log(`${a} + ${b} = ${result}`);
+            result = num1 + num2;
+
+            calcWindow.val(result)
+            console.log(`${num1} + ${num2} = ${result}`);
             break;
 
         case '-':
-            result = a - b;
-            console.log(`${a} - ${b} = ${result}`);
+            result = num1 - num2;
+
+            calcWindow.val(result)
+            console.log(`${num1} - ${num2} = ${result}`);
             break;
 
         case '*':
-            result = a * b;
-            console.log(`${a} * ${b} = ${result}`);
+            result = num1 * num2;
+
+            calcWindow.val(result)
+            console.log(`${num1} * ${num2} = ${result}`);
             break;
 
         case '/':
-            result = a / b;
-            console.log(`${a} / ${b} = ${result}`);
+            result = num1 / num2;
+
+            calcWindow.val(result)
+            console.log(`${num1} / ${num2} = ${result}`);
             break;
 
         default:
             console.log('Invalid operator');
-            break;
     }
 
+    //make this a global object??
+    a = []
+    b = []
+    operator = ''
+})
+
+
+$('.delete').click(function () {
+
+    if (operator === '') {
+
+        a.pop()
+        calcWindow.val(a.join(''))
+    } else {
+
+        //add operator delete
+
+        b.pop()
+        calcWindow.val(b.join(''))
+    }
+})
+
+$('.clear').click(() => {
+    a = []
+    b = []
+    operator = ''
+    calcWindow.val('')
 })

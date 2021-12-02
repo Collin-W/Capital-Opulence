@@ -1,15 +1,20 @@
-<!-- todo - insert Collin's static html here -->
-<fieldset id="expense-form-fieldset">
+<link rel="stylesheet" href="/stylesheets/calc-style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-<legend>Expense Form</legend>
+<div class="exp-div-hide exp-div">
+<fieldset id="expense-form-fieldset"  class="expense-form-styles">
 
-  <form id="expense-form">
+<div>
+ <legend class="exp-form-head">Expense Form</legend>
+
+  <form id="expense-form" class="exp-style">
       <div id="main-expense-row">
       <input id="expense-date" class="expense-input expense-date" type="date" placeholder="Date Of Expense"> 
       <input id="expense-gain-loss" class="expense-input expense-gain-loss" type="boolean" placeholder="Gain/Loss" list="gain-loss">
       <input id="expense-description" class="expense-input expense-description" type="text" placeholder="Description Of Expense">
       <input id="expense-amount" class="expense-input expense-amount" type="number" placeholder="Amount - Or +">
-      <button onclick="Delete(this);">Reset Row</button>
+      <button  class="btn-styles">Reset Row</button> 
+      {{!-- onclick="Delete(this);" --}}
       </div>
 
       <div>
@@ -18,19 +23,70 @@
       </div>
   </form>
 
-    <p>Click the button to add a new form element.</p>
+    <p>Click the add button to add a new form element.</p>
 
-    <button class='go-back-home'>Go Back</button>
+    
 
-        <button id="expense-form-add-btn">Add Button</button>
-        <button id="submit-expense-row">Submit</button>
+        {{#if loggedIn}}
+        <a href="/" class="btn-styles anch-styles ">Homepage</a>
+        <button id="expense-form-add-btn" class="btn-styles">Add</button>
+        <button id="submit-expense-row" class="btn-styles">Submit</button>
+        {{else}}
+        <a href="/" class="btn-styles anch-styles ">Homepage</a>
+        {{/if}}
 
         <!-- datalist for the gain loss input -->
         <datalist id="gain-loss">
             <option value="Loss">
             <option value="Gain"> 
         </datalist>
+</div>
+
 </fieldset>
+</div>
 
 
+<section id="expense-chart">
+<canvas id="myChart"></canvas>
+</section>
+
+<section class="container" id="calculator">
+
+    {{!-- <div class="row calc-row"> --}}
+ 
+    <input class="col-12" id="calculator-window">
+ 
+ <div class="row calc-row">
+        <button class="col-6 calc-btn-special clear" >Clear</button>
+        <button class="col-6 calc-btn-special delete">Delete</button>
+</div>
+<div class="row calc-row">
+        <button class="col-3 calc-btn-style operator" value="/">÷</button>
+        <button class="col-3 calc-btn-style calc-btn" value=1>1</button>
+        <button class="col-3 calc-btn-style calc-btn" value=2>2</button>
+        <button class="col-3 calc-btn-style calc-btn" value=3>3</button>
+</div>
+<div class="row calc-row">
+        <button class="col-3 calc-btn-style operator" value="*">*</button>
+        <button class="col-3 calc-btn-style calc-btn" value=4>4</button>
+        <button class="col-3 calc-btn-style calc-btn" value=5>5</button>
+        <button class="col-3 calc-btn-style calc-btn" value=6>6</button>
+</div>
+<div class="row calc-row">
+        <button class="col-3 calc-btn-style operator" value="+">+</button>
+        <button class="col-3 calc-btn-style calc-btn" value=7>7</button>
+        <button class="col-3 calc-btn-style calc-btn" value=8>8</button>
+        <button class="col-3 calc-btn-style calc-btn" value=9>9</button>
+</div>
+<div class="row calc-row">
+        <button class="col-3 calc-btn-style operator" value="-">-</button>
+        <button class="col-3 calc-btn-style calc-btn" value=.>.</button>
+        <button class="col-3 calc-btn-style calc-btn" value=0>0</button>
+        <button class="col-3 calc-btn-style" id="calculate" value='='>=</button>
+ </div>
+ {{!-- </div> --}}
+</section>
+
+<script src="/javascript/chart.js"></script>
 <script src="/javascript/expense-form.js"></script>
+<script src="/javascript/calc.js"></script>

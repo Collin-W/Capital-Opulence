@@ -16,8 +16,8 @@ Expense_Form.init(
       type: DataTypes.DATEONLY,
       allowNull: false,
     },
-    type: {
-      type: DataTypes.ENUM('expense', 'income', ''),
+    gain_loss: {
+      type: DataTypes.STRING(),
       allowNull: false,
       defaultValue: '',
     },

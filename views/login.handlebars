@@ -1,80 +1,78 @@
 <section>
-    <form action="/login" method="get" id="login-form">
+  <div>
+     <form action="/login" method="get" id="login-form">
 
-        <p>Login</p>
+        <h2>Login</h2>
 
-        <label for="username" class="login-signup-label">
-          Username
-          <input
-                name="username"
-                id="username-login"
-                type="text"
-                class="login-signup-input"
-                placeholder="Enter Username"/>
-        </label>
-        <small></small>
         <label for="email" class="login-signup-label">
-          Password
-          <input
-                name="email"
-                id="password-login"
-                type="password"
-                class="login-signup-input"
-                placeholder="Enter Password"/>
-        </label>
-        <small></small>
-
-        <button id="login-btn">Login</button>
-    </form>
-
-    <form action="/signup" method="post" id="signup-form">
-
-        <p>Sign Up</p>
-
-        <label class="login-signup-label">
-          First Name
-          <input
-                id="first-name-signup"
-                type="text"
-                class="login-signup-input"
-                placeholder="Enter First Name"/>
-        </label>
-        <label class="login-signup-label">
-          Last Name
-          <input
-                id="last-name-signup"
-                type="text"
-                class="login-signup-input"
-                placeholder="Enter Last Name"/>
-        </label>
-        <label class="login-signup-label">
-          Username
-          <input
-                id="username-signup"
-                type="text"
-                class="login-signup-input"
-                placeholder="Enter New Username"/>
-        </label>
-        <label class="login-signup-label">
           Email
           <input
-                id="email-signup"
-                type="email"
+                name="email"
+                id="email-login"
+                type="text"
                 class="login-signup-input"
                 placeholder="Enter Email"/>
         </label>
-        <label class="login-signup-label">
+        <small></small>
+        <label for="password" class="login-signup-label">
           Password
-          <input
-                id="password-signup"
-                type="password"
-                class="login-signup-input"
-                placeholder="Enter New Password"/>
         </label>
-
-        <button id="signup-btn">Sign Up</button>
-        <button class="go-back-home">Go Back</button>
+          <input
+                name="password"
+                id="password-login"
+                type="text"
+                class="login-signup-input"
+                placeholder="Enter Password"
+          />
+        <button id="login-btn" class="btn-styles ">Login</button>
     </form>
+  </div>
+   
+
+<div class="mt">
+  <form id="signup-form" class="mt">
+
+    <h2>Sign Up</h2>
+
+    <label class="login-signup-label">First Name</label>
+    <input
+      id="first-name-signup"
+      type="text"
+      class="login-signup-input"
+      placeholder="Enter First Name"
+    />
+   
+    <label class="login-signup-label">Last Name</label>
+    <input
+      id="last-name-signup"
+      type="text"
+      class="login-signup-input"
+      placeholder="Enter Last Name"
+    />
+    <label class="login-signup-label">Email</label>
+    <input
+          id="email-signup"
+          type="email"
+          class="login-signup-input"
+          placeholder="Enter Email"
+    />
+    <label class="login-signup-label">Password</label>
+      <input
+        id="password-signup"
+        type="password"
+        class="login-signup-input"
+        placeholder="Enter New Password"
+      />  
+
+    <button id="signup-btn" class="btn-styles anch-styles" >Sign Up</button>
+    
+    </form>
+</div>
+    
+
+    <div class="mt">
+      <a href="/" class="btn-styles anch-styles ">Homepage</a>
+    </div>
 
 </section>
 

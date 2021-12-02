@@ -54,15 +54,19 @@ router.get('/:id', (req, res) => {
   })
 })
 
+
 //create expense form
 router.post('/', (req, res) => {
-  Expense_Form.create({
-    date: req.body.date,
-    type: req.body.type,
-    description: req.body.description,
-    amount: req.body.amount,
-    user_id: req.body.user_id
-  })
+
+  const array = req.body
+
+  let mapArray = array.expenseArray.map(x => 
+    {
+      x.user_id = req.session.user_id
+      return x
+    })
+
+  Expense_Form.bulkCreate(mapArray)
   .then(dbExpFormData => res.json(dbExpFormData))
   .catch(err => {
     console.log(err)
