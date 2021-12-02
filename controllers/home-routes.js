@@ -16,11 +16,11 @@ router.get('/login', (req,res) => {
 })
 
 router.get('/tracker', (req, res) => {
-  res.render('expense-tracker')
+  res.render('expense-tracker', {loggedIn: req.session.loggedIn})
 })
 
 router.get('/calc', (req, res) => {
-  res.render('calculator')
+  res.render('calculator', {loggedIn: req.session.loggedIn})
 })
 
 
@@ -31,7 +31,7 @@ router.get('/about', (req, res) => {
   cardList.push({ imgsrc: "images/blank.jpg", contributor: "Inmar Luna", title: "Some Title", abouttext: "about inmar", github: "inmar github", email: "inmar@inmar.inmar" });
   cardList.push({ imgsrc: "images/ben.jpg", contributor: "Ben Vue", title: "Full Stack Student", abouttext: "Ben is Ben", github: "benyvue", email: "bvue012@gmail.com" });
   cardList.push({ imgsrc: "images/blank.jpg", contributor: "Collin Whalen", title: "Some Title", abouttext: "about collin", github: "collin github", email: "collin@collin.collin" });
-  res.render('about', {cardList: cardList });
+  res.render('about', {cardList: cardList, loggedIn: req.session.loggedIn});
 })
 
 
