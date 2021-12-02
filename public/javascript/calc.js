@@ -103,6 +103,9 @@ $('#calculate').click(() => {
     let num1 = a.reduce((x, y) => x + y);
     let num2 = b.reduce((x, y) => x + y);
 
+   num1 = parseInt(num1)
+   num2 = parseInt(num2)
+
     // console.log(num1)
     // console.log(num2)
     // console.log(operator)
