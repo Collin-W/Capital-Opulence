@@ -24,10 +24,15 @@
 
     <p>Click the add button to add a new form element.</p>
 
-    <a href="/" class="btn-styles anch-styles ">Homepage</a>
+    
 
+        {{#if loggedIn}}
+        <a href="/" class="btn-styles anch-styles ">Homepage</a>
         <button id="expense-form-add-btn" class="btn-styles">Add</button>
         <button id="submit-expense-row" class="btn-styles">Submit</button>
+        {{else}}
+        <a href="/" class="btn-styles anch-styles ">Homepage</a>
+        {{/if}}
 
         <!-- datalist for the gain loss input -->
         <datalist id="gain-loss">
