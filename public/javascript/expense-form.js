@@ -1,37 +1,7 @@
 let expenseArray = [
 
-    // {
-    //     date: '2021-01-01',
-    //     gainLoss: 'Loss',
-    //     description: 'car payment',
-    //     amount: '300'
-    // },
-    // {
-    //     date: '2021-01-02',
-    //     gainLoss: 'Gain',
-    //     description: 'fast food',
-    //     amount: '15'
-    // },
-    // {
-    //     date: '2021-01-03',
-    //     gainLoss: 'Loss',
-    //     description: 'new shoes',
-    //     amount: '75'
-    // },
-    // {
-    //     date: '2021-01-04',
-    //     gainLoss: 'Loss',
-    //     description: 'bill',
-    //     amount: '25'
-    // },
-    // {
-    //     date: '2021-01-05',
-    //     gainLoss: 'Loss',
-    //     description: 'bought ticket',
-    //     amount: '5'
-    // }
-
 ];
+
 let i = 0;
 let del = 0;
 
@@ -58,7 +28,7 @@ $("#expense-form-add-btn").click((evt) => {
         date: $('#expense-date').val().trim(),
         gainLoss: gainLoss,
         description: $('#expense-description').val().trim(),
-        amount: amount
+        amount: amount,
     }
 
     console.log(JSON.stringify(rowObj) + "object " + i++)
@@ -134,3 +104,65 @@ $('#expense-row-list').on('click', ".delete-btn", function (evt) {
 
     expenseArray.splice(test, 1)
 })
+
+//chart.js/post request
+$('#submit-expense-row').click( async(evt) => {
+    evt.preventDefault()
+    const res = await fetch('/api/expform', {
+        method: 'post',
+        body: JSON.stringify({
+            expenseArray,
+        }),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+
+    if(res.ok){
+        chartJS()
+    }else {
+        alert(res.statusText)
+    }
+
+   
+
+
+})
+
+
+function chartJS () {
+    dateArray = expenseArray.map((x) => {
+        return x.date
+    })
+
+    intArray = expenseArray.map((x) => {
+        return x.amount
+    })
+
+    const labels = dateArray
+
+
+    const data = {
+        labels: labels,
+        datasets: [{
+            label: 'Daily Expenses',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            // data is money
+            data: intArray,
+        }]
+    };
+
+
+    const config = {
+        type: 'bar',
+        data: data,
+        options: {}
+    };
+
+
+    const myChart = new Chart(
+        document.getElementById('myChart'),
+        config
+    );
+}

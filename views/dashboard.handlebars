@@ -1,14 +1,16 @@
-<div>
+<div class="dash-div">
   <h3>Expense Forms</h3>
 
   <h4> {{usersName.first_name}} {{usersName.last_name}}</h4>
-
+ 
   {{#each EXPForms}}
-  <div>
-    <p>Date: <span>{{date}}</span></p>
-    <p>Description: <span>{{description}}</span></p>
-    <p>Amount: <span>{{amount}}</span></p>
-  </div>
-  {{/each}}
+    <div class="dash-expform-div">
+      
+      <p class="mt-l">Date: <span>{{date}}</span></p>
+      <p>Description: <span>{{description}}</span></p>
+      <p>Amount: <span>{{amount}}</span></p>
+    </div>
+    {{/each}}
 
+ <a href="/" class="dash-a">Homepage</a>
 </div>
