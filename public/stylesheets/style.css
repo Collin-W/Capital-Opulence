@@ -166,5 +166,8 @@ footer{
     border: solid 2px black;
 }
 
+.card {
+    border: solid 2px rgb(27, 27, 27)
+}
 
 
