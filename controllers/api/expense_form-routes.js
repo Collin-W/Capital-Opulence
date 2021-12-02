@@ -54,7 +54,6 @@ router.get('/:id', (req, res) => {
   })
 })
 
-// const seedLogs = () => Expense_Form.bulkCreate(logdata);
 
 //create expense form
 router.post('/', (req, res) => {

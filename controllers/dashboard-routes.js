@@ -26,12 +26,36 @@ router.get('/', (req, res) => {
       usersName = ''
     }
 
-    res.render('dashboard', {EXPForms, usersName})
+    res.render('dashboard', {EXPForms, usersName, loggedIn: req.session.loggedIn})
   })
   .catch(err => {
     console.log(err)
     res.status(500).json(err)
   })
 })
+
+//get post by id to update it 
+router.get("/update/:id", (req, res) => {
+  Expense_Form.findOne({
+    where:{
+      id: req.params.id
+    }
+  })
+  .then( dbEXPFormData => {
+    if(!dbEXPFormData){
+      res.status(400).json({ message: 'No expense form found with that id'})
+      return
+    }
+
+    const expForm = dbEXPFormData.get({plain: true})
+   
+    res.render('update-expform', {expForm, loggedIn: req.session.loggedIn})
+  })
+  .catch(err => {
+    console.log(err)
+    res.status(500).json(err)
+  })
+})
+
 
 module.exports = router

@@ -16,7 +16,7 @@ Expense_Form.init(
       type: DataTypes.DATEONLY,
       allowNull: false,
     },
-    type: {
+    gain_loss: {
       type: DataTypes.STRING(),
       allowNull: false,
       defaultValue: '',

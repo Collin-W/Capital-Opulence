@@ -6,12 +6,12 @@ let del = 0;
 $("#expense-form-add-btn").click((evt) => {
   //  console.log('add button')
 
-    let gainLoss = $('#expense-gain-loss').val().trim()
+    let gain_loss = $('#expense-gain-loss').val().trim()
     let amount = $('#expense-amount').val().trim()
 
     evt.preventDefault();
 
-    if (gainLoss === 'Loss') {
+    if (gain_loss === 'Loss') {
         amount = -Math.abs(amount);
       //  console.log(amount)
 
@@ -23,7 +23,7 @@ $("#expense-form-add-btn").click((evt) => {
 
     let rowObj = {
         date: $('#expense-date').val().trim(),
-        gainLoss: gainLoss,
+        gain_loss: gain_loss,
         description: $('#expense-description').val().trim(),
         amount: amount,
     }
@@ -46,7 +46,7 @@ $("#expense-form-add-btn").click((evt) => {
         type: "boolean",
         placeholder: "Gain/Loss",
         list: "gain-loss",
-        value: rowObj.gainLoss
+        value: rowObj.gain_loss
     });
     let inputDescription = $("<input>", {
         class: "expense-input expense-description",

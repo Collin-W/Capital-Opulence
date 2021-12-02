@@ -1,0 +1,32 @@
+<div class="update-div">
+
+  <h4 class="mt-l">Current Expense Form Data</h4>
+
+  <form class="update-form mt">
+    <div class="update-form-div">
+      <p>{{expForm.date}}</p>
+      <input id="expense-date" class="expense-input expense-date" type="date" placeholder="Date Of Expense"> 
+    </div>
+    <div class="update-form-div ml">
+      <p class="update-cd-p">{{expForm.gain_loss}}</p>
+      <input id="expense-gain-loss" class="expense-input expense-gain-loss" type="boolean" placeholder="Gain/Loss" list="gain-loss">
+    </div>
+    <div class="update-form-div ml">
+       <p class="update-cd-p">{{expForm.description}}</p>
+      <input id="expense-description" class="expense-input expense-description" type="text" placeholder="Description Of Expense">
+    </div>
+    <div class="update-form-div ml">
+      <p class="update-cd-p">{{expForm.amount}}</p>
+      <input id="expense-amount" class="expense-input expense-amount" type="number" placeholder="Amount - Or +">
+    </div>
+
+  </form>
+
+  <datalist id="gain-loss">
+    <option value="Loss">
+    <option value="Gain"> 
+  </datalist>
+  <button type="button" class="update-btn mt mb" id="update-btn">Update Form</button>
+</div>
+
+<script src="/javascript/update-expform.js"></script>
