@@ -38,12 +38,12 @@
               
               {{#if loggedIn}}
                 <a href="/tracker" id="start-expense-tracker" class="anch-styles">Expense Tracker</a>
-                <a href="/calc" id="start-calculator" class="anch-styles">Finance Calculator</a>
-                <a href="/dashboard" class="anch-styles">Dashboard</a>
-                <a href="/about" class="btn-styles anch-styles" style="width: 100px;">About</a>
-                <button id='logout-btn' type="button" class="btn-styles anch-styles" style="width: 100px;">logout</button>                
+                <a href="/calc" id="start-calculator" class="anch-styles ml">Finance Calculator</a>
+                <a href="/dashboard" class="anch-styles ml">Dashboard</a>
+                <a href="/about" class="btn-styles anch-styles ml" style="width: 100px;">About</a>
+                <button id='logout-btn' type="button" class="btn-styles anch-styles ml" style="width: 100px;">logout</button>                
               {{else}}
-                <a href="/about" class="btn-styles anch-styles" >About</a>
+                <a href="/about" class="btn-styles anch-styles ml" >About</a>
                 <a href="/login" class="btn-styles anch-styles ml" >Login</a>
               {{/if}}
               </ul>
