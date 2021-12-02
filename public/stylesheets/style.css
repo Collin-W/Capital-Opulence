@@ -17,14 +17,22 @@ body {
 
 
 /* margin stlyes */
+/* margin left */
 .ml{
     margin-left: 2rem;
 }
-
+/* margin top */
 .mt{
     margin-top: 2rem;
 }
-
+/* margin top but less */
+.mt-l{
+    margin-top: 1.25rem;
+}
+/* font increase */
+.font-in{
+    font-size: 1.25rem;
+}
 
 header {
     box-sizing: border-box;
@@ -186,3 +194,43 @@ footer{
 /* end expense form styling */
 
 
+/* dashboard styling */
+
+
+.dash-expform-div{
+    border: solid black 2px;
+    margin-bottom: 1%;
+    width: 50%;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    background-color: var(--primary-color);
+    color: black;
+}
+
+.dash-div{
+    display: flex; 
+    align-items: center;
+    flex-direction: column;
+}
+
+.dash-a{
+    text-decoration: none;
+    color: black;
+    font-size: 1.25rem;
+    background-color: var(--quaternary-color);
+    padding: 5px 15px 5px 15px;
+    border-radius: 10px;
+    border: solid black 2px;
+    border-radius: 8px;
+    box-shadow: 3px 3px black;
+    margin-top: 1%;
+    margin-bottom: 2%;
+}
+
+/* homepage styling */
+.content-homepage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
