@@ -39,6 +39,7 @@ body {
 
 header {
     box-sizing: border-box;
+    min-height: 100px;
     border-bottom: solid 5px black;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     background-color: var(--primary-color);

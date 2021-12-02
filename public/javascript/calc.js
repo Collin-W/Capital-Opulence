@@ -8,6 +8,13 @@ let calcWindow = $('#calculator-window')
 
 $('#submit-expense-row').click(() => {
 
+    let totalLoss;
+    let totalGains;
+   
+    //on submit renders the chart and hides the form
+    //$(".exp-div-hide").effect('slide', {direction: 'right', duration: 1000});
+    $(".exp-div-hide").hide(1000)
+
     ifArray = expenseArray.map((x) => {
         return {
             gainLoss: x.gainLoss,
@@ -21,20 +28,28 @@ $('#submit-expense-row').click(() => {
 
             gainArray.push(parseInt(ifArray[i].amount));
 
-            let totalGains = gainArray.reduce((a, b) => a + b, 0);
+            totalGains = gainArray.reduce((a, b) => a + b, 0);
 
             console.log("your total gains are " + totalGains);
-
 
         } else {
 
             lossArray.push(parseInt(ifArray[i].amount));
 
-            let totalLoss = lossArray.reduce((a, b) => a + b, 0);
+            totalLoss = lossArray.reduce((a, b) => a + b, 0);
 
             console.log("your total loss are " + totalLoss);
         }
     });
+
+    let pEl = $("<p>", {
+        class: "totalGainLoss-p-tag",
+        type: "text",
+        text: `Total gains: ${totalGains} Total loss: ${totalLoss}`
+    });
+
+    $('#expense-chart').append(pEl)
+
 })
 
 //calculator
@@ -142,7 +157,7 @@ $('.delete').click(function () {
         calcWindow.val(a.join(''))
     } else {
 
-        //add operator delelte
+        //add operator delete
 
         b.pop()
         calcWindow.val(b.join(''))

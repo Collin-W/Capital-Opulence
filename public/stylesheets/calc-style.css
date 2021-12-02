@@ -1,45 +1,67 @@
+#expense-form-and-data {
+    display: flex;
+    justify-content: space-between;
+}
+
 #calculator {
-    width: 250px;
-    height: 400px;
+    width: 12%;
     border-radius: 30px;
-    background-color: lightblue;
-    margin: 2%;
-    padding: 2%;
+    background-color: #C6E4F5;
+    margin: 1.8% 0 1.8% 85%;
+    padding: 0.8%;
+    position: absolute;
+    position: sticky;
+    position: -webkit-sticky;
+    bottom: 0;
+    right: 0;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: 80%;
+    z-index: 9999;
+    position: right;
 }
 
 .calc-row {
-    margin: 10px 5px 10px 5px;
+    margin: 2.3% 1.1% 2.3% 1.1%;
     justify-content: space-between;
 }
 
 #calculator-window {
     border-radius: 10px;
-    min-height: 60px;
-    font-size: 40px;
+    min-height: 1%;
+    font-size: 1.7rem;
     padding: 2%;
 }
 
 .calc-btn-style {
     border: 2px solid #66F06F;
-    background-color: palegoldenrod;
+    background-color: #FFEFCF;
     width: 22%;
     border-radius: 10px;
-    padding: 5px;
-    margin: 2px;
-    font-size: 20px;
+    padding: 1%;
+    margin: 1.5%;
+    font-size: 1rem;
 }
 
 .calc-btn-special {
     border: 2px solid #66F06F;
-    background-color: palegoldenrod;
+    background-color: #FFEFCF;
     width: 45%;
     border-radius: 10px;
-    padding: 5px;
-    margin: 2px;
-    font-size: 20px;
+    padding: 1%;
+    margin: 1.4%;
+    font-size: 1.0rem;
 }
 
+#expense-chart{
+    display:flex;
+    justify-content: space-around;
+}
+#expense-chart.p{
+    font-size: xx-large;
+}
 
-/* #calculate{
-
-} */
+#myChart{
+    max-height: 550px;
+    max-width: 800px;
+}
