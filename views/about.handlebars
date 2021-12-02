@@ -1,22 +1,34 @@
-<div class="about-section">
-    <h1>About the Team</h1>
-    <p>Some text that needs filled in later</p>
-</div>
+<div class="container">
+    <div class="w-100 p-1 container d-flex about-section row">
+        <h1 class="w-100 p-1 d-flex justify-content-center about-header1">About the Team</h1>
+    </div>
+    <div class="row">
+        <p class="d-flex row w-100 p-3" id="about-text">Some text that needs filled in later</p>
+    <div class="row">
 
-<h2>Our Team</h2> <!--should be centered?-->
-<div class="row">
-    {{#each cardList}}
-    <div class="column">
-        <div class="card">
-            <img width="10%" src="{{this.imgsrc}}">
-            <div class="container">
-                <h2>{{this.contributor}}</h2>
-                <p class="title">{{this.title}}</p>
-                <p>{{this.abouttext}}</p>
-                <p>{{this.github}}</p>
-                <p><button class="button" data="{{this.email}}">Contact</button></p>
+    <div class="container">
+        <h2 class="d-flex justify-content-center about-h2">Our Team</h2> <!--should be centered?-->
+        <div class="d-flex justify-content-center row">
+            {{#each cardList}}
+            <div class="col-sm-4">
+                <div class="card mt-2 mb-2">
+                    <img class="card-img-top p-4" src="{{this.imgsrc}}">
+                    <div class="card-body">
+                        <h4 class="card-title lead">{{this.contributor}}</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">{{this.title}}</h6>
+                        <p class="card-text">{{this.abouttext}}</p>
+                        <div class="d-flex row justify-content-around">
+                            <div class="btn btn-dark d-flex justify-content-center col-sm-2">
+                                <a href={{this.github}}><img alt="GitHub Mark" src="/images/gh-mark.png"></a>
+                            </div>
+                            <div class="btn btn-dark d-flex justify-content-center col-sm-2">
+                                <a href="mailto:{{this.email}}?subject=Re: Capital Opulence"><img alt="Email Mark" src="/images/email-mark.png"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+            {{/each}}
         </div>
     </div>
-    {{/each}}
 </div>
