@@ -1,6 +1,8 @@
 <link rel="stylesheet" href="/stylesheets/calc-style.css">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
+
+<wrapper id='expense-form-and-data'>
 <fieldset id="expense-form-fieldset"  class="expense-form-styles">
 
 <legend>Expense Form</legend>
@@ -35,14 +37,9 @@
         </datalist>
 </fieldset>
 
-<section id="expense-chart">
-        <canvas style="max-height: 400px; max-width: 500px;" id="myChart"></canvas>
- 
-    </section>
+</wrapper>
 
-
-
-<section class="container" id="calculator">
+<section style="position: right;" class="container" id="calculator">
 
     {{!-- <div class="row calc-row"> --}}
  
@@ -78,6 +75,13 @@
  </div>
  {{!-- </div> --}}
 </section>
+
+<section id="expense-chart">
+        <canvas style="max-height: 400px; max-width: 500px;" id="myChart"></canvas>
+</section>
+
+
+
 
 {{> footer }}
 

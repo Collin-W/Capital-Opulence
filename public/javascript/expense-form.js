@@ -1,37 +1,4 @@
-let expenseArray = [
-
-    // {
-    //     date: '2021-01-01',
-    //     gainLoss: 'Loss',
-    //     description: 'car payment',
-    //     amount: '300'
-    // },
-    // {
-    //     date: '2021-01-02',
-    //     gainLoss: 'Gain',
-    //     description: 'fast food',
-    //     amount: '15'
-    // },
-    // {
-    //     date: '2021-01-03',
-    //     gainLoss: 'Loss',
-    //     description: 'new shoes',
-    //     amount: '75'
-    // },
-    // {
-    //     date: '2021-01-04',
-    //     gainLoss: 'Loss',
-    //     description: 'bill',
-    //     amount: '25'
-    // },
-    // {
-    //     date: '2021-01-05',
-    //     gainLoss: 'Loss',
-    //     description: 'bought ticket',
-    //     amount: '5'
-    // }
-
-];
+let expenseArray = [];
 let i = 0;
 let del = 0;
 
@@ -48,6 +15,10 @@ $("#expense-form-add-btn").click((evt) => {
     if (gainLoss === 'Loss') {
         amount = -Math.abs(amount);
         console.log(amount)
+
+        for(i = 0; i > expenseArray.length; i++) {
+        //expenseArray
+        }
 
     } else {
         console.log('Gain')
@@ -134,3 +105,13 @@ $('#expense-row-list').on('click', ".delete-btn", function (evt) {
 
     expenseArray.splice(test, 1)
 })
+
+
+
+// `<p>
+//         Total gains: ${}
+//         Total loss: ${}     
+// </p>
+// `
+
+
