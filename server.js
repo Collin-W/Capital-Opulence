@@ -35,6 +35,6 @@ app.use(session(sess))
 //use routes
 app.use(routes);
 
-sequelize.sync({ force: false}).then(() => {
+sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log(`App listening on port http://localhost:${PORT}`));
 })
