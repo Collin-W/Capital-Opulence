@@ -18,6 +18,7 @@
     background-attachment: fixed;
     background-position: 80%;
     z-index: 9999;
+    position: right;
 }
 
 .calc-row {
@@ -50,4 +51,17 @@
     padding: 1%;
     margin: 1.4%;
     font-size: 1.0rem;
+}
+
+#expense-chart{
+    display:flex;
+    justify-content: space-around;
+}
+#expense-chart.p{
+    font-size: xx-large;
+}
+
+#myChart{
+    max-height: 550px;
+    max-width: 800px;
 }

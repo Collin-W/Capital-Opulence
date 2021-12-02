@@ -2,10 +2,9 @@ let expenseArray = [];
 let i = 0;
 let del = 0;
 
-
 // listens to the expense form only
 $("#expense-form-add-btn").click((evt) => {
-    console.log('add button')
+  //  console.log('add button')
 
     let gainLoss = $('#expense-gain-loss').val().trim()
     let amount = $('#expense-amount').val().trim()
@@ -14,12 +13,9 @@ $("#expense-form-add-btn").click((evt) => {
 
     if (gainLoss === 'Loss') {
         amount = -Math.abs(amount);
-        console.log(amount)
+      //  console.log(amount)
 
-        for(i = 0; i > expenseArray.length; i++) {
-        //expenseArray
-        }
-
+      
     } else {
         console.log('Gain')
     }
@@ -36,7 +32,7 @@ $("#expense-form-add-btn").click((evt) => {
 
     expenseArray.push(rowObj)
 
-    console.log(expenseArray)
+   // console.log(expenseArray)
 
     //this will render the html for a new row of form elements on an add button click
     let inputDate = $("<input>", {
@@ -79,7 +75,7 @@ $("#expense-form-add-btn").click((evt) => {
     // let inputDataAtt = jQuery.data(newInputRow, 'inputRow', 'row ' + i++)
 
     $(newInputRow).append(inputDate, inputGainLoss, inputDescription, inputAmount, deleteBtn)
-    console.log(newInputRow)
+   // console.log(newInputRow)
 
     $('#expense-row-list').append(newInputRow)
 
@@ -96,11 +92,11 @@ $('#expense-row-list').on('click', ".delete-btn", function (evt) {
     let btnIndex = this.value
     let test = btnIndex
 
-    console.log(btnIndex + " btn counter")
+    // console.log(btnIndex + " btn counter")
 
-    console.log(expenseArray + " expense array")
+    // console.log(expenseArray + " expense array")
 
-    console.log(test + " test")
+    // console.log(test + " test")
 
 
     expenseArray.splice(test, 1)
@@ -124,11 +120,8 @@ $('#submit-expense-row').click( async(evt) => {
     }else {
         alert(res.statusText)
     }
-
-   
-
-
 })
+
 
 
 function chartJS () {
@@ -167,10 +160,3 @@ function chartJS () {
         config
     );
 }
-
-
-// `<p>
-//         Total gains: ${}
-//         Total loss: ${}     
-// </p>
-// `
