@@ -21,6 +21,9 @@ body {
 .ml{
     margin-left: 2rem;
 }
+.ml-l{
+    margin-left: 1.25rem;
+}
 /* margin top */
 .mt{
     margin-top: 2rem;
@@ -49,17 +52,20 @@ h1 {
 
 h2 {
     font-size: 3em;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .nav-styles {
     display: flex;
     justify-content: end;
     align-items: end;
+    font-size: 1.3rem;
 }
 
 .ul-styles {
     display: flex;
-    justify-content: space-around;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    font-weight: bold;
 }
 
 .description {
@@ -72,6 +78,12 @@ section {
     padding: 60px 60px;
 }
 
+.walker-img {
+    margin: 100px;
+    padding: 10px;
+}
+
+/* btn styles */
 .btn-styles {
     border: solid black 2px;
     border-radius: 8px;
@@ -96,7 +108,9 @@ section {
     top: 0;
     box-shadow: none;
 }
+/* end btn styles */
 
+/* anchor styles */
 .anch-styles {
     text-decoration: none;
     color: black;
@@ -114,7 +128,9 @@ section {
 .header-anch:hover {
     color: black;
 }
+/* end anchor styles */
 
+/* footer styles */
 .footer-anchors {
     color: black;
     text-decoration: none;
@@ -154,6 +170,7 @@ footer{
     color: white;
     box-shadow: none;
 }
+/* end footer styles */
 
 /* expense form styling */
 
@@ -171,10 +188,15 @@ footer{
     justify-content: center;
 }
 
+.exp-form-head {
+    font-size: 3rem;
+}
+
 .exp-styles {
     border: solid 2px black;
 }
 
+/* end expense form styling */
 .card {
     border: solid 2px rgb(27, 27, 27)
 }
@@ -219,4 +241,11 @@ footer{
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.img-portrait {
+    float: left;
+    width: 400px;
+    height: 550px;
+    object-fit: cover;
 }
