@@ -222,3 +222,10 @@ footer{
     flex-direction: column;
     align-items: center;
 }
+
+.img-portrait {
+    float: left;
+    width: 400px;
+    height: 550px;
+    object-fit: cover;
+}
