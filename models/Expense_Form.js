@@ -17,7 +17,7 @@ Expense_Form.init(
       allowNull: false,
     },
     type: {
-      type: DataTypes.ENUM('expense', 'income', ''),
+      type: DataTypes.STRING(),
       allowNull: false,
       defaultValue: '',
     },

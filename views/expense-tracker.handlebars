@@ -1,11 +1,15 @@
 <link rel="stylesheet" href="/stylesheets/calc-style.css">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
+<<<<<<< HEAD
 
 <wrapper id='expense-form-and-data'>
+=======
+<div class="exp-div">
+>>>>>>> f77495881b6db35740665c720124f16d9599064f
 <fieldset id="expense-form-fieldset"  class="expense-form-styles">
-
-<legend>Expense Form</legend>
+<div>
+ <legend>Expense Form</legend>
 
   <form id="expense-form" class="exp-style">
       <div id="main-expense-row">
@@ -25,19 +29,34 @@
 
     <p>Click the add button to add a new form element.</p>
 
-    <button class='go-back-home btn-styles'>Go Back</button>
+    
 
+        {{#if loggedIn}}
+        <a href="/" class="btn-styles anch-styles ">Homepage</a>
         <button id="expense-form-add-btn" class="btn-styles">Add</button>
         <button id="submit-expense-row" class="btn-styles">Submit</button>
+        {{else}}
+        <a href="/" class="btn-styles anch-styles ">Homepage</a>
+        {{/if}}
 
         <!-- datalist for the gain loss input -->
         <datalist id="gain-loss">
             <option value="Loss">
             <option value="Gain"> 
         </datalist>
-</fieldset>
+</div>
 
+</fieldset>
+</div>
+
+
+<<<<<<< HEAD
 </wrapper>
+=======
+<section id="expense-chart">
+<canvas style="max-height: 400px; max-width: 500px;" id="myChart"></canvas>
+</section>
+>>>>>>> f77495881b6db35740665c720124f16d9599064f
 
 <section style="position: right;" class="container" id="calculator">
 
@@ -76,6 +95,7 @@
  {{!-- </div> --}}
 </section>
 
+<<<<<<< HEAD
 <section id="expense-chart">
         <canvas style="max-height: 400px; max-width: 500px;" id="myChart"></canvas>
 </section>
@@ -85,6 +105,8 @@
 
 {{> footer }}
 
+=======
+>>>>>>> f77495881b6db35740665c720124f16d9599064f
 <script src="/javascript/chart.js"></script>
 <script src="/javascript/expense-form.js"></script>
 <script src="/javascript/calc.js"></script>
