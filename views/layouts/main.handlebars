@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Capital Opulence</title>
-    <link rel="stylesheet" href="/stylesheets/style.css">
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
@@ -17,58 +16,50 @@
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" 
     crossorigin="anonymous">
 
-    <!-- google fonts style, Oswald style -->
+    <!-- google fonts style, Oswald -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
-    <!-- google fonts style, Abril Fatface -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Oswald&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 
-<body>
+<body style="background-color: #FFEFCF">
 
   <div class="wrapper">
     <header class="row hero">
-        <h1 id="title" class="col-9">
-          <a href="/">Capital Opulence</a>
+        <h1 class="col-7">
+          <a href="/"  id="title" class="header-anch" style="font-size: 3em;">Capital Opulence</a>
+          <img src="public/images" alt="icon">
         </h1>
-        <div class="col-3">
-            <nav class="row align-items-end">
-                <a href="/about" class="btn-styles" style="width: 20%;">About</a>
+        <div class="col-5 nav-styles">
+            <nav class="row">
+              <ul class="ul-styles">
+              
               {{#if loggedIn}}
-                <a href="/tracker" class="anch-styles">Expense Tracker</a>
-                <a href="/calc" class="anch-styles">Finance Calculator</a>
-                <a href="/dashboard">Dashboard</a>
-                <button id='logout' type="button" class="btn-styles" style="width: 20%;">logout</button>                
+                <a href="/tracker" id="start-expense-tracker" class="anch-styles">Expense Tracker</a>
+                <a href="/calc" id="start-calculator" class="anch-styles">Finance Calculator</a>
+                <a href="/dashboard" class="anch-styles">Dashboard</a>
+                <a href="/about" class="btn-styles anch-styles" style="width: 100px;">About</a>
+                <button id='logout-btn' type="button" class="btn-styles anch-styles" style="width: 100px;">logout</button>                
               {{else}}
-                <a href="/login" class="anch-styles">Login</a>
+                <a href="/about" class="btn-styles anch-styles" >About</a>
+                <a href="/login" class="btn-styles anch-styles ml" >Login</a>
               {{/if}}
+              </ul>
             </nav>
         </div>
     </header>
     <main>
       {{{ body }}}
     </main>
-    <footer>
-      <p style="font-size: 18px;"><strong>Thank you for visting our page</strong><span>&#128151;</span></p>
-    <p><strong>Creators</strong></p>
-    <div>
-      {{!-- these will be github links --}}
-        <a href="">Ben</a>
-        <a href="">Tom</a>
-        <a href="">Inmar</a>
-        <a href="">Collin</a>
-        <a href="">Mark</a>
-    </div>
-    </footer>
+    
   </div>
-<!--  Implement later
+
   {{#if loggedIn}}
   <script src="/javascript/logout.js"></script>
   {{/if}}
--->
+
 </body>
 
 

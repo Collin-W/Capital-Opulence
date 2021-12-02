@@ -47,16 +47,15 @@ router.post('/', (req, res) => {
     password: req.body.password
   })
   .then(dbUserData => {
-    //start new sessions when user is created
-    // req.session.save( () => {
-    //   req.session.user_id = dbUserData.id
-    //   req.session.email = dbUserData.email
-    //   req.session.loggedIn = true
+    // start new sessions when user is created
+    req.session.save( () => {
+      req.session.user_id = dbUserData.id
+      req.session.email = dbUserData.email
+      req.session.loggedIn = true
       
-    //   res.json(dbUserData)
-    // })
+      res.json(dbUserData)
+    })
 
-    res.json(dbUserData)
   })
   .catch(err => {
     console.log(err)
@@ -126,12 +125,16 @@ router.post('/login', (req, res) => {
     }
 
     req.session.save( () => {
-      req.session.user_id = dbUserData.user_id
-      req.session.email = dbUserData.id
+      req.session.user_id = dbUserData.id
+      req.session.email = dbUserData.email
       req.session.loggedIn = true
 
       res.json({ user: dbUserData, message: "You are now logged in"})
     })
+    })
+    .catch( err => {
+      console.log(err)
+      res.status(500).json(err)
   })
 })
 

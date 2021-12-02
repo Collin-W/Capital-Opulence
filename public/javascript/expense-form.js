@@ -39,15 +39,25 @@ let i = 0;
 $("#expense-form-add-btn").click((evt) => {
     console.log('add button')
 
+   let gainLoss = $('#expense-gain-loss').val().trim()
+   let amount = $('#expense-amount').val().trim()
+
     evt.preventDefault();
+
+    if(gainLoss === 'Loss') {
+        amount = -Math.abs(amount);
+        console.log(amount)
+
+    } else {
+        console.log('Gain')
+    }
 
 
     let rowObj = {
         date: $('#expense-date').val().trim(),
-        gainLoss: $('#expense-gain-loss').val().trim(),
+        gainLoss: gainLoss,
         description: $('#expense-description').val().trim(),
-        amount: $('#expense-amount').val().trim()
-
+        amount: amount
     }
 
     console.log(JSON.stringify(rowObj) + "object " + i++)
