@@ -40,6 +40,7 @@ h1 {
 
 h2 {
     font-size: 3em;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .nav-styles {
@@ -51,7 +52,8 @@ h2 {
 
 .ul-styles {
     display: flex;
-    justify-content: space-around;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    font-weight: bold;
 }
 
 .description {
@@ -136,6 +138,10 @@ footer {
     padding: 50px;
     border: solid 2px black;
     width: 50%;
+}
+
+.exp-form-head {
+    font-size: 3rem;
 }
 
 .exp-styles {
