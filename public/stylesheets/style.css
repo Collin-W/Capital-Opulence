@@ -46,6 +46,7 @@ h2 {
     display: flex;
     justify-content: end;
     align-items: end;
+    font-size: 1.3rem;
 }
 
 .ul-styles {
