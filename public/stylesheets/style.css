@@ -21,6 +21,9 @@ body {
 .ml{
     margin-left: 2rem;
 }
+.ml-l{
+    margin-left: 1.25rem;
+}
 /* margin top */
 .mt{
     margin-top: 2rem;
