@@ -21,6 +21,9 @@ body {
 .ml{
     margin-left: 2rem;
 }
+.ml-l{
+    margin-left: 1.25rem;
+}
 /* margin top */
 .mt{
     margin-top: 2rem;
@@ -193,6 +196,9 @@ footer{
 }
 
 /* end expense form styling */
+.card {
+    border: solid 2px rgb(27, 27, 27)
+}
 
 
 /* dashboard styling */
@@ -234,4 +240,11 @@ footer{
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.img-portrait {
+    float: left;
+    width: 400px;
+    height: 550px;
+    object-fit: cover;
 }
