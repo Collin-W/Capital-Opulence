@@ -1,50 +1,21 @@
 let expenseArray = [
 
-    {
-        date: '2021-01-01',
-        gainLoss: 'Loss',
-        description: 'car payment',
-        amount: '300'
-    },
-    {
-        date: '2021-01-02',
-        gainLoss: 'Gain',
-        description: 'fast food',
-        amount: '15'
-    },
-    {
-        date: '2021-01-03',
-        gainLoss: 'Loss',
-        description: 'new shoes',
-        amount: '75'
-    },
-    {
-        date: '2021-01-04',
-        gainLoss: 'Loss',
-        description: 'bill',
-        amount: '25'
-    },
-    {
-        date: '2021-01-05',
-        gainLoss: 'Loss',
-        description: 'bought ticket',
-        amount: '5'
-    }
-
 ];
+
 let i = 0;
+let del = 0;
 
 
 // listens to the expense form only
 $("#expense-form-add-btn").click((evt) => {
     console.log('add button')
 
-   let gainLoss = $('#expense-gain-loss').val().trim()
-   let amount = $('#expense-amount').val().trim()
+    let gainLoss = $('#expense-gain-loss').val().trim()
+    let amount = $('#expense-amount').val().trim()
 
     evt.preventDefault();
 
-    if(gainLoss === 'Loss') {
+    if (gainLoss === 'Loss') {
         amount = -Math.abs(amount);
         console.log(amount)
 
@@ -57,7 +28,7 @@ $("#expense-form-add-btn").click((evt) => {
         date: $('#expense-date').val().trim(),
         gainLoss: gainLoss,
         description: $('#expense-description').val().trim(),
-        amount: amount
+        amount: amount,
     }
 
     console.log(JSON.stringify(rowObj) + "object " + i++)
@@ -95,15 +66,18 @@ $("#expense-form-add-btn").click((evt) => {
 
     let deleteBtn = $("<button>", {
         text: "X",
-        onclick: "Delete(this);",
+        type: 'button',
+        // onclick: "Delete(this);",
+        class: 'delete-btn btn-styles',
+        value: del++
 
     })
 
     let newInputRow = document.createElement('li');
 
-    let inputDataAtt = jQuery.data(newInputRow, 'inputRow', 'row ' + i++)
+    // let inputDataAtt = jQuery.data(newInputRow, 'inputRow', 'row ' + i++)
 
-    $(newInputRow).append(inputDate, inputGainLoss, inputDescription, inputAmount, deleteBtn, inputDataAtt)
+    $(newInputRow).append(inputDate, inputGainLoss, inputDescription, inputAmount, deleteBtn)
     console.log(newInputRow)
 
     $('#expense-row-list').append(newInputRow)
@@ -112,12 +86,83 @@ $("#expense-form-add-btn").click((evt) => {
     $('#main-expense-row :input').val('')
 });
 
+$('#expense-row-list').on('click', ".delete-btn", function (evt) {
 
-// COLLECTS expense form data and pushes it into an array.
-//for chart js I am going to start with just the spending data
-// $('#submit-expense-row').click(() => {
+    evt.preventDefault();
 
-//     expenseArray
+    $(this.parentNode).remove()
+
+    let btnIndex = this.value
+    let test = btnIndex
+
+    console.log(btnIndex + " btn counter")
+
+    console.log(expenseArray + " expense array")
+
+    console.log(test + " test")
 
 
-// });
+    expenseArray.splice(test, 1)
+})
+
+//chart.js/post request
+$('#submit-expense-row').click( async(evt) => {
+    evt.preventDefault()
+    const res = await fetch('/api/expform', {
+        method: 'post',
+        body: JSON.stringify({
+            expenseArray,
+        }),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+
+    if(res.ok){
+        chartJS()
+    }else {
+        alert(res.statusText)
+    }
+
+   
+
+
+})
+
+
+function chartJS () {
+    dateArray = expenseArray.map((x) => {
+        return x.date
+    })
+
+    intArray = expenseArray.map((x) => {
+        return x.amount
+    })
+
+    const labels = dateArray
+
+
+    const data = {
+        labels: labels,
+        datasets: [{
+            label: 'Daily Expenses',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            // data is money
+            data: intArray,
+        }]
+    };
+
+
+    const config = {
+        type: 'bar',
+        data: data,
+        options: {}
+    };
+
+
+    const myChart = new Chart(
+        document.getElementById('myChart'),
+        config
+    );
+}

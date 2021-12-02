@@ -15,6 +15,28 @@ body {
     background-color: var(--secondary-color);   
 }
 
+
+/* margin stlyes */
+/* margin left */
+.ml{
+    margin-left: 2rem;
+}
+.ml-l{
+    margin-left: 1.25rem;
+}
+/* margin top */
+.mt{
+    margin-top: 2rem;
+}
+/* margin top but less */
+.mt-l{
+    margin-top: 1.25rem;
+}
+/* font increase */
+.font-in{
+    font-size: 1.25rem;
+}
+
 header {
     box-sizing: border-box;
     border-bottom: solid 5px black;
@@ -29,17 +51,20 @@ h1 {
 
 h2 {
     font-size: 3em;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .nav-styles {
     display: flex;
     justify-content: end;
     align-items: end;
+    font-size: 1.3rem;
 }
 
 .ul-styles {
     display: flex;
-    justify-content: space-around;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    font-weight: bold;
 }
 
 .description {
@@ -52,6 +77,12 @@ section {
     padding: 60px 60px;
 }
 
+.walker-img {
+    margin: 100px;
+    padding: 10px;
+}
+
+/* btn styles */
 .btn-styles {
     border: solid black 2px;
     border-radius: 8px;
@@ -76,10 +107,12 @@ section {
     top: 0;
     box-shadow: none;
 }
+/* end btn styles */
 
+/* anchor styles */
 .anch-styles {
-    color: black;
     text-decoration: none;
+    color: black;
 }
 
 .anch-styles:hover {
@@ -94,7 +127,9 @@ section {
 .header-anch:hover {
     color: black;
 }
+/* end anchor styles */
 
+/* footer styles */
 .footer-anchors {
     color: black;
     text-decoration: none;
@@ -105,27 +140,111 @@ section {
     color: var(--tertiary-color);
 }
 
-footer {
-    position: fixed;
-    left: 0px;
-    bottom: 0px;
+.footer-div{
     display: flex;
-    justify-content: end;
-    position: absolute;
-    bottom: 0;
-    padding: 100px 0 10px 100px;
+    justify-content: center;
 }
 
+footer{
+    display: flex;
+    flex-direction: column;
+   align-items: center;
+   padding-bottom: 2%;
+}
+
+.footer-a{
+    text-decoration: none;
+    color: black;
+    font-size: 1.25rem;
+    background-color: var(--quaternary-color);
+    padding: 5px 15px 5px 15px;
+    border-radius: 10px;
+    border: solid black 2px;
+    border-radius: 8px;
+    box-shadow: 3px 3px black;
+    margin-top: 1%;
+}
+
+.footer-a:hover{
+    color: white;
+    box-shadow: none;
+}
+/* end footer styles */
 
 /* expense form styling */
 
+.exp-div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
 .expense-form-styles {
     margin: 100px;
     padding: 50px;
     border: solid 2px black;
-    width: 50%;
+    width: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.exp-form-head {
+    font-size: 3rem;
 }
 
 .exp-styles {
     border: solid 2px black;
+}
+
+/* end expense form styling */
+.card {
+    border: solid 2px rgb(27, 27, 27)
+}
+
+
+/* dashboard styling */
+
+
+.dash-expform-div{
+    border: solid black 2px;
+    margin-bottom: 1%;
+    width: 50%;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    background-color: var(--primary-color);
+    color: black;
+}
+
+.dash-div{
+    display: flex; 
+    align-items: center;
+    flex-direction: column;
+}
+
+.dash-a{
+    text-decoration: none;
+    color: black;
+    font-size: 1.25rem;
+    background-color: var(--quaternary-color);
+    padding: 5px 15px 5px 15px;
+    border-radius: 10px;
+    border: solid black 2px;
+    border-radius: 8px;
+    box-shadow: 3px 3px black;
+    margin-top: 1%;
+    margin-bottom: 2%;
+}
+
+/* homepage styling */
+.content-homepage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.img-portrait {
+    float: left;
+    width: 400px;
+    height: 550px;
+    object-fit: cover;
 }

@@ -1,27 +1,22 @@
- <div class="row">
-    <section class="col-3">
-      <div class="description">
-        <p>
-            Page description goes here.
-        </p>
-      </div> 
-    </section>
-     {{!-- {{#if loggedIn}} --}}
-    <section id="homepage"  class="col-3">
-            <div>
-                <div class="col " style="padding: 50px;">
-                <h2 style="font-size: 3em">Expense Tracker</h2> 
-                <p>description of expense tracker</p>
-                <a href="/calc" id="start-expense-tracker" class="btn-styles anch-styles" style=:"width: 100px;">Start Tracker</a>
-                </div>
-                <div class="col" style="padding: 50px;">
-                <h2 style="font-size: 3em">Calculator</h2>
-                <p>description of the financal calculator</p>
-                <a href="/tracker" id="start-calculator" class="btn-styles anch-styles"  style=:"width: 100px;">Calculator</a>
+<section id="homepage">
+    <div class="container">
+        <div class="row justify-content-between">
+            <div class="col-4 align-self-center">
+                <div class="card p-3">
+                <img class="card-img-top p-4" src="/images/expenses.png">
+                <h2 class="text-center card-title">Expense Tracker</h2> 
+                <p class="p-1 card-text">description of expense tracker</p>
+                <a href="/tracker" id="start-expense-tracker" class="text-center p-3 w-100 btn-styles anch-styles">Start Tracker</a>
                 </div>
             </div>
-    </section>
- </div>
- {{!-- {{/if}} --}}
-
-{{> footer }}
+            <div class="col-4">
+                <div class="card p-3">
+                <img class="card-img-top p-4" src="/images/happy-calc.png">
+                <h2 class="text-center card-title">Calculator</h2>
+                <p class="p-1 card-text">description of the financal calculator</p>
+                <a href="/calc" id="start-calculator" class="p-3 w-100 btn-styles anch-styles">Start Calculator</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

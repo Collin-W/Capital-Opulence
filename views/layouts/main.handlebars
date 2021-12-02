@@ -29,25 +29,24 @@
 <body style="background-color: #FFEFCF">
 
   <div class="wrapper">
-    <header class="row hero">
+    <header class="row hero g-0">
         <h1 class="col-7">
           <a href="/"  id="title" class="header-anch" style="font-size: 3em;">Capital Opulence</a>
-          <img src="public/images" alt="icon">
         </h1>
         <div class="col-5 nav-styles">
             <nav class="row">
               <ul class="ul-styles">
               
-              {{!-- {{#if loggedIn}} --}}
+              {{#if loggedIn}}
                 <a href="/tracker" id="start-expense-tracker" class="anch-styles">Expense Tracker</a>
-                <a href="/calc" id="start-calculator" class="anch-styles">Finance Calculator</a>
-                <a href="/dashboard" class="anch-styles">Dashboard</a>
-                <a href="/about" class="btn-styles anch-styles" style="width: 100px;">About</a>
-                <button id='logout' type="button" class="btn-styles anch-styles" style="width: 100px;">logout</button>                
-              {{!-- {{else}} --}}
-                <a href="/about" class="btn-styles anch-styles" style="width: 100px;">About</a>
-                <button id="login" type="button" class="btn-styles anch-styles" style="width: 100px;">Login</button>
-              {{!-- {{/if}} --}}
+                <a href="/calc" id="start-calculator" class="anch-styles ml">Finance Calculator</a>
+                <a href="/dashboard" class="anch-styles ml">Dashboard</a>
+                <a href="/about" class="btn-styles anch-styles ml" style="width: 100px;">About</a>
+                <button id='logout-btn' type="button" class="btn-styles anch-styles ml" style="width: 100px;">logout</button>                
+              {{else}}
+                <a href="/about" class="btn-styles anch-styles ml" >About</a>
+                <a href="/login" class="btn-styles anch-styles ml" >Login</a>
+              {{/if}}
               </ul>
             </nav>
         </div>
@@ -55,7 +54,6 @@
     <main>
       {{{ body }}}
     </main>
-    
   </div>
 
   {{#if loggedIn}}
@@ -63,6 +61,7 @@
   {{/if}}
 
 </body>
+
 
 
 
