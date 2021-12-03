@@ -28,36 +28,58 @@
 
 <body style="background-color: #FFEFCF">
 
-  <div class="wrapper">
+  <div class="wrapper hero">
+    <header class="container-fluid">
+        <div class="row max-width-100">
+          <h1>
+            <a href="/"><img src="/images/android-chrome-192x192.png" alt="icon" class="page-icon"></a>
+            <a href="/"  id="title" class="header-anch" style="font-size: 3em;">Capital Opulence</a>
+          </h1>
+        </div>
+        <nav class="d-flex justify-content-lg-end justify-content-sm-center position-relative">
+          <div class="d-flex flex-row flex-column-sm align-items-center no-gutters w-50 flex-wrap">
+              {{#if loggedIn}}
+              <div class="d-flex col-sm mt-1 mb-1 text-center navele">
+              <a href="/tracker" id="start-expense-tracker" class="btn-styles anch-styles ml">Expense Tracker</a>
+              </div>
+              <div class="d-flex col-sm mt-1 mb-1 text-center navele">
+              <a href="/calc" id="start-calculator" class="btn-styles anch-styles ml">Finance Calculator</a>
+              </div>
+              <div class="d-flex col-sm mt-1 mb-1 text-center navele">
+              <a href="/dashboard" class="btn-styles anch-styles ml">Dashboard</a>
+              </div>
+              <div class="d-flex col-sm mt-1 mb-1 text-center navele">
+              <a href="/about" class="btn-styles anch-styles ml">About</a>
+              </div>
+              <div class="d-flex col-sm mt-1 mb-1 text-center navele">
+              <button id='logout-btn' type="button" class="btn-styles anch-styles ml" style="font-weight: bold">Logout</button>
+              </div>                
+              {{else}}
+              <div class="col">
+              <a href="/about" class="btn-styles anch-styles ml" >About</a>
+              <a href="/login" class="btn-styles anch-styles ml" >Login</a>
+              </div>              
+              {{/if}}
+          </div>
+        </nav>
+    </header>
+<!--
     <header class="row hero g-0">
         <h1 class="col-7">
           <a href="/"><img src="/images/android-chrome-192x192.png" alt="icon" class="page-icon"></a>
           <a href="/"  id="title" class="header-anch" style="font-size: 3em;">Capital Opulence</a>
         </h1>
         <div class="col-5 nav-styles">
-            <nav class="row">
-              <ul class="ul-styles">
-              
-              {{#if loggedIn}}
-                <a href="/tracker" id="start-expense-tracker" class="anch-styles">Expense Tracker</a>
-                <a href="/calc" id="start-calculator" class="anch-styles ml">Finance Calculator</a>
-                <a href="/dashboard" class="anch-styles ml">Dashboard</a>
-                <a href="/about" class="btn-styles anch-styles ml">About</a>
-                <button id='logout-btn' type="button" class="btn-styles anch-styles ml" style="font-weight: bold">logout</button>                
-              {{else}}
-                <a href="/about" class="btn-styles anch-styles ml" >About</a>
-                <a href="/login" class="btn-styles anch-styles ml" >Login</a>
-              {{/if}}
-              </ul>
-            </nav>
         </div>
     </header>
+-->
     <main>
       {{{ body }}}
     </main>
   </div>
 
   <div class="footer-div">
+
 
 <footer>   
     <h5><strong>Thank you for visting our page</strong><span>&#128151;</span></h5>

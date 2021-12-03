@@ -98,7 +98,7 @@ section {
 .btn-styles {
     border: solid black 2px;
     border-radius: 8px;
-    width: 100px;
+    width: 150px;
     box-shadow: 3px 3px black;
     text-align: center;
     background-color: var(--quaternary-color);
@@ -124,6 +124,7 @@ section {
 /* anchor styles */
 .anch-styles {
     text-decoration: none;
+    width: 150px;
     color: black;
 }
 
@@ -334,4 +335,8 @@ footer{
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.navele {
+    width: 175px;
 }
