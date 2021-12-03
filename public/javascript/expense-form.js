@@ -140,7 +140,7 @@ function chartJS () {
         labels: labels,
         datasets: [{
             label: 'Daily Expenses',
-            backgroundColor: 'rgb(255, 99, 132)',
+            backgroundColor: 'rgb(255,122,0)',
             borderColor: 'rgb(255, 99, 132)',
             // data is money
             data: intArray,

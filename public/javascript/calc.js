@@ -45,7 +45,13 @@ $('#submit-expense-row').click(() => {
     let pEl = $("<p>", {
         class: "totalGainLoss-p-tag",
         type: "text",
-        text: `Total gains: ${totalGains} Total loss: ${totalLoss}`
+        text: `
+        
+        Total gains: ${totalGains}
+       
+        Total loss: ${totalLoss}
+        
+        `
     });
 
     $('#expense-chart').append(pEl)
@@ -173,3 +179,13 @@ $('.clear').click(() => {
     operator = ''
     calcWindow.val('')
 })
+
+
+// `
+//         <p>
+//         Total gains: ${totalGains}
+//         <br>
+//         <br>
+//         Total loss: ${totalLoss}
+//         </p>
+//         `
