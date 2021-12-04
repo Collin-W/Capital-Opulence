@@ -47,9 +47,9 @@ $('#submit-expense-row').click(() => {
         type: "text",
         text: `
         
-        Total gains: ${totalGains}
+        Total gains: ${'$' + totalGains}
        
-        Total loss: ${totalLoss}
+        Total loss: ${'$' + totalLoss}
         
         `
     });
