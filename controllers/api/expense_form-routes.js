@@ -20,6 +20,7 @@ router.get('/user/:user_id', (req, res) => {
     }
   })
   .then( dbExpFormData => {
+     // if there is data then continue
     if(!dbExpFormData){
       res.status(404).json({ message: "No user found with that id"})
       return
@@ -41,6 +42,7 @@ router.get('/:id', (req, res) => {
     }
   })
   .then( dbExpFormData => {
+     // if there is data then continue
     if(!dbExpFormData){
       res.status(404).json({ message: 'No Expense froms found with that id'})
       return
@@ -58,15 +60,18 @@ router.get('/:id', (req, res) => {
 //create expense form
 router.post('/', (req, res) => {
 
-  const array = req.body
+  // create variable with req.body
+  const expForms = req.body
 
-  let mapArray = array.expenseArray.map(x => 
+  //add current signed in user to each expense form
+  let mappedExpForms = expForms.expenseArray.map(x => 
     {
       x.user_id = req.session.user_id
       return x
     })
 
-  Expense_Form.bulkCreate(mapArray)
+  //bulk create all the expense forms
+  Expense_Form.bulkCreate(mappedExpForms)
   .then(dbExpFormData => res.json(dbExpFormData))
   .catch(err => {
     console.log(err)
@@ -82,6 +87,7 @@ router.put('/:id', (req, res) => {
     }
   })
   .then(dbExpFormData => {
+    // if there is data then continue
     if(!dbExpFormData){
       res.status(404).json({ message: 'No Expense froms found with that id'})
       return
@@ -103,6 +109,7 @@ router.delete('/:id', (req, res) => {
     }
   })
   .then(dbExpFormData => {
+    // if there is data then continue
     if(!dbExpFormData){
       res.status(404).json({ message: 'No Expense froms found with that id'})
       return
