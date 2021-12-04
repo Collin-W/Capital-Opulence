@@ -361,3 +361,18 @@ footer{
     align-items: center;
 }
 /* end update from stlying */
+
+/* media query for smaller desktop screens */
+@media screen and (max-width: 1200px) {
+    
+}
+
+/* media query for tablet screens */
+@media screen and (max-width: 768px) {
+    
+}
+
+/* media query for mobile phone screens */
+@media screen and (max-width: 425px) {
+    
+}
