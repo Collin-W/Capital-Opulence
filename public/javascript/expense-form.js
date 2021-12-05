@@ -102,7 +102,7 @@ $('#expense-row-list').on('click', ".delete-btn", function (evt) {
     expenseArray.splice(test, 1)
 })
 
-//chart.js/post request
+ // submit rendered rows button on click listener 2 of 3- chart.js/post request
 $('#submit-expense-row').click( async(evt) => {
     evt.preventDefault()
     const res = await fetch('/api/expform', {
