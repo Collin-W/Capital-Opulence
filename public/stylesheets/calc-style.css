@@ -74,12 +74,13 @@
     font-size: xx-large;
 }
 
+/* style for the bar graph */
 #myChart{
     max-height: 550px;
     max-width: 800px;
 }
 
-
+/* this is style for the renders two numbers to the right of the rendered bar graph */
 .totalGainLoss-p-tag{
 font-size: 40px;
 font-weight: 500;
