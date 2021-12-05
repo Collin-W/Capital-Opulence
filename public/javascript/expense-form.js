@@ -19,7 +19,6 @@ function addFormHandler (evt){
     //if a user chooses "Loss" the number they enter into the amount input will get converted to negative for the chart
     if (rowObj.gain_loss === 'Loss') {rowObj.amount = -Math.abs(rowObj.amount);} 
 
-
     // get input values
     let rowObjEntries = Object.values(rowObj)
     
@@ -55,7 +54,6 @@ function addFormHandler (evt){
             placeholder: "Amount - Or +",
             value: rowObj.amount
         });
-    
         let deleteBtn = $("<button>", {
             text: "X",
             type: 'button',
@@ -119,7 +117,7 @@ async function submitFormHandler(evt){
         }
     })
 
-    // if ok then call a funtion 
+    // if ok then call a function 
     // else alert what went wrong to user
     if(res.ok){
         chartAndDisplay()
@@ -207,7 +205,6 @@ function displayGainLosses(){
     if(totalGains === undefined){
         totalGains = 0
     }
-    //
     if(totalLoss === undefined){
         totalLoss = 0
     }
