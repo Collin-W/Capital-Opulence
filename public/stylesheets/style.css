@@ -214,6 +214,7 @@ footer{
     justify-content: center;
 }
 .expense-form-styles {
+    
     margin: 100px;
     padding: 50px;
     border: solid 2px black;
@@ -362,6 +363,8 @@ footer{
 }
 /* end update from stlying */
 
+
+
 /* media query for smaller desktop screens */
 @media screen and (max-width: 1200px) {
     
@@ -369,7 +372,7 @@ footer{
 
 /* media query for tablet screens */
 @media screen and (max-width: 768px) {
-    .login-signup-forms{
+       .login-signup-forms{
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -378,6 +381,10 @@ footer{
     .flex-center{
         display: flex;
         justify-content: center;
+    }
+
+    .exp-div{
+        background:var(--secondary-color) ;
     }
 }
 
