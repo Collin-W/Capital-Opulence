@@ -105,25 +105,30 @@ $('#expense-row-list').on('click', ".delete-btn", function (evt) {
 // will call a secondary function to create the chart on the page and also
 // display total losses and gains
 async function submitFormHandler(evt){
-    evt.preventDefault()
-    // post fetch call
-    const res = await fetch('/api/expform', {
-        method: 'post',
-        body: JSON.stringify({
-            expenseArray,
-        }),
-        headers: {
-            'Content-Type': 'application/json'
+    if(expenseArray.length){
+        evt.preventDefault()
+        // post fetch call
+        const res = await fetch('/api/expform', {
+            method: 'post',
+            body: JSON.stringify({
+                expenseArray,
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+    
+        // if ok then call a function 
+        // else alert what went wrong to user
+        if(res.ok){
+            chartAndDisplay()
+        }else {
+            alert(res.statusText)
         }
-    })
-
-    // if ok then call a function 
-    // else alert what went wrong to user
-    if(res.ok){
-        chartAndDisplay()
-    }else {
-        alert(res.statusText)
+    } else{
+        alert('No forms to submit')
     }
+   
 }
 // call chart function and gain/loss function
 function chartAndDisplay () {
@@ -171,6 +176,9 @@ function chartjs(){
 // display function this will display all of the gains/losses on the side of the
 // chart
 function displayGainLosses(){
+    //Hide calculator
+    $('#calculator').hide(1000)
+
     // declaring vars for front end UI
     let totalLoss;
     let totalGains;
