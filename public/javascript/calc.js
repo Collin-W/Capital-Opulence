@@ -7,12 +7,12 @@ let a = [];
 let b = [];
 
 
-function reset() {
-    a = []
-    b = []
-    operator = ' '
+// function reset() {
+//     a = []
+//     b = []
+//     operator = ' '
    
-}
+// }
 
 //this var is for the rendered input
 let calcWindow = $('#calculator-window')
@@ -85,15 +85,11 @@ $('.calc-btn').click(function () {
 
         let btnNum = $(this).val()
 
-        console.log(btnNum)
-
         a.push(btnNum)
 
         let windowVal1 = a.join('')
 
         calcWindow.val(windowVal1)
-
-
     } else {
 
         let btnNum = $(this).val()
@@ -105,8 +101,7 @@ $('.calc-btn').click(function () {
         calcWindow.val(windowVal3)
 
     }
-
-})
+});
 
 $('.operator').click(function () {
 
@@ -124,8 +119,8 @@ $('#calculate').click(() => {
     let num1 = a.reduce((x, y) => x + y);
     let num2 = b.reduce((x, y) => x + y);
 
-    num1 = parseInt(num1)
-    num2 = parseInt(num2)
+    num1 = parseFloat(num1)
+    num2 = parseFloat(num2)
 
     let result;
 
