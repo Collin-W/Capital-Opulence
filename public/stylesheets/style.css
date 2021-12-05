@@ -386,6 +386,13 @@ footer{
 }
 
 /* media query for mobile phone screens */
+<<<<<<< HEAD
+@media screen and (max-width: 600px) {
+    header{
+        width: 100%;
+    }
+=======
 @media screen and (max-width: 425px) {
  
+>>>>>>> 74daa90aeeb83112f22fb18899002c4e52cd152e
 }
