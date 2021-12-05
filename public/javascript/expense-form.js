@@ -207,6 +207,7 @@ function displayGainLosses(){
     if(totalGains === undefined){
         totalGains = 0
     }
+    //
     if(totalLoss === undefined){
         totalLoss = 0
     }
