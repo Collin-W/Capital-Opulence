@@ -28,4 +28,4 @@ async function deleteExpFormHandler (evt){
 }
 
 // listener on the from delete btn
-$('#form-delete-btn').click(deleteExpFormHandler)
+$('.dash-expform-div').on('click', '#form-delete-btn',deleteExpFormHandler)

@@ -1,82 +1,37 @@
-//calculations
 let gainArray = [];
 let lossArray = [];
+
+// these are just for the calculator
 let operator = '';
 let a = [];
 let b = [];
+
+
+// function reset() {
+//     a = []
+//     b = []
+//     operator = ' '
+   
+// }
+
+//this var is for the rendered input
 let calcWindow = $('#calculator-window')
 
-$('#submit-expense-row').click(() => {
-
-    let totalLoss;
-    let totalGains;
-   
-    //on submit renders the chart and hides the form
-    //$(".exp-div-hide").effect('slide', {direction: 'right', duration: 1000});
-    $(".exp-div-hide").hide(1000)
-
-    ifArray = expenseArray.map((x) => {
-        return {
-            gainLoss: x.gainLoss,
-            amount: x.amount
-        }
-    });
-
-    $(ifArray).each((i) => {
-
-        if (ifArray[i].gainLoss === "Gain") {
-
-            gainArray.push(parseInt(ifArray[i].amount));
-
-            totalGains = gainArray.reduce((a, b) => a + b, 0);
-
-            console.log("your total gains are " + totalGains);
-
-        } else {
-
-            lossArray.push(parseInt(ifArray[i].amount));
-
-            totalLoss = lossArray.reduce((a, b) => a + b, 0);
-
-            console.log("your total loss are " + totalLoss);
-        }
-    });
-
-    let pEl = $("<p>", {
-        class: "totalGainLoss-p-tag",
-        type: "text",
-        text: `
-        
-        Total gains: ${totalGains}
-       
-        Total loss: ${totalLoss}
-        
-        `
-    });
-
-    $('#expense-chart').append(pEl)
-
-})
-
-//calculator
+//listens for all calc button clicks 
 $('.calc-btn').click(function () {
 
+    //reset calcWindow
     calcWindow.val('')
 
     if (operator === '') {
 
         let btnNum = $(this).val()
 
-        console.log(btnNum)
-
         a.push(btnNum)
 
         let windowVal1 = a.join('')
 
         calcWindow.val(windowVal1)
-
-       // console.log(a + " a variable")
-
     } else {
 
         let btnNum = $(this).val()
@@ -87,10 +42,8 @@ $('.calc-btn').click(function () {
 
         calcWindow.val(windowVal3)
 
-        //console.log(b + " b var")
     }
-
-})
+});
 
 $('.operator').click(function () {
 
@@ -100,7 +53,6 @@ $('.operator').click(function () {
 
     calcWindow.val(windowVal2)
 
-    //console.log(operator + " operator")
 });
 
 
@@ -109,12 +61,8 @@ $('#calculate').click(() => {
     let num1 = a.reduce((x, y) => x + y);
     let num2 = b.reduce((x, y) => x + y);
 
-   num1 = parseInt(num1)
-   num2 = parseInt(num2)
-
-    // console.log(num1)
-    // console.log(num2)
-    // console.log(operator)
+    num1 = parseFloat(num1)
+    num2 = parseFloat(num2)
 
     let result;
 
@@ -123,35 +71,35 @@ $('#calculate').click(() => {
             result = num1 + num2;
 
             calcWindow.val(result)
-            console.log(`${num1} + ${num2} = ${result}`);
+
             break;
 
         case '-':
             result = num1 - num2;
 
             calcWindow.val(result)
-            console.log(`${num1} - ${num2} = ${result}`);
+
             break;
 
         case '*':
             result = num1 * num2;
 
             calcWindow.val(result)
-            console.log(`${num1} * ${num2} = ${result}`);
+
             break;
 
         case '/':
             result = num1 / num2;
 
             calcWindow.val(result)
-            console.log(`${num1} / ${num2} = ${result}`);
+
             break;
 
         default:
             console.log('Invalid operator');
     }
 
-    //make this a global object??
+    //reset calcWindow and arrays for new calculations
     a = []
     b = []
     operator = ''
@@ -167,25 +115,18 @@ $('.delete').click(function () {
     } else {
 
         //add operator delete
-
         b.pop()
         calcWindow.val(b.join(''))
     }
 })
 
+//clear btn
 $('.clear').click(() => {
     a = []
     b = []
-    operator = ''
+    operator = ' '
     calcWindow.val('')
+    // reset()
+    // calcWindow.val('')
 })
 
-
-// `
-//         <p>
-//         Total gains: ${totalGains}
-//         <br>
-//         <br>
-//         Total loss: ${totalLoss}
-//         </p>
-//         `
