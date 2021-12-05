@@ -96,7 +96,6 @@
 
 /* media query for tablet screens or smaller */
 @media screen and (max-width: 768px) {
-<<<<<<< HEAD
     #calculator{
         width: 20%;
         padding: 1%;
@@ -106,20 +105,6 @@
 
     #calculator-window{
         border-radius: 15px;
-=======
-    #calculator {
-        padding: 1%;
-        border-radius: 22px;
-        width: 25%;
-        padding: 2%;
-        border-radius: 22px;
-        margin: auto;
-        margin-bottom: 9%;
-    }
-
-    #calculator-window {
-        border-radius: 12px;
->>>>>>> 74daa90aeeb83112f22fb18899002c4e52cd152e
     }
 
     #expense-chart {
@@ -159,7 +144,6 @@
 }
 
 /* media query for mobile phone screens */
-<<<<<<< HEAD
 @media screen and (max-width: 600px) {
     #calculator{
         width: 25%;
@@ -174,26 +158,6 @@
 
     .calc-btn-style{
         border-radius: 10px;
-=======
-@media screen and (max-width: 425px) {
-    #calculator {
-        width: 25%;
-        padding: 2%;
-        border-radius: 22px;
-        width: 60%;
-        padding: 2%;
-        margin: auto;
-        margin-bottom: 9%;
-        position: sticky;
-    }
-
-    #calculator-window {
-        border-radius: 14px;
-    }
-
-    .calc-btn-style {
-        border-radius: 8px;
->>>>>>> 74daa90aeeb83112f22fb18899002c4e52cd152e
         padding: 2%;
     }
 
