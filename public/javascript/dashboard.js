@@ -1,5 +1,6 @@
 // delete button handler when delete button is clicked delete a expense form
 async function deleteExpFormHandler (evt){
+  console.log('hello')
   evt.preventDefault()
 
   //get the furtherest out parent element
