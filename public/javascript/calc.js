@@ -17,64 +17,6 @@ let b = [];
 //this var is for the rendered input
 let calcWindow = $('#calculator-window')
 
-// submit rendered rows button on click listener 1 of 2- pushing each row object into an array for the database and calculations on front end
-$('#submit-expense-row').click(() => {
-
-    // declaring vars for front end UI
-    let totalLoss;
-    let totalGains;
-
-    //on row submit- renders the chart and hides the form- a nice UI transition
-    $(".exp-div-hide").hide(1000)
-
-    //isolating specific key value pairs from my main array
-    ifArray = expenseArray.map((x) => {
-        return {
-            gainLoss: x.gainLoss,
-            amount: x.amount
-        }
-    });
-
-    // named ifArray because the array separates the two conditions of the gainLoss key
-    //this ifArray has ONLY a gain/loss string and its corresponding positive or negative integer
-    $(ifArray).each((i) => {
-
-        // ifArray becomes two separated arrays 
-        if (ifArray[i].gainLoss === "Gain") {
-
-            gainArray.push(parseInt(ifArray[i].amount));
-
-            totalGains = gainArray.reduce((a, b) => a + b, 0);
-
-            console.log("your total gains are " + totalGains);
-
-        } else {
-
-            lossArray.push(parseInt(ifArray[i].amount));
-
-            totalLoss = lossArray.reduce((a, b) => a + b, 0);
-
-            console.log("your total loss are " + totalLoss);
-        }
-    });
-
-
-    // renders a the combined gain and loss ints to the page for the user, directly next to the rendered bar graph
-    //this is causing a bug still
-    let pEl = $("<p>", {
-        class: "totalGainLoss-p-tag",
-        type: "text",
-        text: `
-        Total gains: ${'$' + totalGains}
-        Total loss: ${'$' + totalLoss}
-        `
-    });
-
-    //appends to page
-    $('#expense-chart').append(pEl)
-
-})
-
 //listens for all calc button clicks 
 $('.calc-btn').click(function () {
 
