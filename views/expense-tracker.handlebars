@@ -7,6 +7,7 @@
 <div>
  <legend class="exp-form-head">Expense Form</legend>
 
+{{!-- main user expense form --}}
   <form id="expense-form" class="exp-style">
       <div id="main-expense-row">
       <input id="expense-date" class="expense-input expense-date" type="date" placeholder="Date Of Expense"> 
@@ -14,10 +15,10 @@
       <input id="expense-description" class="expense-input expense-description" type="text" placeholder="Description Of Expense">
       <input id="expense-amount" class="expense-input expense-amount" type="number" placeholder="Amount - Or +">
       <button  class="btn-styles">Reset Row</button> 
-      {{!-- onclick="Delete(this);" --}}
       </div>
 
       <div>
+              {{!-- new rendered rows get appended to this element --}}
           <ul  id="expense-row-list">
           </ul>
       </div>
@@ -45,15 +46,15 @@
 </fieldset>
 </div>
 
-
+{{!-- this is where the rendered chart is appended, must include the canvas element --}}
 <section id="expense-chart">
 <canvas id="myChart"></canvas>
 </section>
 
+
+{{!-- this is the body of the calc --}}
 <section class="container" id="calculator">
 
-    {{!-- <div class="row calc-row"> --}}
- 
     <input class="col-12" id="calculator-window">
  
  <div class="row calc-row">
@@ -84,7 +85,6 @@
         <button class="col-3 calc-btn-style calc-btn" value=0>0</button>
         <button class="col-3 calc-btn-style" id="calculate" value='='>=</button>
  </div>
- {{!-- </div> --}}
 </section>
 
 <script src="/javascript/chart.js"></script>
