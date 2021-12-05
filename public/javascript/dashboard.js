@@ -1,6 +1,5 @@
 // delete button handler when delete button is clicked delete a expense form
 async function deleteExpFormHandler (evt){
-  console.log('hello')
   evt.preventDefault()
 
   //get the furtherest out parent element
@@ -29,4 +28,4 @@ async function deleteExpFormHandler (evt){
 }
 
 // listener on the from delete btn
-$('#form-delete-btn').click(deleteExpFormHandler)
+$('.dash-expform-div').on('click', '#form-delete-btn',deleteExpFormHandler)
