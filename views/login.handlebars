@@ -1,19 +1,21 @@
 <section>
   <div>
-     <form action="/login" method="get" id="login-form">
+     <form action="/login" method="get" id="login-form" class="login-signup-forms">
 
         <h2>Login</h2>
 
         <label for="email" class="login-signup-label">
           Email
-          <input
+          
+        </label>
+        <input
                 name="email"
                 id="email-login"
                 type="text"
                 class="login-signup-input"
-                placeholder="Enter Email"/>
-        </label>
-        <small></small>
+                placeholder="Enter Email"
+        />
+
         <label for="password" class="login-signup-label">
           Password
         </label>
@@ -30,7 +32,7 @@
    
 
 <div class="mt">
-  <form id="signup-form" class="mt">
+  <form id="signup-form" class="mt login-signup-forms">
 
     <h2>Sign Up</h2>
 
@@ -64,14 +66,14 @@
         placeholder="Enter New Password"
       />  
 
-    <button id="signup-btn" class="btn-styles anch-styles" >Sign Up</button>
+    <button id="signup-btn" class="btn-styles anch-styles mt-l" >Sign Up</button>
     
     </form>
 </div>
     
 
-    <div class="mt">
-      <a href="/" class="btn-styles anch-styles ">Homepage</a>
+    <div class="mt flex-center">
+      <a href="/" class="btn-styles anch-styles">Homepage</a>
     </div>
 
 </section>

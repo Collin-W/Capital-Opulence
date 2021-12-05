@@ -369,10 +369,19 @@ footer{
 
 /* media query for tablet screens */
 @media screen and (max-width: 768px) {
-    
+    .login-signup-forms{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .flex-center{
+        display: flex;
+        justify-content: center;
+    }
 }
 
 /* media query for mobile phone screens */
 @media screen and (max-width: 425px) {
-    
+ 
 }
