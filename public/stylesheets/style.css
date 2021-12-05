@@ -214,6 +214,7 @@ footer{
     justify-content: center;
 }
 .expense-form-styles {
+    
     margin: 100px;
     padding: 50px;
     border: solid 2px black;
@@ -361,6 +362,8 @@ footer{
     align-items: center;
 }
 /* end update from stlying */
+
+
 
 /* media query for smaller desktop screens */
 @media screen and (max-width: 1200px) {

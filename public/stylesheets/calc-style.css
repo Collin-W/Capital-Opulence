@@ -1,5 +1,5 @@
 /* this file contains style for mini calc and some smaller components of the website */
-
+/* background: var(--secondary-color); */
 /* mini calc style starts */
 #calculator {
     width: 12%;
@@ -104,6 +104,11 @@
         border-radius: 22px;
         margin: auto;
         margin-bottom: 9%;
+        z-index: -1;
+    }
+
+    #myChart{
+        background: var(--secondary-color);
     }
 
     #calculator-window {
@@ -180,6 +185,7 @@
     #myChart {
         min-height: 300px;
         max-width: 350px;
+        
     }
 
     #expense-chart {
