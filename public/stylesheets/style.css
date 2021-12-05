@@ -389,6 +389,13 @@ footer{
 }
 
 /* media query for mobile phone screens */
-@media screen and (max-width: 425px) {
- 
+@media screen and (max-width: 600px) {
+    h2{
+        font-size: 2rem;
+    }
+
+    .container{
+        padding: 0rem;
+    }
+
 }
