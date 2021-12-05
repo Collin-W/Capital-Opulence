@@ -107,9 +107,6 @@
         z-index: -1;
     }
 
-    #myChart{
-        background: var(--secondary-color);
-    }
 
     #calculator-window {
         border-radius: 12px;
