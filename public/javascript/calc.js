@@ -22,7 +22,7 @@ $('#submit-expense-row').click(() => {
     //isolating specific key value pairs from my main array
     ifArray = expenseArray.map((x) => {
         return {
-            gainLoss: x.gainLoss,
+            gainLoss: x.gain_loss,
             amount: x.amount
         }
     });
