@@ -373,6 +373,8 @@ footer{
 }
 
 /* media query for mobile phone screens */
-@media screen and (max-width: 425px) {
-    
+@media screen and (max-width: 600px) {
+    header{
+        width: 100%;
+    }
 }
