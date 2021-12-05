@@ -6,6 +6,14 @@ let operator = '';
 let a = [];
 let b = [];
 
+
+function reset() {
+    a = []
+    b = []
+    operator = ' '
+   
+}
+
 //this var is for the rendered input
 let calcWindow = $('#calculator-window')
 
@@ -181,4 +189,7 @@ $('.clear').click(() => {
     b = []
     operator = ' '
     calcWindow.val('')
+    // reset()
+    // calcWindow.val('')
 })
+

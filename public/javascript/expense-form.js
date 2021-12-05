@@ -13,7 +13,7 @@ $("#expense-form-add-btn").click((evt) => {
     evt.preventDefault();
 
     //if a user chooses "Loss" the number they enter into the amount input will get converted to negative for the chart
-    if (gain_loss === 'Loss')  amount = -Math.abs(amount);
+    if (gain_loss === 'Loss') amount = -Math.abs(amount);
 
     //this object of data get pushed to an array for the database
     let rowObj = {
@@ -71,6 +71,12 @@ $("#expense-form-add-btn").click((evt) => {
     $('#main-expense-row :input').val('')
 });
 
+//reset button listener- resets main input row on top
+$('#reset-row-btn').click((evt) => {
+    evt.preventDefault();
+    $('#main-expense-row :input').val('')
+})
+
 // ".on('click'," is needed for dynamically created elements 
 // this is specifically listening on the form for the delete button
 $('#expense-row-list').on('click', ".delete-btn", function (evt) {
@@ -85,8 +91,8 @@ $('#expense-row-list').on('click', ".delete-btn", function (evt) {
     expenseArray.splice(btnIndex, 1)
 })
 
- // submit rendered rows button on click listener 2 of 2- chart.js/post request -this sends the expenseArray data to the database & renders the chart
-$('#submit-expense-row').click( async(evt) => {
+// submit rendered rows button on click listener 2 of 2- chart.js/post request -this sends the expenseArray data to the database & renders the chart
+$('#submit-expense-row').click(async (evt) => {
     evt.preventDefault()
     const res = await fetch('/api/expform', {
         method: 'post',
@@ -98,18 +104,22 @@ $('#submit-expense-row').click( async(evt) => {
         }
     })
 
-    if(res.ok){
+    if (res.ok) {
         chartJS()
-    }else {
+    } else {
         alert(res.statusText)
     }
 })
 
-function chartJS () {
+function chartJS() {
 
     //isolate data from form to use in the graph
-    dateArray = expenseArray.map((x) => { return x.date })
-    intArray = expenseArray.map((x) => { return x.amount })
+    dateArray = expenseArray.map((x) => {
+        return x.date
+    })
+    intArray = expenseArray.map((x) => {
+        return x.amount
+    })
 
     //chart data
     const data = {
