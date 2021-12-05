@@ -86,3 +86,66 @@
 font-size: 40px;
 font-weight: 500;
 }
+
+/* media query for tablet screens or smaller */
+@media screen and (max-width: 768px) {
+    #calculator{
+        width: fit-content;
+        padding: 1%;
+        border-radius: 22px;
+        margin-right: 1.8%;
+    }
+
+    #calculator-window{
+        border-radius: 12px;
+    }
+    #expense-chart{
+        width: fit-content;
+    }
+
+    .calc-btn-style{
+        border-radius: 8px;
+        padding: 2%;
+    }
+
+    .calc-btn-special{
+        padding: 0.5%;
+        width: 47%;
+    }
+
+    .totalGainLoss-p-tag{
+        font-size: 35px;
+
+    }
+    
+}
+
+/* media query for mobile phone screens */
+@media screen and (max-width: 425px) {
+    #calculator{
+        width: 25%;
+        padding: 2%;
+        border-radius: 22px;
+    }
+
+    #calculator-window{
+        border-radius: 14px;
+    }
+
+    .calc-btn-style{
+        border-radius: 8px;
+        padding: 2%;
+    }
+
+    .calc-btn-special{
+        padding: 2%;
+        width: 47%;
+    }
+
+    .totalGainLoss-p-tag{
+        font-size: 35px;
+
+    }
+    
+}
+    

@@ -25,6 +25,7 @@ router.get('/:id', (req, res) => {
     }
   })
   .then(dbUserData => {
+    // if there is data then continue
     if(!dbUserData){
       res.status(404).json({ message: "No user found with that id"})
       return
@@ -72,6 +73,7 @@ router.put('/:id', (req, res) => {
     }
   })
   .then(dbUserData => {
+    // if there is data then continue
     if(!dbUserData){
       res.status(404).json({ message: 'No user found with that id'})
       return
@@ -93,10 +95,12 @@ router.delete('/:id', (req, res) => {
     }
   })
   .then(dbUserData => {
+    // if there is data then continue
     if(!dbUserData){
       res.status(404).json({ message: 'No user found with that id'})
       return
     }
+
     res.json(dbUserData)
   })
   .catch(err => {
@@ -113,17 +117,20 @@ router.post('/login', (req, res) => {
     }
   })
   .then( dbUserData => {
+    // if there is data then continue
     if(!dbUserData){
       res.status(400).json({ message: 'No user found with that email'})
       return
     }
 
+    //validate password for login
     const validatePassword = dbUserData.checkPassword(req.body.password)
     if(!validatePassword){
       res.status(400).json( { message: 'Incorrect password'})
       return
     }
 
+    // start new sessions when user logs in
     req.session.save( () => {
       req.session.user_id = dbUserData.id
       req.session.email = dbUserData.email
@@ -140,6 +147,8 @@ router.post('/login', (req, res) => {
 
 //logout request
 router.post('/logout', (req, res) => {
+  // if logged in then destory session or quit session
+  // else stop call
   if(req.session.loggedIn){
     req.session.destroy( () => {
       res.status(204).end()
