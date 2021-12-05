@@ -12,7 +12,6 @@ $("#expense-form-add-btn").click((evt) => {
 
     evt.preventDefault();
 
-
     //if a user chooses "Loss" the number they enter into the amount input will get converted to negative for the chart
     if (gain_loss === 'Loss')  amount = -Math.abs(amount);
 
@@ -25,7 +24,6 @@ $("#expense-form-add-btn").click((evt) => {
     }
 
     expenseArray.push(rowObj);
-
 
     //this will render the html for a new row of form elements on an add button click
     let inputDate = $("<input>", {
