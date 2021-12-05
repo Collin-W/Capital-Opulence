@@ -1,9 +1,8 @@
-//inport sequelize
+//import sequelize
 const Sequelize = require('sequelize');
 
-//require dotevn file to connect to the database
+//require dotenv file to connect to the database
 require('dotenv').config();
-
 
 //connect to the database
 

@@ -1,13 +1,10 @@
-#expense-form-and-data {
-    display: flex;
-    justify-content: space-between;
-}
-
+/* this file contains style for mini calc and some smaller components of the website */
+/* background: var(--secondary-color); */
+/* mini calc style starts */
 #calculator {
     width: 12%;
     border-radius: 30px;
-    /* background-color: #C6E4F5; */
-    background-color:  rgba(255,122,0,1);
+    background-color: rgba(255, 122, 0, 1);
     margin: 1.8% 0 1.8% 85%;
     padding: 0.8%;
     position: absolute;
@@ -20,7 +17,6 @@
     background-position: 80%;
     z-index: 9999;
     position: right;
-    
 }
 
 .calc-row {
@@ -45,10 +41,11 @@
     font-size: 1rem;
     box-shadow: 0.8px 0.8px black;
 }
-.calc-btn-style:hover{
+
+.calc-btn-style:hover {
     border: 2px solid #dacbaf;
-    background-color:  #97714c;
-    
+    background-color: #97714c;
+
 }
 
 .calc-btn-special {
@@ -61,20 +58,133 @@
     margin: 1.4%;
     font-size: 1.0rem;
 }
-.calc-btn-special:hover{
+
+.calc-btn-special:hover {
     border: 2px solid #dacbaf;
-    background-color:  #97714c;
+    background-color: #97714c;
 }
 
-#expense-chart{
-    display:flex;
+/* end mini calc style */
+
+/* expense form */
+#expense-form-and-data {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* for rendered and calculated data */
+#expense-chart {
+    display: flex;
     justify-content: space-around;
 }
-#expense-chart.p{
+
+#expense-chart.p {
     font-size: xx-large;
 }
 
-#myChart{
+/* style for the bar graph */
+#myChart {
     max-height: 550px;
     max-width: 800px;
+}
+
+/* this is style for the renders two numbers to the right of the rendered bar graph */
+.totalGainLoss-p-tag {
+    font-size: 40px;
+    font-weight: 500;
+}
+
+/* media query for tablet screens or smaller */
+@media screen and (max-width: 768px) {
+    #calculator{
+        width: 20%;
+        padding: 1%;
+        border-radius: 22px;
+        margin: 1.8% 0 1.8% 75%;
+    }
+
+    #calculator-window{
+        border-radius: 15px;
+    }
+
+    #expense-chart {
+        width: fit-content;
+    }
+
+    .calc-btn-style {
+        border-radius: 8px;
+        padding: 2%;
+    }
+
+    .calc-btn-special {
+        padding: 0.5%;
+        width: 47%;
+    }
+
+    .totalGainLoss-p-tag {
+        font-size: 30px;
+    }
+
+    #myChart {
+        min-height: 525px;
+        max-width: 600px;
+    }
+
+    #expense-chart {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 2% 5% 2% 5%;
+    }
+
+    #expense-form-fieldset {
+        margin: 5% 2% 5% 2%;
+    }
+
+}
+
+/* media query for mobile phone screens */
+@media screen and (max-width: 600px) {
+    #calculator{
+        width: 25%;
+        padding: 1%;
+        border-radius: 20px;
+        margin: 1.8% 0 1.8% 70%;
+    }
+
+    #calculator-window{
+        border-radius: 15px;
+    }
+
+    .calc-btn-style{
+        border-radius: 10px;
+        padding: 2%;
+    }
+
+    .calc-btn-special {
+        padding: 2%;
+        width: 100%;
+    }
+
+    .totalGainLoss-p-tag {
+        font-size: 25px;
+    }
+
+    #myChart {
+        min-height: 300px;
+        max-width: 350px;
+        
+    }
+
+    #expense-chart {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 0;
+        margin: 0;
+    }
+
+    #expense-form-fieldset {
+        margin: 5% 2% 5% 2%;
+    }
 }

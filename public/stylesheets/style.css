@@ -1,9 +1,16 @@
+/* default page styling */
 * {
     margin: 0;
     padding: 0;
     font-family: Oswald, sans-serif;
 }
 
+/* body of page styling */
+body {
+    background-color: var(--secondary-color);   
+}
+
+/* coloring for page stored in variable */
 :root {
     --primary-color: #FF7A00;
     --secondary-color: #FFEFCF;
@@ -11,9 +18,6 @@
     --quaternary-color: #864000;
 }
 
-body {
-    background-color: var(--secondary-color);   
-}
 
 
 /* margin stlyes */
@@ -37,6 +41,7 @@ body {
     margin-bottom: 2rem;
 }
 
+/* font styles */
 /* font increase */
 .font-in{
     font-size: 1.25rem;
@@ -48,6 +53,9 @@ body {
     padding-bottom: 1.25rem;
 }
 
+/* html elements styling */
+
+/* header */
 header {
     box-sizing: border-box;
     min-height: 100px;
@@ -57,48 +65,55 @@ header {
     padding: 0 30px 10px 60px;
 }
 
+/* h1 */
 h1 {
     padding: 20px 0;
 }
 
+/* h2 */
 h2 {
     font-size: 3em;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-.nav-styles {
-    display: flex;
-    justify-content: end;
-    align-items: end;
-    font-size: 1.3rem;
+/* section */
+section {
+    padding: 60px 60px;
 }
+/* end html elements styling */
 
+
+
+/* unordered list styles */
 .ul-styles {
     display: flex;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     font-weight: bold;
 }
 
+/* descriptions on homepage styling */
 .description {
     margin: 100px 100px;
     padding: 50px 50px;
     border: solid 2px black;
 }
 
-section {
-    padding: 60px 60px;
+
+/* hidden styling */
+.hidden{
+    display: none;
 }
 
-.walker-img {
-    margin: 100px;
-    padding: 10px;
+/* card styling */
+.card {
+    border: solid 2px rgb(27, 27, 27)
 }
 
 /* btn styles */
 .btn-styles {
     border: solid black 2px;
     border-radius: 8px;
-    width: 100px;
+    width: 150px;
     box-shadow: 3px 3px black;
     text-align: center;
     background-color: var(--quaternary-color);
@@ -124,6 +139,7 @@ section {
 /* anchor styles */
 .anch-styles {
     text-decoration: none;
+    width: 150px;
     color: black;
 }
 
@@ -141,11 +157,25 @@ section {
 }
 /* end anchor styles */
 
+/* navigation styles */
+.nav-styles {
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    font-size: 1.3rem;
+}
+
+.navele {
+    width: 175px;
+}
+/* end navigation styles */
+
 /* footer styles */
-.footer-anchors {
-    color: black;
-    text-decoration: none;
-    font-weight: bold;
+footer{
+    display: flex;
+    flex-direction: column;
+   align-items: center;
+   padding-bottom: 2%;
 }
 
 .footer-anchors:hover {
@@ -155,13 +185,6 @@ section {
 .footer-div{
     display: flex;
     justify-content: center;
-}
-
-footer{
-    display: flex;
-    flex-direction: column;
-   align-items: center;
-   padding-bottom: 2%;
 }
 
 .footer-a{
@@ -191,6 +214,7 @@ footer{
     justify-content: center;
 }
 .expense-form-styles {
+    
     margin: 100px;
     padding: 50px;
     border: solid 2px black;
@@ -198,7 +222,6 @@ footer{
     display: flex;
     justify-content: center;
 }
-
 
 .exp-form-head {
     font-size: 3rem;
@@ -209,13 +232,10 @@ footer{
 }
 
 /* end expense form styling */
-.card {
-    border: solid 2px rgb(27, 27, 27)
-}
+
 
 
 /* dashboard styling */
-
 
 .dash-expform-div{
     border: solid black 2px;
@@ -268,6 +288,8 @@ footer{
     box-shadow: none;
     color: white;
 }
+/* end dashboard styling */
+
 
 /* homepage styling */
 .content-homepage{
@@ -275,7 +297,9 @@ footer{
     flex-direction: column;
     align-items: center;
 }
+/* end homepage styling*/
 
+/* image styling */
 .img-portrait {
     float: left;
     width: 400px;
@@ -292,10 +316,12 @@ footer{
     margin-top: 15px;
 }
 
-/* hidden */
-.hidden{
-    display: none;
+.walker-img {
+    margin: 100px;
+    padding: 10px;
 }
+/* end image styling */
+
 
 /* update form */
 .update-div{
@@ -334,4 +360,35 @@ footer{
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+/* end update from stlying */
+
+
+
+/* media query for smaller desktop screens */
+@media screen and (max-width: 1200px) {
+    
+}
+
+/* media query for tablet screens */
+@media screen and (max-width: 768px) {
+       .login-signup-forms{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .flex-center{
+        display: flex;
+        justify-content: center;
+    }
+
+    .exp-div{
+        background:var(--secondary-color) ;
+    }
+}
+
+/* media query for mobile phone screens */
+@media screen and (max-width: 425px) {
+ 
 }
