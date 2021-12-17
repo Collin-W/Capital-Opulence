@@ -110,6 +110,7 @@
 
     #calculator-window {
         border-radius: 12px;
+
     }
 
     #expense-chart {
@@ -167,6 +168,22 @@
 
     .calc-btn-style {
         border-radius: 8px;
+
+@media screen and (max-width: 600px) {
+    #calculator{
+        width: 25%;
+        padding: 1%;
+        border-radius: 20px;
+        margin: 1.8% 0 1.8% 70%;
+    }
+
+    #calculator-window{
+        border-radius: 15px;
+    }
+
+    .calc-btn-style{
+        border-radius: 10px;
+
         padding: 2%;
     }
 
